@@ -3,7 +3,8 @@ Repository of the Exam project for the realisation of a Spring Boot Application 
 
 ## Class diagram
 
-![SIW_Digital_Art_Gallery-Class_Diagram](SIW-Digital-Art-Gallery-2022/SIW-Digital-Art-Gallery-2022-Class_Diagram.png)
+![SIW_Digital_Art_Gallery-Class_Diagram](SIW-Digital-Art-Gallery-2022-Class_Diagram/SIW_Digital_Art_Gallery-Class_Diagram.png)
+
 
 ## Use cases
 
