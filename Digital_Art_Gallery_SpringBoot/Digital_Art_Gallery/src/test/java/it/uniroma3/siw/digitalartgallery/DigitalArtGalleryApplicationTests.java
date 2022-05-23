@@ -1,10 +1,10 @@
-package it.uniroma3.siw.digital_art_gallery;
+package it.uniroma3.siw.digitalartgallery;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class DigitalArtGallerySpringBootProjectApplicationTests {
+class DigitalArtGalleryApplicationTests {
 
 	@Test
 	void contextLoads() {

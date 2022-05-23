@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>it.uniroma3.siw</groupId>
-	<artifactId>Digital_Art_Gallery_SpringBoot_Project</artifactId>
-	<version>0.0.1</version>
-	<name>Digital_Art_Gallery_SpringBoot_Project</name>
-	<description>Repository of the Exam project for the realisation of a Spring Boot Application that manages a Digital Art Gallery.</description>
+	<artifactId>Digital_Art_Gallery</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>Digital_Art_Gallery</name>
+	<description>System that manges a Digital Art Gallery</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>
