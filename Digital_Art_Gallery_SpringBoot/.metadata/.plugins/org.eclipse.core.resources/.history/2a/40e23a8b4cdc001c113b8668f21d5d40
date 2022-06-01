@@ -1,0 +1,8 @@
+package it.uniroma3.siw.digital_art_gallery.authentication;
+
+import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+
+@Configuration
+public class AuthConfiguration extends WebSecurityConfigurerAdapter {
+
+}

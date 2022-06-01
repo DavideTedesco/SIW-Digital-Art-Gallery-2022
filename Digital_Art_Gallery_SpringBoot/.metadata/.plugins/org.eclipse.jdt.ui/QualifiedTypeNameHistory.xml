@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="org.springframework.security.config.annotation.web.configuration.EnableWebSecurity"/>
+    <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+    <fullyQualifiedTypeName name="javax.activation.DataSource"/>
+    <fullyQualifiedTypeName name="javax.persistence.Entity"/>
+    <fullyQualifiedTypeName name="org.hibernate.annotations.CascadeType"/>
+    <fullyQualifiedTypeName name="it.uniroma3.siw.digital_art_gallery.model.Credentials"/>
+    <fullyQualifiedTypeName name="javax.sql.DataSource"/>
+</qualifiedTypeNameHistroy>
