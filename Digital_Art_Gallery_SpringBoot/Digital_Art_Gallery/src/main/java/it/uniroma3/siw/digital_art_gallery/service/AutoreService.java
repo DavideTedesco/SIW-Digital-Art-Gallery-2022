@@ -10,5 +10,9 @@ public class AutoreService {
 	
 	@Autowired
 	AutoreRepository autoreRepository;
+	
+	public boolean verificaDuplicati(String nome, String Cognome, java.time.LocalDate dataDiNascita) {
+		return this.autoreRepository.existsByNomeAndCognomeAndDataDiNascita(nome, Cognome, dataDiNascita);
+	}
 
 }
