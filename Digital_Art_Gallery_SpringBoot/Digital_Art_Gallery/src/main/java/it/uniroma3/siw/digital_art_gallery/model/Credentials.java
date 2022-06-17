@@ -5,10 +5,18 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
+
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 
 @Entity
+@Getter
+@Setter
+@NoArgsConstructor
 public class Credentials {
 	
 	public static final String DEFAULT_ROLE = "DEFAULT";
@@ -30,7 +38,7 @@ public class Credentials {
 	@OneToOne(cascade = CascadeType.ALL)
 	private User user;
 
-	public Long getId() {
+	/*public Long getId() {
 		return id;
 	}
 
@@ -68,5 +76,5 @@ public class Credentials {
 
 	public void setUser(User user) {
 		this.user = user;
-	}
+	}*/
 }

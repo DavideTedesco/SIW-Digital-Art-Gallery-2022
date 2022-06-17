@@ -8,7 +8,14 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 @Entity
+@Getter
+@Setter
+@NoArgsConstructor
 public class Collezione {
 	
 	@Id
@@ -21,7 +28,7 @@ public class Collezione {
 	@OneToMany
 	private List<Opera> opere;
 
-	public Long getId() {
+	/*public Long getId() {
 		return id;
 	}
 
@@ -51,5 +58,5 @@ public class Collezione {
 
 	public void setOpere(List<Opera> opere) {
 		this.opere = opere;
-	}
+	}*/
 }

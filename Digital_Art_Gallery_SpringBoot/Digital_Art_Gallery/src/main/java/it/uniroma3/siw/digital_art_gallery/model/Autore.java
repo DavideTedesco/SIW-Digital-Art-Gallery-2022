@@ -9,7 +9,14 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 @Entity
+@Getter
+@Setter
+@NoArgsConstructor
 public class Autore {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -27,7 +34,7 @@ public class Autore {
 	@ManyToMany
 	private List<Opera> opere;
 
-	public Long getId() {
+	/*public Long getId() {
 		return id;
 	}
 
@@ -73,7 +80,7 @@ public class Autore {
 
 	public void setOpere(List<Opera> opere) {
 		this.opere = opere;
-	}
+	}*/
 	
 	
 	

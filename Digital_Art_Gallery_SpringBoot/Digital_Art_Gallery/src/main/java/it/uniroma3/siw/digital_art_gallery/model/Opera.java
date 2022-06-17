@@ -9,7 +9,14 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToOne;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 @Entity
+@Getter
+@Setter
+@NoArgsConstructor
 public class Opera {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -29,7 +36,7 @@ public class Opera {
 	@OneToOne
 	private Collezione collezione;
 
-	public Long getId() {
+	/*public Long getId() {
 		return id;
 	}
 
@@ -84,7 +91,7 @@ public class Opera {
 
 	public void setCollezione(Collezione collezione) {
 		this.collezione = collezione;
-	}
+	}*/
 	
 	
 }

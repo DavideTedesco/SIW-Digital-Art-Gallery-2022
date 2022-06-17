@@ -12,4 +12,5 @@
     <fullyQualifiedTypeName name="java.time.Year"/>
     <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="javax.persistence.Entity"/>
+    <fullyQualifiedTypeName name="lombok.NoArgsConstructor"/>
 </qualifiedTypeNameHistroy>
