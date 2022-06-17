@@ -5,6 +5,9 @@ Repository of the Exam project for the realisation of a Spring Boot Application 
 
 ![SIW_Digital_Art_Gallery-Class_Diagram](SIW-Digital-Art-Gallery-2022-Class_Diagram/SIW_Digital_Art_Gallery-Class_Diagram.png)
 
+## Flow of the app
+
+[Link to the flow diagram of the app](https://miro.com/app/board/uXjVOzW6hpA=/)
 
 ## Use cases
 
