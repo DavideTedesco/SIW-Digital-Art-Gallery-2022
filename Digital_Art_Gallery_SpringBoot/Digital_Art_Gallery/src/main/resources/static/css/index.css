@@ -1,0 +1,113 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Potta+One&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+English&display=swap');
+
+@font-face {
+    font-family: 'new_yorkerregular';
+    src: url('ny_irvin-webfont.woff2') format('woff2'),
+         url('ny_irvin-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'dryhtenregular';
+    src: url('dryhtenregular-webfont.woff2') format('woff2'),
+         url('dryhtenregular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+*{
+	background-color: black;
+}
+
+body{
+	color: white;
+	/*font-family: 'Potta One', cursive;*/
+    /*font-family: 'IM Fell English', serif;*/
+    /*font-family: 'new_yorkerregular';*/
+    font-family: 'dryhtenregular';
+}
+
+p{
+	font-size: 15pt;
+}
+.flex-megacontainer{
+	display: flex;
+	flex-direction: row;
+}
+
+.flex-container{
+	display: flex;
+	flex-direction: column;
+}
+
+.flex-item-white{
+	background-color:  white;
+	align-self: flex-start;
+	width: 1000px;
+	height: 450px;
+	text-align: center;
+}
+
+.white{
+	background-color:  white;
+	color: black;
+}
+
+.white-paragraph{
+	background-color:  white;
+	color: black;
+	padding: 5%;
+}
+
+.flex-item-yellow{
+	background-color:  rgb(254, 197, 93);
+	align-self: flex-end;
+	width: 320px;
+	height: 520px;
+	text-align: center;
+	color: white;
+	/*text-shadow: 2px 2px 4px #000000;*/
+}
+
+.yellow{
+	background-color:  rgb(254, 197, 93);
+}
+
+.flex-item-blue{
+	align-self: flex-start;
+	background-color: rgb(25, 84, 140);
+	width: 1000px;
+	height: 170px;
+	text-align: center;
+}
+
+.blue{
+	background-color: rgb(25, 84, 140);
+}
+.flex-item-red{
+	align-self: flex-end;
+	background-color:  rgb(231,0,30);
+	width: 320px;
+	height: 100px;
+	text-align: center;
+}
+
+.red{
+	background-color:  rgb(231,0,30);
+}
+
+.flex-item-black{
+	background-color:  black;
+	height: 24px;
+}
+
+.flex-item-black-vertical{
+	background-color:  black;
+	width: 24px;
+}
