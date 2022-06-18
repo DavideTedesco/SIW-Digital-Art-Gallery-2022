@@ -65,7 +65,7 @@ public class AuthController {
     }
 	
 	@GetMapping("/default")
-	public String defaultAfterLogin(Model model, RedirectAttributes redirectAttr){
+	public String defaultAfterLogin( RedirectAttributes redirectAttr){
 		UserDetails userDetails = (UserDetails)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
     	Credentials credentials = credentialsService.getCredentials(userDetails.getUsername());
     	redirectAttr.addAttribute("credentials", credentials);

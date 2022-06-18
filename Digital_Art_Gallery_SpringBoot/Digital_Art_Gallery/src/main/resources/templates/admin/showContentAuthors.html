@@ -7,9 +7,10 @@
 </head>
 <body>
 	<h1>Authors</h1>
-	<ul>
-		<li th:each="author : ${authors}">
-				<a th:href="@{'/authordetails' + '/' + ${author.id}" th:text="${author.nome}"></a></li>
-	</ul>
+	<div th:each="author : ${authors}">
+		<span th:text="${artwork.nome}">Nome autore</span>
+		<span ><a th:href="@{'/admin/confirmAuthorDeletion' + '/' + ${author.id}}">Remove</a></span>
+		<span><a th:href="@{'/admin/editAuthor' + '/' + ${author.id}}">Edit</a></span>
+	</div>
 </body>
 </html>

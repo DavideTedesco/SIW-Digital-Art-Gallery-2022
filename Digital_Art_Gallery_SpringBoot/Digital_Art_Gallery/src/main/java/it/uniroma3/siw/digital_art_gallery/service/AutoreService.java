@@ -2,6 +2,8 @@ package it.uniroma3.siw.digital_art_gallery.service;
 
 import java.util.List;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,6 +22,15 @@ public class AutoreService {
 	
 	public List<Autore> getAllAutori(){
 		return (List<Autore>)autoreRepository.findAll();
+	}
+	
+	@Transactional
+	public void deleteAuthorById(Long id) {
+		this.autoreRepository.deleteById(id);
+	}
+	
+	public Autore findAutoreById(Long id) {
+		return this.autoreRepository.findById(id).get();
 	}
 
 }

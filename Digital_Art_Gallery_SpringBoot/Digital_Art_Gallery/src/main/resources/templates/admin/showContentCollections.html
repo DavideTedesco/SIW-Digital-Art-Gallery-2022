@@ -7,9 +7,10 @@
 </head>
 <body>
 	<h1>Collections</h1>
-	<ul>
-		<li th:each="collection : ${collections}">
-				<a th:href="@{'/collectiondetails' + '/' + ${collection.id}"></a></li>
-	</ul>
+	<div th:each="collection : ${collections}">
+		<span th:text="${artwork.nome}">Nome collezione</span>
+		<span ><a th:href="@{'/admin/confirmCollectionDeletion' + '/' + ${collection.id}}">Remove</a></span>
+		<span><a th:href="@{'/admin/editCollection' + '/' + ${collection.id}}">Edit</a></span>
+	</div>
 </body>
 </html>

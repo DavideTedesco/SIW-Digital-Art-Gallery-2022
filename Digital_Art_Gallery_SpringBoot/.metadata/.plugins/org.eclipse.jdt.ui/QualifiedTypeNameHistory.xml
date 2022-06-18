@@ -2,7 +2,6 @@
 <qualifiedTypeNameHistroy>
     <fullyQualifiedTypeName name="org.springframework.security.config.annotation.web.configuration.EnableWebSecurity"/>
     <fullyQualifiedTypeName name="javax.activation.DataSource"/>
-    <fullyQualifiedTypeName name="org.hibernate.annotations.CascadeType"/>
     <fullyQualifiedTypeName name="it.uniroma3.siw.digital_art_gallery.model.Credentials"/>
     <fullyQualifiedTypeName name="javax.sql.DataSource"/>
     <fullyQualifiedTypeName name="javax.persistence.GeneratedValue"/>
@@ -31,7 +30,10 @@
     <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
     <fullyQualifiedTypeName name="it.uniroma3.siw.digital_art_gallery.service.UserService"/>
     <fullyQualifiedTypeName name="org.springframework.ui.Model"/>
-    <fullyQualifiedTypeName name="javax.transaction.Transactional"/>
     <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="org.hibernate.annotations.Cascade"/>
+    <fullyQualifiedTypeName name="org.hibernate.annotations.CascadeType"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.GetMapping"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PathVariable"/>
+    <fullyQualifiedTypeName name="javax.transaction.Transactional"/>
 </qualifiedTypeNameHistroy>

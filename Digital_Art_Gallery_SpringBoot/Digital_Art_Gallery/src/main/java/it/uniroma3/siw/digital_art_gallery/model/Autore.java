@@ -11,6 +11,9 @@ import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.NotBlank;
 
+import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.CascadeType;
+
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -40,6 +43,7 @@ public class Autore {
 	private String luogoDiNascita;
 	
 	@ManyToMany
+	@Cascade({CascadeType.DELETE, CascadeType.PERSIST})
 	private List<Opera> opere;
 	
 }
