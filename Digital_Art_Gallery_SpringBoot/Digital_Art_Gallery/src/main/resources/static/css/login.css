@@ -114,8 +114,7 @@ p{
 
 
 .link{
-        color: white;
-
+    color: white;
 }
 
 .link::after{
@@ -123,4 +122,12 @@ p{
 }
 
 .link:hover::after{
+}
+
+.login-table{
+	align-items: center;
+}
+
+.button{
+	font-family: 'dryhtenregular';
 }
