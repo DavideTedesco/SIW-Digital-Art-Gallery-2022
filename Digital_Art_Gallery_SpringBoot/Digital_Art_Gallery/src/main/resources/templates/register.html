@@ -1,44 +1,98 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+
 <head>
 	<meta charset="UTF-8" />
-	<link href="/css/my-style.css" rel="stylesheet">
+	<link href="/css/register.css" rel="stylesheet">
 	<title>Digital Art Gallery</title>
 </head>
+
 <body>
-<form th:action="@{/register}" method="post">
-				<h1 id="title" th:text="#{header-register}">Register</h1>
-				<table class="login-table">
-					<tr>
-						<td >Name:</td>
-						<td><label><input type="text"
-								required
-								th:field="${user.nome}"></label></td>
-					</tr>
-					<tr>
-						<td >Surname:</td>
-						<td><label><input type="text"
-								 required
-								th:field="${user.cognome}"></label></td>
-					</tr>
-					<tr>
-						<td >Username:</td>
-						<td><label><input type="text"
-								required
-								th:field="${credentials.username}" ></label></td>
-					</tr>
-					 <tr>
-						<td >Password:</td>
-						<td><label><input type="password"
-								required
-								th:field="${credentials.password}" /></label></td>
-					</tr> 
-				</table>
-				<div class="button-div">
-					<span>
-						<button class="button" type="submit" th:text="#{register.button}">Login</button>
-					</span>
+	<div class="flex-megacontainer">
+
+		<div class="flex-container">
+			<div class="flex-item-white">
+				<h1 class="white">
+					Digital Art Gallery
+				</h1>
+				<form class="white"th:action="@{/register}" method="post">
+					<h1 class="white" id="title" th:text="#{header-register}">Register</h1>
+					<table class="login-table","white">
+						<tr class="white">
+							<td class="white">Name:</td>
+							<td class="white"><label class="white"><input class="white" type="text" required th:field="${user.nome}"></label></td>
+						</tr>
+						<tr class="white">
+							<td class="white">Surname:</td>
+							<td class="white"><label class="white"><input class="white" type="text" required th:field="${user.cognome}"></label></td>
+						</tr>
+						<tr class="white">
+							<td class="white">Username:</td>
+							<td class="white"><label class="white"><input class="white" type="text" required th:field="${credentials.username}"></label></td>
+						</tr>
+						<tr class="white">
+							<td class="white">Password:</td>
+							<td class="white"><label class="white"><input class="white" type="password" required th:field="${credentials.password}" /></label>
+							</td>
+						</tr>
+					</table>
+					
+					<div class="white">
+						<span class="white">
+							<button class="white" ,"button" type="submit" th:text="#{register.button}">Register</button>
+						</span>
+					</div>
+				</form>
+			</div>
+			<div class="flex-item-black">
+			</div>
+			<div class="flex-item-black-vertical">
+			</div>
+			<div class="flex-item-blue">
+				<h2 class="blue">Contacts</h2>
+				<div class="blue">
+					E-mail:<a href="mailto:info@digitalartgallery.com">info@digitalartgallery.com</a>
 				</div>
-</form>
+				<div class="blue">
+					Phone: 0044 0848 44 66 88
+				</div>
+				<div class="blue">
+					London - New York - Genève - Milan
+				</div>
+				<div class="blue">
+					VAT ID: 86334519757
+				</div>
+			</div>
+
+
+		</div>
+		<div class="flex-container">
+			<div class="flex-item-black-vertical">
+			</div>
+		</div>
+		<div class="flex-container">
+
+			<div class="flex-item-yellow">
+				<h2 class="yellow">Reserved Area</h2>
+				<h3 class="yellow"><a class="yellow" ,"link" th:href="@{/login}">login</a></h3>
+				<h3 class="yellow"><a class="yellow" th:href="@{/register}">register</a></h3>
+			</div>
+			<div class="flex-item-black">
+			</div>
+			<div class="flex-item-red">
+				<div class="red">
+					Made by <br>
+					Kevin Santodonato <br>
+					& <br>
+					Davide Tedesco
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
 </body>
+
 </html>
