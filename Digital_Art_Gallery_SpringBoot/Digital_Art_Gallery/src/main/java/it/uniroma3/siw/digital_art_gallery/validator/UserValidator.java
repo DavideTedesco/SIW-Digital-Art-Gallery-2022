@@ -1,12 +1,12 @@
 package it.uniroma3.siw.digital_art_gallery.validator;
 
+import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
-
 import org.springframework.validation.Validator;
 
 import it.uniroma3.siw.digital_art_gallery.model.User;
 
-
+@Component
 public class UserValidator implements Validator {
 
 	 final Integer MAX_NAME_LENGTH = 100;

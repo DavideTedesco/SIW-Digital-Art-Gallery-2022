@@ -6,5 +6,11 @@
 	<title>Digital Art Gallery</title>
 </head>
 <body>
+	<h1>Artworks</h1>
+	<div th:each="artwork : ${artworks}">
+		<span th:text="${artwork.nome}">Nome opera</span>
+		<span ><a th:href="@{'/admin/confirmArtworkDeletion' + '/' + ${artwork.id}}">Remove</a></span>
+		<span><a th:href="@{'/admin/editArtwork' + '/' + ${artwork.id}}">Edit</a></span>
+	</div>
 </body>
 </html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8" />
+	<link href="/css/my-style.css" rel="stylesheet">
+	<title>Digital Art Gallery</title>
+</head>
+<body>
+	<h1>Collections</h1>
+	<div th:each="collection : ${collections}">
+		<span th:text="${artwork.nome}">Nome collezione</span>
+		<span ><a th:href="@{'/admin/confirmCollectionDeletion' + '/' + ${collection.id}}">Remove</a></span>
+		<span><a th:href="@{'/admin/editCollection' + '/' + ${collection.id}}">Edit</a></span>
+	</div>
+</body>
+</html>
