@@ -8,6 +8,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToOne;
+import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
+import javax.validation.constraints.NotBlank;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -17,17 +20,24 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
+
+@Table( uniqueConstraints = {
+		@UniqueConstraint( name = "UniqueOpera", columnNames = {"titolo", "annoDiRealizzazione"})})
 public class Opera {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	
+	@NotBlank
 	private String titolo;
 	
+	@NotBlank
 	private java.time.Year annoDiRealizzazione;
 	
+	@NotBlank
 	private String descrizione;
 	
+	@NotBlank
 	private java.net.URL immagineOpera;
 	
 	@ManyToMany 
