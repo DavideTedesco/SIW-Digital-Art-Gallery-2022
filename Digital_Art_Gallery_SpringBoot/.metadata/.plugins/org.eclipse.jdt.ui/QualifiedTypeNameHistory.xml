@@ -10,14 +10,12 @@
     <fullyQualifiedTypeName name="java.time.Year"/>
     <fullyQualifiedTypeName name="javax.persistence.Entity"/>
     <fullyQualifiedTypeName name="lombok.NoArgsConstructor"/>
-    <fullyQualifiedTypeName name="it.uniroma3.siw.digital_art_gallery.model.Collezione"/>
     <fullyQualifiedTypeName name="org.springframework.data.repository.CrudRepository"/>
     <fullyQualifiedTypeName name="it.uniroma3.siw.digital_art_gallery.repository.AutoreRepository"/>
     <fullyQualifiedTypeName name="it.uniroma3.siw.digital_art_gallery.repository.OperaRepository"/>
     <fullyQualifiedTypeName name="org.springframework.validation.Validator"/>
     <fullyQualifiedTypeName name="java.util.Optional"/>
     <fullyQualifiedTypeName name="it.uniroma3.siw.digital_art_gallery.service.CredentialsService"/>
-    <fullyQualifiedTypeName name="java.time.LocalDate"/>
     <fullyQualifiedTypeName name="it.uniroma3.siw.digital_art_gallery.validator.AutoreValidator"/>
     <fullyQualifiedTypeName name="org.hibernate.validator.constraints.NotBlank"/>
     <fullyQualifiedTypeName name="javax.persistence.Table"/>
@@ -30,11 +28,15 @@
     <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
     <fullyQualifiedTypeName name="it.uniroma3.siw.digital_art_gallery.service.UserService"/>
     <fullyQualifiedTypeName name="org.springframework.ui.Model"/>
-    <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="org.hibernate.annotations.Cascade"/>
     <fullyQualifiedTypeName name="org.hibernate.annotations.CascadeType"/>
-    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.GetMapping"/>
-    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PathVariable"/>
     <fullyQualifiedTypeName name="javax.transaction.Transactional"/>
     <fullyQualifiedTypeName name="org.springframework.format.annotation.DateTimeFormat"/>
+    <fullyQualifiedTypeName name="java.time.LocalDate"/>
+    <fullyQualifiedTypeName name="it.uniroma3.siw.digital_art_gallery.model.Opera"/>
+    <fullyQualifiedTypeName name="it.uniroma3.siw.digital_art_gallery.model.Collezione"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="it.uniroma3.siw.digital_art_gallery.model.Autore"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.GetMapping"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PathVariable"/>
 </qualifiedTypeNameHistroy>

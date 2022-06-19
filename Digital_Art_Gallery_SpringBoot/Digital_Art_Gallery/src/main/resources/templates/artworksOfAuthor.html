@@ -6,5 +6,9 @@
 	<title>Digital Art Gallery</title>
 </head>
 <body>
+	<div th:each="artwork : ${artworks}">
+		<span th:text="${artwork.nome}" th:href="@{'/artworkDetails' + '/' + ${artwork.id}}"></span>
+	</div>
+		
 </body>
 </html>

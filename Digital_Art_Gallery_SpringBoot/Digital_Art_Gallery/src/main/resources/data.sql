@@ -1,13 +1,13 @@
 /*=========DIGITAL ART GALLERY==========*/
 /*============ENTITY TABLES=============*/
 
-/*Users*/
+/*Users
 insert into users(id, nome, cognome ) values('1000','admin','admin');
-insert into users(id, nome, cognome ) values('1001','user','user');
+insert into users(id, nome, cognome ) values('1001','user','user');*/
 
-/*Credentials (le password sono: "password". Esse sono realizzate tramite il metodo encode della classe BCryptPasswordEncoder)*/
+/*Credentials (le password sono: "password". Esse sono realizzate tramite il metodo encode della classe BCryptPasswordEncoder)
 insert into credentials(id, password, role, username, user_id ) values('2000', '$2a$10$H90gDy3sDjHh64GqNIimseg0wifDVWpLpDednMiqWAUSae5SLwvzO' ,'ADMIN','admin', '1000');
-insert into credentials(id, password, role, username, user_id ) values('2001', '$2a$10$H90gDy3sDjHh64GqNIimseg0wifDVWpLpDednMiqWAUSae5SLwvzO' ,'USER','user', '1001');
+insert into credentials(id, password, role, username, user_id ) values('2001', '$2a$10$H90gDy3sDjHh64GqNIimseg0wifDVWpLpDednMiqWAUSae5SLwvzO' ,'USER','user', '1001');*/
 
 /*Autore*/
 insert into autore(id, cognome, data_di_nascita, luogo_di_nascita, nome) values('100', 'Van Gogh', '2020-12-15', 'Toploinia', 'Vincent');

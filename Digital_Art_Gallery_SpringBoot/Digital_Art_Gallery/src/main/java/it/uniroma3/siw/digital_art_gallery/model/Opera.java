@@ -1,18 +1,13 @@
 package it.uniroma3.siw.digital_art_gallery.model;
 
-import java.util.List;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.NotBlank;
-
-import org.springframework.format.annotation.DateTimeFormat;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -34,8 +29,7 @@ public class Opera {
 	private String nome;
 	
 	@NotBlank
-	@DateTimeFormat(pattern = "yyyy")
-	private java.time.Year annoDiRealizzazione;
+	private java.time.LocalDate annoDiRealizzazione;
 	
 	@NotBlank
 	private String descrizione;
@@ -43,8 +37,8 @@ public class Opera {
 	@NotBlank
 	private java.net.URL immagine;
 	
-	@ManyToMany 
-	private List<Autore> autori;
+	@OneToOne 
+	private Autore autore;
 	
 	@OneToOne
 	private Collezione collezione;

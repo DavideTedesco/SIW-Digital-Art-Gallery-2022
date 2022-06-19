@@ -28,4 +28,8 @@ public class OperaService {
 	public Opera getOperaById(Long id) {
 		return this.operaRepository.findById(id).get();
 	}
+	
+	public Opera findOperaById(Long id) {
+		return this.operaRepository.findById(id).get();
+	}
 }

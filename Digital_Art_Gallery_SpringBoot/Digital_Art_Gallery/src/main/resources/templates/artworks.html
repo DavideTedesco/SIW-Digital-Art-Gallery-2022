@@ -9,7 +9,7 @@
 	<h1>Artworks</h1>
 		<ul>
 			<li th:each="artwork : ${artworks}">
-					<a th:href="@{'/artworkdetails' + '/' + ${artwork.id}" th:text="${artwork.nome}"></a></li>
+					<a th:href="@{'/artworkDetails' + '/' + ${artwork.id}}" th:text="${artwork.nome}"></a></li>
 		</ul>
 </body>
 </html>
