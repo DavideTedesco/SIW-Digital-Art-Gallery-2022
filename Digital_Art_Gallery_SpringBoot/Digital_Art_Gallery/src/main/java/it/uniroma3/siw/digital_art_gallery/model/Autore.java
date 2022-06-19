@@ -46,4 +46,5 @@ public class Autore {
 	@Cascade({CascadeType.DELETE, CascadeType.PERSIST})
 	private List<Opera> opere;
 	
+	
 }
