@@ -26,17 +26,17 @@ public class CollezioneController {
 		return "admin/showContentCollections";
 	}
 	
-//	@GetMapping("/admin/removeAuthor/{id}")
-//	public String removeAutore(@PathVariable("id") Long id, Model model) {
-//		this.collezioneService.deleteCollectionById(id);
-//		model.addAttribute("authors", this.collezioneService.getAllCollezioni());
-//		return "admin/showContentAuthors";
-//	}
-//	
-//	@GetMapping("/admin/confirmAuthorDeletion/{id}")
-//	public String confirmDeletionAutore(@PathVariable("id") Long id, Model model) {
-//		model.addAttribute("author", this.collezioneService.findCollezioneById(id));
-//		return "admin/askConfirmCollectionDeletion";
-//	}
+	@GetMapping("/admin/removeCollection/{id}")
+	public String removeAutore(@PathVariable("id") Long id, Model model) {
+		this.collezioneService.deleteCollectionById(id);
+		model.addAttribute("authors", this.collezioneService.getAllCollezioni());
+		return "admin/showContentAuthors";
+		}
+	
+	@GetMapping("/admin/confirmCollectionDeletion/{id}")
+	public String confirmDeletionAutore(@PathVariable("id") Long id, Model model) {
+		model.addAttribute("collection", this.collezioneService.findCollezioneById(id));
+		return "admin/askConfirmCollectionDeletion";
+	}
 
 }
