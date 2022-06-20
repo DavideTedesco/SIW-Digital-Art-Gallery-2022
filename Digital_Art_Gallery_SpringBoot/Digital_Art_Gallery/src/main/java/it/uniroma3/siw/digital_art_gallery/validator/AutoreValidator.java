@@ -1,5 +1,7 @@
 package it.uniroma3.siw.digital_art_gallery.validator;
 
+import java.time.LocalDate;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
@@ -27,7 +29,7 @@ public class AutoreValidator implements Validator {
 		 Autore autore = (Autore) o;
 	        String nome = autore.getNome().trim();
 	        String cognome = autore.getCognome().trim();
-	        java.time.LocalDate dataDiNascita = autore.getDataDiNascita();
+	        LocalDate dataDiNascita = autore.getDataDiNascita();
 
 	        if (nome.isEmpty())
 	            errors.rejectValue("nome", "required");

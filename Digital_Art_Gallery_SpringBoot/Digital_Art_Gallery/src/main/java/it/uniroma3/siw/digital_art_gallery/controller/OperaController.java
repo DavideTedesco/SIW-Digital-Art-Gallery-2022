@@ -1,14 +1,18 @@
 package it.uniroma3.siw.digital_art_gallery.controller;
 
+import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import it.uniroma3.siw.digital_art_gallery.model.Autore;
 import it.uniroma3.siw.digital_art_gallery.model.Opera;
+import it.uniroma3.siw.digital_art_gallery.service.AutoreService;
 import it.uniroma3.siw.digital_art_gallery.service.OperaService;
 
 @Controller
@@ -16,6 +20,9 @@ public class OperaController {
 	
 	@Autowired
 	OperaService operaService;
+	
+	@Autowired
+	AutoreService autoreService;
 	
 	@GetMapping("/artworks")
 	public String opere(Model model) {
@@ -48,11 +55,27 @@ public class OperaController {
 		return "admin/askConfirmArtworkDeletion";
 	}
 	
+	@GetMapping("/admin/insertArtwork")
+	public String insertArtworkForAuthor(Model model) {
+		
+		model.addAttribute("artwork", new Opera());
+		model.addAttribute("authors", this.autoreService.getAllAutori());
+		return "admin/insertArtworksForAuthor";
+	}
+	
+
+	@PostMapping("/admin/insertArtwork")
+	public String insertArtworkForAuthor( @ModelAttribute("artwork") Opera opera, Model model) {
+		
+		this.operaService.save(opera);
+		
+		return "admin/showContentArtworks";
+	}
+	
 	@GetMapping("/artworkDetails/{id}")
 	public String dettagliOpera(@PathVariable("id") Long id, Model model) {
 		Opera opera = this.operaService.findOperaById(id);
 		model.addAttribute("artwork", opera);
-		model.addAttribute("author", opera.getAutore());
 		return "artworkDetails";
 	}
 

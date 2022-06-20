@@ -6,5 +6,7 @@
 	<title>Digital Art Gallery</title>
 </head>
 <body>
+	<div th:text="${collection.nome}"></div>
+	<span><a th:href="@{/admin/showContent/collections}">Lista delle collezioni</a></span>
 </body>
 </html>

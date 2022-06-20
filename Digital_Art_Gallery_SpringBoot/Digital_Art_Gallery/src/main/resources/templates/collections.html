@@ -9,7 +9,7 @@
 	<h1>Collections</h1>
 		<ul>
 			<li th:each="collection : ${collections}">
-					<a th:href="@{'/collectiondetails' + '/' + ${collection.id}" th:text="${collection.nome}"></a></li>
+					<a th:href="@{'/collectionDetails' + '/' + ${collection.id}}" th:text="${collection.nome}"></a></li> 
 		</ul>
 </body>
 </html>

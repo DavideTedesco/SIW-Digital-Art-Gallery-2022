@@ -7,6 +7,7 @@
 </head>
 <body>
 	<h1>Artworks</h1>
+	<div><a th:href="@{/admin/insertArtwork}">Insert a new artwork</a></div>
 	<div th:each="artwork : ${artworks}">
 		 <span th:text="${artwork.nome}">Nome opera</span> 
 		<span ><a th:href="@{'/admin/confirmArtworkDeletion' + '/' + ${artwork.id}}">Remove</a></span>

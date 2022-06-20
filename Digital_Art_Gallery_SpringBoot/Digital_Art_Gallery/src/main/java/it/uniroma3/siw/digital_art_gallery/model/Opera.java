@@ -1,5 +1,7 @@
 package it.uniroma3.siw.digital_art_gallery.model;
 
+import java.time.LocalDate;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -28,16 +30,16 @@ public class Opera {
 	@NotBlank
 	private String nome;
 	
-	@NotBlank
-	private java.time.LocalDate annoDiRealizzazione;
+	//@NotBlank
+	private LocalDate annoDiRealizzazione;
 	
 	@NotBlank
 	private String descrizione;
 	
-	@NotBlank
-	private java.net.URL immagine;
+	//@NotBlank
+	private String immagine;
 	
-	@OneToOne 
+	@OneToOne//(cascade = CascadeType.PERSIST)
 	private Autore autore;
 	
 	@OneToOne

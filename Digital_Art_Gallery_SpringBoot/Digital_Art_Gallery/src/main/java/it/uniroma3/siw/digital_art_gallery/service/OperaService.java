@@ -32,4 +32,13 @@ public class OperaService {
 	public Opera findOperaById(Long id) {
 		return this.operaRepository.findById(id).get();
 	}
+	
+	public List<Opera> opereSenzaCollezione(){
+		return this.operaRepository.opereSenzaCollezione();
+	}
+	
+	@Transactional
+	public Opera save(Opera opera) {
+		return this.operaRepository.save(opera);
+	}
 }

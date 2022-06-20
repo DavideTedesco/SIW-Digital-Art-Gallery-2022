@@ -1,10 +1,43 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-	<meta charset="UTF-8" />
-	<link href="/css/my-style.css" rel="stylesheet">
-	<title>Digital Art Gallery</title>
+<meta charset="UTF-8" />
+<link href="/css/my-style.css" rel="stylesheet">
+<title>Digital Art Gallery</title>
 </head>
 <body>
+	<h1>Insert artwork</h1>
+	<form th:action="@{/admin/insertAuthor}" method="post"
+		th:object="${artwork}">
+		<h1>Inserimento Authore</h1>
+		<table>
+			<tr>
+				<td>Nome:</td>
+				<td><label><input type="text" required
+						th:field="*{nome}"></label></td>
+			</tr>
+			<tr>
+				<td>Cognome:</td>
+				<td><label><input type="text" required
+						th:field="*{annoDiRealizzazione}"></label></td>
+			</tr>
+			<tr>
+				<td>Data di nascita</td>
+				<td><label><input type="text"
+						th:field="*{descrizione}"></label></td>
+			</tr>
+			<tr>
+				<td>Luogo di nascita</td>
+				<td><label><input type="file"
+						th:field="*{luogoDiNascita}"></label></td>
+			</tr>
+		</table>
+
+		<div>
+			<span>
+				<button type="submit" th:text="#{register.button}">Register</button>
+			</span>
+		</div>
+	</form>
 </body>
 </html>

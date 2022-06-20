@@ -7,6 +7,7 @@
 </head>
 <body>
 	<h1>Collections</h1>
+	<div><a th:href="@{/admin/insertCollection}">Insert a new collection</a></div>
 	<div th:each="collection : ${collections}">
 		<span th:text="${collection.nome}">Nome collezione</span>
 		<span ><a th:href="@{'/admin/confirmCollectionDeletion' + '/' + ${collection.id}}">Remove</a></span>

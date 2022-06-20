@@ -2,9 +2,9 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
-	<meta charset="UTF-8" />
-	<link href="/css/login.css" rel="stylesheet">
-	<title>Digital Art Gallery</title>
+<meta charset="UTF-8" />
+<link href="/css/login.css" rel="stylesheet">
+<title>Digital Art Gallery</title>
 </head>
 
 <body>
@@ -13,71 +13,64 @@
 
 		<div class="flex-container">
 			<div class="flex-item-white">
-				<h1 class="white">
-					Digital Art Gallery
-				</h1>
+				<h1 class="white">Digital Art Gallery</h1>
 				<form class="white" th:action="@{/login}" method="POST">
 					<h1 class="white" id="title" th:text="#{login.title}">Login</h1>
-					<table class="login-table" ,"white">
+					<table class="login-table","white">
 						<tr>
 							<td class="white" th:text="#{username.message}">Username:</td>
-							<td class="white"><label class="white"><input class="white" name="username" type="text"
-										th:placeholder="#{placeholder-username}" required></label></td>
+							<td class="white"><label class="white"><input
+									class="white" name="username" type="text"
+									th:placeholder="#{placeholder-username}" required></label></td>
 						</tr>
 						<tr>
 							<td class="white" th:text="#{password.message}">Password:</td>
-							<td class="white"><label class="white"><input class="white" name="password" type="password"
-										th:placeholder="#{placeholder-password}" required></label></td>
+							<td class="white"><label class="white"><input
+									class="white" name="password" type="password"
+									th:placeholder="#{placeholder-password}" required></label></td>
 						</tr>
 					</table>
 					<div class="white">
 						<span class="white">
-							<button class="white" ,"button" type="submit" th:text="#{login.button}">Login</button>
+							<button class="white" ,"button" type="submit"
+								th:text="#{login.button}">Login</button>
 						</span>
 					</div>
 				</form>
 			</div>
-			<div class="flex-item-black">
-			</div>
-			<div class="flex-item-black-vertical">
-			</div>
+			<div class="flex-item-black"></div>
+			<div class="flex-item-black-vertical"></div>
 			<div class="flex-item-blue">
 				<h2 class="blue">Contacts</h2>
 				<div class="blue">
 					E-mail:<a href="mailto:info@digitalartgallery.com">info@digitalartgallery.com</a>
 				</div>
-				<div class="blue">
-					Phone: 0044 0848 44 66 88
-				</div>
-				<div class="blue">
-					London - New York - Genève - Milan
-				</div>
-				<div class="blue">
-					VAT ID: 86334519757
-				</div>
+				<div class="blue">Phone: 0044 0848 44 66 88</div>
+				<div class="blue">London - New York - Genève - Milan</div>
+				<div class="blue">VAT ID: 86334519757</div>
 			</div>
 
 
 		</div>
 		<div class="flex-container">
-			<div class="flex-item-black-vertical">
-			</div>
+			<div class="flex-item-black-vertical"></div>
 		</div>
 		<div class="flex-container">
 
 			<div class="flex-item-yellow">
 				<h2 class="yellow">Reserved Area</h2>
-				<h3 class="yellow"><a class="yellow" ,"link" th:href="@{/login}">login</a></h3>
-				<h3 class="yellow"><a class="yellow" th:href="@{/register}">register</a></h3>
+				<h3 class="yellow">
+					<a class="yellow" ,"link" th:href="@{/login}">login</a>
+				</h3>
+				<h3 class="yellow">
+					<a class="yellow" th:href="@{/register}">register</a>
+				</h3>
 			</div>
-			<div class="flex-item-black">
-			</div>
+			<div class="flex-item-black"></div>
 			<div class="flex-item-red">
 				<div class="red">
-					Made by <br>
-					Kevin Santodonato <br>
-					& <br>
-					Davide Tedesco
+					Made by <br> Kevin Santodonato <br> & <br> Davide
+					Tedesco
 				</div>
 			</div>
 		</div>
