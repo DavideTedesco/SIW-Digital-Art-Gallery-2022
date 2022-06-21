@@ -9,12 +9,16 @@ import org.springframework.stereotype.Service;
 
 import it.uniroma3.siw.digital_art_gallery.model.Opera;
 import it.uniroma3.siw.digital_art_gallery.repository.OperaRepository;
+import it.uniroma3.siw.digital_art_gallery.validator.LocalDateConverter;
 
 @Service
 public class OperaService {
 	
 	@Autowired
 	OperaRepository operaRepository;
+	
+	@Autowired
+	LocalDateConverter converter;
 	
 	public List<Opera> getAllOpere(){
 		return (List<Opera>) operaRepository.findAll();
@@ -39,6 +43,12 @@ public class OperaService {
 	
 	@Transactional
 	public Opera save(Opera opera) {
+		return this.operaRepository.save(opera);
+	}
+	
+	@Transactional
+	public Opera save(Opera opera, String date) {
+		opera.setAnnoDiRealizzazione(this.converter.convert(date));
 		return this.operaRepository.save(opera);
 	}
 }

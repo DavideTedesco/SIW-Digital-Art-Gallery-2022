@@ -12,6 +12,7 @@
 		 <span th:text="${artwork.nome}">Nome opera</span> 
 		<span ><a th:href="@{'/admin/confirmArtworkDeletion' + '/' + ${artwork.id}}">Remove</a></span>
 		<span><a th:href="@{'/admin/editArtwork' + '/' + ${artwork.id}}">Edit</a></span>
+		<img th:alt="${artwork.immagine}" th:src="@{'/images/' +  ${artwork.immagine}}">
 	</div>
 </body>
 </html>

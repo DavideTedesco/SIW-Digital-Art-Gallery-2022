@@ -6,38 +6,28 @@
 <title>Digital Art Gallery</title>
 </head>
 <body>
-	<h1>Insert artwork</h1>
-	<form th:action="@{/admin/insertAuthor}" method="post"
-		th:object="${artwork}">
-		<h1>Inserimento Authore</h1>
+	
+	
+		<h1>Insert artwork</h1>
 		<table>
 			<tr>
 				<td>Nome:</td>
-				<td><label><input type="text" required
-						th:field="*{nome}"></label></td>
+				<!-- <td th:text="${artwork.nome}"></td> -->
 			</tr>
 			<tr>
-				<td>Cognome:</td>
-				<td><label><input type="text" required
-						th:field="*{annoDiRealizzazione}"></label></td>
+				<td>Data di realizzazione:</td>
+				<!--<td th:text="${artwork.dataDiRealizzazione}"></td> -->
 			</tr>
 			<tr>
-				<td>Data di nascita</td>
-				<td><label><input type="text"
-						th:field="*{descrizione}"></label></td>
-			</tr>
-			<tr>
-				<td>Luogo di nascita</td>
-				<td><label><input type="file"
-						th:field="*{luogoDiNascita}"></label></td>
+				<td>Descrizione</td>
+				<!--<td th:text="${artwork.descrizione}"></td> -->
 			</tr>
 		</table>
 
 		<div>
-			<span>
-				<button type="submit" th:text="#{register.button}">Register</button>
-			</span>
+			 <img th:alt="${artwork.immagine}" th:src="@{'/images' + '/' + ${artwork.immagine}}"> 
 		</div>
-	</form>
+		
+		<div > <a th:href="@{/admin/showContent/artworks}"> Lista opere</a></div>
 </body>
 </html>

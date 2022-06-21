@@ -1,4 +1,4 @@
-package it.uniroma3.siw.digital_art_gallery.controller;
+package it.uniroma3.siw.digital_art_gallery.utility;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

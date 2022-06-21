@@ -51,13 +51,5 @@ public class AutoreService {
 		return this.autoreRepository.save(autore);
 	}
 	
-	@Transactional
-	public Autore save(Autore autore, Opera opera) {
-		if(autore.getOpere() == null)
-			autore.setOpere(new ArrayList<Opera>());
-		
-		autore.getOpere().add(opera);
-		return this.autoreRepository.save(autore);
-	}
 
 }
