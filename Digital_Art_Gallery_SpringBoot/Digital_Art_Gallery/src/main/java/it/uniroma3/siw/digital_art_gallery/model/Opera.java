@@ -1,6 +1,7 @@
 package it.uniroma3.siw.digital_art_gallery.model;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -13,11 +14,11 @@ import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
-import static it.uniroma3.siw.digital_art_gallery.constant.PathConstant.IMAGE_DIR;
 
 @Entity
 @Getter
@@ -35,6 +36,7 @@ public class Opera {
 	private String nome;
 	
 	@NotNull
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private LocalDate annoDiRealizzazione;
 	
 	@NotBlank
@@ -49,12 +51,10 @@ public class Opera {
 	@OneToOne
 	private Collezione collezione;
 	
-	@Transient
-	public String getImagePath() {
-		if(immagine == null)
-			return null;
+	
+	public String stringDate() {
 		
-		return IMAGE_DIR + immagine;
+		return annoDiRealizzazione.format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
 	}
 	
 	

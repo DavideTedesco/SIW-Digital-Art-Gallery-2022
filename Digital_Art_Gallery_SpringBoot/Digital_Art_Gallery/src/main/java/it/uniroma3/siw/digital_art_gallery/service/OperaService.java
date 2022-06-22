@@ -43,11 +43,13 @@ public class OperaService {
 	
 	@Transactional
 	public Opera save(Opera opera) {
+		opera.getCollezione().getOpere().add(opera);
 		return this.operaRepository.save(opera);
 	}
 	
 	@Transactional
 	public Opera save(Opera opera, String date) {
+		opera.getCollezione().getOpere().add(opera);
 		opera.setAnnoDiRealizzazione(this.converter.convert(date));
 		return this.operaRepository.save(opera);
 	}

@@ -71,6 +71,7 @@ public class OperaController {
 		model.addAttribute("artwork", new Opera());
 		model.addAttribute("authors", this.autoreService.getAllAutori());
 		model.addAttribute("collections", this.collezioneService.getAllCollezioni());
+		model.addAttribute("flag", false);
 		return "admin/insertArtwork";
 	}
 	
@@ -89,6 +90,41 @@ public class OperaController {
 		model.addAttribute("artwork",savedOpera);
 		
 		return "admin/insertedArtwork";
+	}
+	
+	@GetMapping("/admin/editArtwork/{id}")
+	public String editArtwork(@PathVariable("id") Long id, Model model) {
+		Opera opera = this.operaService.findOperaById(id);
+		System.out.println(opera.stringDate() + "\n\n\n\n\n\n\n\n\n\n");
+		model.addAttribute("date", opera.stringDate());
+		model.addAttribute("artwork", opera);
+		model.addAttribute("collections",this.collezioneService.getAllCollezioni());
+		return "admin/editArtwork";
+	}
+	
+	@PostMapping("/admin/editArtwork/{id}")
+	public String editingArtwork(@PathVariable("id") Long id,
+									@ModelAttribute("artwork") Opera opera,
+									@RequestParam("image") MultipartFile multiPartFile,
+									@RequestParam("date") String date,
+									Model model) throws IOException {
+		String fileName = StringUtils.cleanPath(multiPartFile.getOriginalFilename());
+		Opera originalOpera = this.operaService.findOperaById(id);
+		originalOpera.setNome(opera.getNome());
+		originalOpera.setDescrizione(opera.getDescrizione());
+		originalOpera.setCollezione(opera.getCollezione());
+		originalOpera.setAutore(opera.getAutore());
+		originalOpera.setImmagine(fileName);
+		
+		FileUploader.deleteFile(IMAGE_DIR, opera.getImmagine());
+		FileUploader.saveFile(IMAGE_DIR, fileName, multiPartFile);
+		
+		this.operaService.save(originalOpera, date);
+		
+		model.addAttribute("artworks", this.operaService.getAllOpere());
+		
+		
+		return "admin/showContentArtworks";
 	}
 	
 	@GetMapping("/artworkDetails/{id}")
