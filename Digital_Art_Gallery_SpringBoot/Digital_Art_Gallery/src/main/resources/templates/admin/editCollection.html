@@ -7,7 +7,7 @@
 </head>
 <body>
 	<h1>Edit collection</h1>
-	<form th:action="@{/admin/editCollection}" method="post"
+	<form th:action="@{/admin/editCollection/{id}(id=${collection.id})}" method="post"
 		th:object="${collection}" >
 		<table>
 			<tr>
@@ -19,20 +19,19 @@
 				<td>Descrizione</td>
 				<td><label><input type="text" th:field="*{descrizione}"></label></td>
 			</tr>
-			 <tr ><!-- th:if="${!artworks.isEmpty()}" -->
-
+			 <!--<tr >
 				<td><label for="checklist1">Opere possibili:</label></td>
 				<td id="checklist1" th:each="artwork : ${artworks}"><input
 					type="checkbox" name="artworkList" th:value="${artwork.id}"
-					th:text="${artwork.nome}" checked="checked"/></td>
-			</tr>
+					th:text="${artwork.nome}"/></td>
+			</tr>-->
 			
 			<tr>
 
-				<td><label for="checklist1">Opere presenti:</label></td>
-				<td id="checklist1" th:each="artwork : *{opere}"><input
-					type="checkbox" name="artworkList2" th:value="${artwork.id}"
-					th:text="${artwork.nome}" checked="checked"/></td>
+				<td><label for="checklist1">Opere selezionabili:</label></td>
+				<td id="checklist1" th:each="artwork : ${artworks}"><input
+					type="checkbox" name="artworkList" th:value="${artwork.id}"
+					th:text="${artwork.nome}"/></td>
 			</tr> 
 		</table>
 

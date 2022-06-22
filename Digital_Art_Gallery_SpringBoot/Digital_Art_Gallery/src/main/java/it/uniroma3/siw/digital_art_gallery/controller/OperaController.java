@@ -70,8 +70,8 @@ public class OperaController {
 		
 		model.addAttribute("artwork", new Opera());
 		model.addAttribute("authors", this.autoreService.getAllAutori());
-		model.addAttribute("collections", this.collezioneService.getAllCollezioni());
-		model.addAttribute("flag", false);
+		//model.addAttribute("collections", this.collezioneService.getAllCollezioni());
+		//model.addAttribute("flag", false);
 		return "admin/insertArtwork";
 	}
 	
