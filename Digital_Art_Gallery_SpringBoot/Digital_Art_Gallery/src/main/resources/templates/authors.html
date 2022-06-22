@@ -8,8 +8,8 @@
 <body>
 	<h1>Authors</h1>
 		<ul>
-			<li th:each="author : ${authors}">
-					<a th:href="@{'/authordetails' + '/' + ${author.id}" th:text="${author.nome}"></a></li>
+			 <li th:each="author : ${authors}">
+					<a th:href="@{'/authorDetails' + '/' + ${author.id}}" th:text="${author.nome}">Nome autore</a></li>
 		</ul>
 </body>
 </html>

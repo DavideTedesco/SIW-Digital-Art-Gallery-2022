@@ -6,10 +6,10 @@
 	<title>Digital Art Gallery</title>
 </head>
 <body>
-	<form th:action="@{/admin/insertAuthor}" method="post"
+	<form th:action="@{/admin/insertArtworkforAuthor}" method="post"
 		th:object="${author}">
-		<h1>Inserimento Authore</h1>
-		<table>
+		<h1>Inserimento Opera per autore</h1>
+		<!-- <table>
 			<tr>
 				<td>Nome:</td>
 				<td><label><input type="text" required
@@ -22,13 +22,16 @@
 			</tr>
 			<tr>
 				<td>Data di nascita</td>
-				<td><label><input name="date"type="text" th:placeholder="yyyy-mm-dd" ></label></td>
+				<td><label><input type="date" th:field="${author.dataDiNascita}"></label></td>
 			</tr>
 			<tr>
 				<td>Luogo di nascita</td>
 				<td><label><input type="text" th:field="${author.luogoDiNascita}"></label></td>
 			</tr>
 		</table>
+		<div>
+			<span><a th:href="@{'/admin/insertArtworksForAuthor}">Inserisci Opere</a></span>
+		</div> -->
 
 		<div>
 			<span>

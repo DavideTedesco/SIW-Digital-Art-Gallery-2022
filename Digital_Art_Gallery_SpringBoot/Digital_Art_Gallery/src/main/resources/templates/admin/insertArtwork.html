@@ -6,5 +6,54 @@
 	<title>Digital Art Gallery</title>
 </head>
 <body>
+	<h1>Insert artwork</h1>
+	<form th:action="@{/admin/insertArtwork}" method="post"
+		th:object="${artwork}" enctype="multipart/form-data">
+		<h1>Inserimento Authore</h1>
+		<table>
+			<tr>
+				<td>Nome:</td>
+				<td><label><input type="text" required
+						th:field="*{nome}"></label></td>
+			</tr>
+			<tr>
+				<td>Data di realizzazione:</td>
+				<td><label><input type="text"
+						th:placeholder="yyyy-MM-dd" required name="date"></label></td>
+			</tr>
+			<tr>
+				<td>Descrizione</td>
+				<td><label><input type="text" th:field="*{descrizione}"></label></td>
+			</tr>
+			<tr>
+				<td>Immagine</td>
+				<td><label><input type="file"
+						accept="image/png, image/jpeg, image/svg"
+						name="image"></label></td>
+			</tr>
+			<tr>
+				<td><label th:for="selettore1" th:text="#{chef.message}">
+				</label></td>
+				<td><select id="selettore1" th:field="*{autore}">
+						<option th:each="author : ${authors}" th:value="${author.id}"
+							th:text="${author.nome} + ' ' + ${author.cognome}"></option>
+				</select></td>
+			</tr>
+			<tr>
+				<td><label th:for="selettore2" th:text="#{chef.message}">
+				</label></td>
+				<td><select id="selettore2" th:field="*{collezione}">
+						<option th:each="collection : ${collections}" th:value="${collection.id}"
+							th:text="${collection.nome} "></option>
+				</select></td>
+			</tr>
+		</table>
+
+		<div>
+			<span>
+				<button type="submit" th:text="#{register.button}">Register</button>
+			</span>
+		</div>
+	</form>
 </body>
 </html>

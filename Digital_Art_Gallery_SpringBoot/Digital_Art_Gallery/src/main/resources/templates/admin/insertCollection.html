@@ -1,10 +1,44 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-	<meta charset="UTF-8" />
-	<link href="/css/my-style.css" rel="stylesheet">
-	<title>Digital Art Gallery</title>
+<meta charset="UTF-8" />
+<link href="/css/my-style.css" rel="stylesheet">
+<title>Digital Art Gallery</title>
 </head>
 <body>
+
+
+	<form th:action="@{/admin/insertCollection}" method="post"
+		th:object="${collection}">
+		<h1>Inserimente Collezione</h1>
+		<table>
+			<tr>
+				<td>Nome:</td>
+				<td><label><input type="text" required
+						th:field="${collection.nome}"></label></td>
+			</tr>
+			<tr>
+				<td>Descrizione:</td>
+				<td><label><input type="text" required
+						th:field="${collection.descrizione}"></label></td>
+			</tr>
+			<tr>
+				<td><label th:for="selettore"> Opere Senza Collezione</label></td>
+				<td><select id="selettore" multiple="multiple"
+					th:field="*{opere}">
+						<option th:each="artwork : ${artworks}" th:value="${artwork.id}"
+							th:text="${artwork.nome}"></option>
+				</select></td>
+			</tr>
+		</table>
+
+		<div>
+			<span>
+				<button type="submit" th:text="#{register.button}">Register</button>
+			</span>
+		</div>
+	</form>
+
+
 </body>
 </html>

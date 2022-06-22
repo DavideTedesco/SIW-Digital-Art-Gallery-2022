@@ -6,5 +6,9 @@
 	<title>Digital Art Gallery</title>
 </head>
 <body>
+	<div>
+		<span th:text="${author.nome}"> Nome autore</span>
+		<span><a th:href="@{'/author' + '/' + ${author.id} + '/' + 'artworks'}">Lista opere dell'autore</a></span>
+	</div>
 </body>
 </html>

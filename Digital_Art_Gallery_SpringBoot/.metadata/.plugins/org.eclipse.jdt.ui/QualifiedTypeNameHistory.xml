@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="org.springframework.security.config.annotation.web.configuration.EnableWebSecurity"/>
     <fullyQualifiedTypeName name="javax.activation.DataSource"/>
     <fullyQualifiedTypeName name="it.uniroma3.siw.digital_art_gallery.model.Credentials"/>
     <fullyQualifiedTypeName name="javax.sql.DataSource"/>
@@ -10,14 +9,12 @@
     <fullyQualifiedTypeName name="java.time.Year"/>
     <fullyQualifiedTypeName name="javax.persistence.Entity"/>
     <fullyQualifiedTypeName name="lombok.NoArgsConstructor"/>
-    <fullyQualifiedTypeName name="it.uniroma3.siw.digital_art_gallery.model.Collezione"/>
     <fullyQualifiedTypeName name="org.springframework.data.repository.CrudRepository"/>
     <fullyQualifiedTypeName name="it.uniroma3.siw.digital_art_gallery.repository.AutoreRepository"/>
     <fullyQualifiedTypeName name="it.uniroma3.siw.digital_art_gallery.repository.OperaRepository"/>
     <fullyQualifiedTypeName name="org.springframework.validation.Validator"/>
     <fullyQualifiedTypeName name="java.util.Optional"/>
     <fullyQualifiedTypeName name="it.uniroma3.siw.digital_art_gallery.service.CredentialsService"/>
-    <fullyQualifiedTypeName name="java.time.LocalDate"/>
     <fullyQualifiedTypeName name="it.uniroma3.siw.digital_art_gallery.validator.AutoreValidator"/>
     <fullyQualifiedTypeName name="org.hibernate.validator.constraints.NotBlank"/>
     <fullyQualifiedTypeName name="javax.persistence.Table"/>
@@ -27,14 +24,40 @@
     <fullyQualifiedTypeName name="org.springframework.security.core.userdetails.UserDetails"/>
     <fullyQualifiedTypeName name="org.springframework.security.core.context.SecurityContextHolder"/>
     <fullyQualifiedTypeName name="org.springframework.web.servlet.mvc.support.RedirectAttributes"/>
-    <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
     <fullyQualifiedTypeName name="it.uniroma3.siw.digital_art_gallery.service.UserService"/>
     <fullyQualifiedTypeName name="org.springframework.ui.Model"/>
-    <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="org.hibernate.annotations.Cascade"/>
-    <fullyQualifiedTypeName name="org.hibernate.annotations.CascadeType"/>
-    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.GetMapping"/>
+    <fullyQualifiedTypeName name="java.time.LocalDate"/>
+    <fullyQualifiedTypeName name="it.uniroma3.siw.digital_art_gallery.model.Opera"/>
+    <fullyQualifiedTypeName name="it.uniroma3.siw.digital_art_gallery.model.Collezione"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PathVariable"/>
-    <fullyQualifiedTypeName name="javax.transaction.Transactional"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.GetMapping"/>
+    <fullyQualifiedTypeName name="it.uniroma3.siw.digital_art_gallery.model.Autore"/>
+    <fullyQualifiedTypeName name="org.hibernate.annotations.CascadeType"/>
+    <fullyQualifiedTypeName name="javax.persistence.CascadeType"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.ModelAttribute"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PostMapping"/>
+    <fullyQualifiedTypeName name="java.sql.Date"/>
+    <fullyQualifiedTypeName name="org.springframework.data.jpa.repository.Temporal"/>
+    <fullyQualifiedTypeName name="javax.persistence.TemporalType"/>
+    <fullyQualifiedTypeName name="javax.persistence.Temporal"/>
+    <fullyQualifiedTypeName name="java.util.Date"/>
+    <fullyQualifiedTypeName name="org.springframework.core.convert.converter.Converter"/>
+    <fullyQualifiedTypeName name="org.hibernate.mapping.List"/>
+    <fullyQualifiedTypeName name="java.util.Arrays"/>
     <fullyQualifiedTypeName name="org.springframework.format.annotation.DateTimeFormat"/>
+    <fullyQualifiedTypeName name="it.uniroma3.siw.digital_art_gallery.validator.LocalDateConverter"/>
+    <fullyQualifiedTypeName name="javax.transaction.Transactional"/>
+    <fullyQualifiedTypeName name="javax.validation.constraints.Future"/>
+    <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+    <fullyQualifiedTypeName name="org.springframework.util.StringUtils"/>
+    <fullyQualifiedTypeName name="it.uniroma3.siw.digital_art_gallery.utility.FileUploader.FileUploadUtil"/>
+    <fullyQualifiedTypeName name="java.nio.file.Path"/>
+    <fullyQualifiedTypeName name="org.springframework.context.annotation.Configuration"/>
+    <fullyQualifiedTypeName name="java.beans.Transient"/>
+    <fullyQualifiedTypeName name="javax.persistence.Transient"/>
+    <fullyQualifiedTypeName name="it.uniroma3.siw.digital_art_gallery.constant.PathConstant"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestParam"/>
+    <fullyQualifiedTypeName name="it.uniroma3.siw.digital_art_gallery.utility.FileUploader"/>
 </qualifiedTypeNameHistroy>

@@ -1,4 +1,4 @@
-package it.uniroma3.siw.digital_art_gallery.authentication;
+package it.uniroma3.siw.digital_art_gallery.configuration;
 
 
 import static it.uniroma3.siw.digital_art_gallery.model.Credentials.ADMIN_ROLE;

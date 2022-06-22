@@ -7,8 +7,9 @@
 </head>
 <body>
 	<h1>Authors</h1>
+	<div><a th:href="@{/admin/insertAuthor}">Insert new author</a></div>
 	<div th:each="author : ${authors}">
-		<span th:text="${artwork.nome}">Nome autore</span>
+		<span th:text="${author.nome}">Nome autore</span>
 		<span ><a th:href="@{'/admin/confirmAuthorDeletion' + '/' + ${author.id}}">Remove</a></span>
 		<span><a th:href="@{'/admin/editAuthor' + '/' + ${author.id}}">Edit</a></span>
 	</div>

@@ -1,10 +1,33 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-	<meta charset="UTF-8" />
-	<link href="/css/my-style.css" rel="stylesheet">
-	<title>Digital Art Gallery</title>
+<meta charset="UTF-8" />
+<link href="/css/my-style.css" rel="stylesheet">
+<title>Digital Art Gallery</title>
 </head>
 <body>
+	
+	
+		<h1>Insert artwork</h1>
+		<table>
+			<tr>
+				<td>Nome:</td>
+				<!-- <td th:text="${artwork.nome}"></td> -->
+			</tr>
+			<tr>
+				<td>Data di realizzazione:</td>
+				<!--<td th:text="${artwork.dataDiRealizzazione}"></td> -->
+			</tr>
+			<tr>
+				<td>Descrizione</td>
+				<!--<td th:text="${artwork.descrizione}"></td> -->
+			</tr>
+		</table>
+
+		<div>
+			 <img th:alt="${artwork.immagine}" th:src="@{'/images' + '/' + ${artwork.immagine}}"> 
+		</div>
+		
+		<div > <a th:href="@{/admin/showContent/artworks}"> Lista opere</a></div>
 </body>
 </html>
