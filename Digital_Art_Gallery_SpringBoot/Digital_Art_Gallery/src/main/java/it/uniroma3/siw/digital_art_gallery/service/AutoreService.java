@@ -1,7 +1,6 @@
 package it.uniroma3.siw.digital_art_gallery.service;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.transaction.Transactional;
@@ -10,7 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import it.uniroma3.siw.digital_art_gallery.model.Autore;
-import it.uniroma3.siw.digital_art_gallery.model.Opera;
 import it.uniroma3.siw.digital_art_gallery.repository.AutoreRepository;
 import it.uniroma3.siw.digital_art_gallery.validator.LocalDateConverter;
 

@@ -56,7 +56,6 @@ INDEX VERSION 1.131+/home/skesky/Desktop/Github/SIW-Digital-Art-Gallery-2022/Dig
 3505787059.index
 2205810663.index
 1279368185.index
-4090375013.index
 4101855434.index
 2298115874.index
 919490844.index

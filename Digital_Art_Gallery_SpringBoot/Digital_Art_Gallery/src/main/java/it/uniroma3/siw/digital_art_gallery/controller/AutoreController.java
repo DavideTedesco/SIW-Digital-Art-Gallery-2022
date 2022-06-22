@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import it.uniroma3.siw.digital_art_gallery.model.Autore;
 import it.uniroma3.siw.digital_art_gallery.model.Opera;
 import it.uniroma3.siw.digital_art_gallery.service.AutoreService;
-import it.uniroma3.siw.digital_art_gallery.validator.LocalDateConverter;
 
 @Controller
 public class AutoreController {
