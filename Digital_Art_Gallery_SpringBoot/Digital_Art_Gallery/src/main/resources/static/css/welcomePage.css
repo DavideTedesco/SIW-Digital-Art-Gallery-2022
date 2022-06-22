@@ -3,9 +3,6 @@
 --red-mondrian: rgb(231,0,30);
 --blue-mondrian: rgb(25, 84, 140);
 --gray-mondrian: rgb(199,199,198);
---lightblue-mondrian: rgb(170, 216, 228);
---gray-mondrian: rgb(199,199,198);
-
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Potta+One&display=swap');
@@ -49,7 +46,7 @@ p{
 }
 .grid-megacontainer{
 	display: grid;
-  grid-template-columns: 10% 56% 30%;
+  grid-template-columns: 12% 66% 18%;
   grid-column-gap: 2%;
   grid-row-gap: 2%;
   height: calc(100vh);
@@ -57,33 +54,20 @@ p{
 
 .grid-container-one{
 	display: grid;
-  grid-template-rows: 5% 92%;
+  grid-template-rows: 18% 79%;
   grid-row-gap: calc(0.03*(100vh));
 }
 
 .grid-container-two{
 	display: grid;
-  	grid-template-rows: 12% 60% 24%;
-  grid-row-gap: calc(0.02*(100vw));
-
+  grid-template-rows: 22% 40% 32%;
+  grid-row-gap: calc(0.03*(100vh));
 }
 
 .grid-container-three{
 	display: grid;
-  	grid-template-rows: 29% 10% 58%;
-  	grid-row-gap: calc(0.02*(100vw));
-}
-
-.grid-subcontainer-one{
-	display: grid;
-  	grid-template-columns: 80% 18%;
-  grid-row-gap: calc(0.02*(100vw));
-}
-
-.grid-subcontainer-two{
-	display: grid;
-  	grid-template-columns: 61% 38%;
-  grid-row-gap: calc(0.02*(100vw));
+  grid-template-rows: 48.5% 48.5%;
+  grid-row-gap: calc(0.03*(100vh));
 }
 
 .grid-item-red{
@@ -106,27 +90,22 @@ p{
   text-align: center;
 }
 
+.grid-item-white-second{
+  background-color: white;
+  color: black;
+  text-align: center;
+}
 
 .grid-item-yellow-first{
   background-color: var(--yellow-mondrian);
   text-align: center;
 }
 
-.grid-item-yellow-second{
+.grid-item-yellow-last{
   background-color: var(--yellow-mondrian);
   text-align: center;
 }
 
-.grid-item-lightblue{
-  background-color: var(--yellow-lightblue);
-  text-align: center;
-}
-
-.grid-item-gray{
-  background-color: var(--gray-mondrian);
-  text-align: center;
-  color: black;
-}
 
 
 .red{
@@ -147,30 +126,6 @@ p{
   background-color: var(--blue-mondrian);
 }
 
-.yellow{
-	  background-color: var(--yellow-mondrian);
-
-}
-
 h1{
   font-size: calc(0.06*100vh);
 }
-
-.login-form {
-  align-items: center;
-}
-
-input {
-  font-family: 'dryhtenregular';
-}
-
-button{
-  border-radius: 10%;
-  font-family: 'dryhtenregular';
-
-}
-
-ul {
-  list-style-type: none;
-}
-
