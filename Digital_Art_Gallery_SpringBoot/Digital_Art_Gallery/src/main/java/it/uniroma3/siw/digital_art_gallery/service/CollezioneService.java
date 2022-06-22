@@ -42,4 +42,8 @@ public class CollezioneService {
 		return this.collezioneRepository.findById(id).get();
 	}
 	
+	public boolean verificaDuplicatiCollezione(String nome) {
+		return this.verificaDuplicatiCollezione(nome);
+	}
+	
 }

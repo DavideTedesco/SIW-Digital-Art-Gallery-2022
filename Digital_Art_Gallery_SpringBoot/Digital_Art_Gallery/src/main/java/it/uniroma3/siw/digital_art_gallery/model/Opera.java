@@ -52,10 +52,4 @@ public class Opera {
 	private Collezione collezione;
 	
 	
-	public String stringDate() {
-		
-		return annoDiRealizzazione.format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
-	}
-	
-	
 }

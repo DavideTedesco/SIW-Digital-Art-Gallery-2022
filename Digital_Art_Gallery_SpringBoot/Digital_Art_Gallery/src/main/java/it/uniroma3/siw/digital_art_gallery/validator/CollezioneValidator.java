@@ -4,22 +4,25 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 
-import it.uniroma3.siw.digital_art_gallery.service.CredentialsService;
+import it.uniroma3.siw.digital_art_gallery.model.Collezione;
+import it.uniroma3.siw.digital_art_gallery.service.CollezioneService;
 
 public class CollezioneValidator implements Validator {
 	
 	@Autowired
-	CredentialsService credentialsService;
+	CollezioneService collezioneService;
 
 	@Override
 	public boolean supports(Class<?> clazz) {
-		// TODO Auto-generated method stub
-		return false;
+		return Collezione.class.equals(clazz);
 	}
 
 	@Override
 	public void validate(Object target, Errors errors) {
-		// TODO Auto-generated method stub
+		Collezione collezione = (Collezione)target;
+		if(this.collezioneService.verificaDuplicatiCollezione(collezione.getNome())) 
+			errors.reject("collezione.duplicate", "collezione duplicata");
+		
 
 	}
 

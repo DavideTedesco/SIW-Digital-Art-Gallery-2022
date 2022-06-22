@@ -2,9 +2,12 @@ package it.uniroma3.siw.digital_art_gallery.controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -60,10 +63,17 @@ public class AutoreController {
 	}
 	
 	@PostMapping("/admin/insertAuthor")
-	public String insertingAuthor(@ModelAttribute("author") Autore autore, @RequestParam("date") String date,Model model) {
-		this.autoreService.save(autore, date);
-		model.addAttribute("authors", this.autoreService.getAllAutori());
-		return "admin/showContentAuthors";
+	public String insertingAuthor(@Valid @ModelAttribute("author") Autore autore, 
+									@RequestParam("date") String date,Model model, BindingResult autoreBindingResults) {
+		
+		if(!autoreBindingResults.hasErrors()) {
+			this.autoreService.save(autore, date);
+			model.addAttribute("authors", this.autoreService.getAllAutori());
+			return "admin/showContentAuthors";
+		}
+		
+		model.addAttribute("author", autore);
+		return "admin/insertAuthor";
 	}
 	
 	@GetMapping("/authorDetails/{id}")

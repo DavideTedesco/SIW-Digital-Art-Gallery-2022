@@ -42,7 +42,7 @@ public class AutoreValidator implements Validator {
 	            errors.rejectValue("cognome", "size");
 	        
 	        if(this.autoreService.verificaDuplicati(nome, cognome, dataDiNascita)) {
-	        	errors.reject("duplicati");
+	        	errors.reject("autore.duplicate", "autore duplicato");
 	        }
 
 	}

@@ -6,6 +6,6 @@ import it.uniroma3.siw.digital_art_gallery.model.Collezione;
 
 public interface CollezioneRepository extends CrudRepository<Collezione, Long> {
 
-	
+	boolean existsByNome(String nome);
 
 }

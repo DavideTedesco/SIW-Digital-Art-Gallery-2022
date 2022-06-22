@@ -1,11 +1,17 @@
 package it.uniroma3.siw.digital_art_gallery.controller;
 
+import static it.uniroma3.siw.digital_art_gallery.constant.PathConstant.IMAGE_DIR;
+
 import java.io.IOException;
+import java.time.LocalDate;
+
+import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.StringUtils;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,7 +24,8 @@ import it.uniroma3.siw.digital_art_gallery.service.AutoreService;
 import it.uniroma3.siw.digital_art_gallery.service.CollezioneService;
 import it.uniroma3.siw.digital_art_gallery.service.OperaService;
 import it.uniroma3.siw.digital_art_gallery.utility.FileUploader;
-import static it.uniroma3.siw.digital_art_gallery.constant.PathConstant.IMAGE_DIR;
+import it.uniroma3.siw.digital_art_gallery.utility.LocalDateConverter;
+import it.uniroma3.siw.digital_art_gallery.validator.OperaValidator;
 
 @Controller
 public class OperaController {
@@ -31,6 +38,12 @@ public class OperaController {
 	
 	@Autowired
 	CollezioneService collezioneService;
+	
+	@Autowired
+	LocalDateConverter converter;
+	
+	@Autowired
+	OperaValidator operaValidator;
 	
 	@GetMapping("/artworks")
 	public String opere(Model model) {
@@ -48,8 +61,7 @@ public class OperaController {
 	public String removeOpera(@PathVariable("id") Long id, Model model) throws IOException {
 		Opera o = this.operaService.findOperaById(id);
 		//remove opera from the author
-		 o.getAutore().getOpere().remove(o);
-		
+		o.getAutore().getOpere().remove(o); 		
 		//remove the opera for the collection
 		o.getCollezione().getOpere().remove(o);
 		//remove image from directory
@@ -77,26 +89,31 @@ public class OperaController {
 	
 
 	@PostMapping("/admin/insertArtwork")
-	public String insertArtworkForAuthor( @ModelAttribute("artwork") Opera opera, 
+	public String insertArtworkForAuthor(@ModelAttribute("artwork") Opera opera, 
 										@RequestParam("image") MultipartFile multiPartFile,
-										@RequestParam("date") String date,Model model) throws IOException {
-		
-		String imageName = StringUtils.cleanPath(multiPartFile.getOriginalFilename());
-		opera.setImmagine(imageName);
-		Opera savedOpera =this.operaService.save(opera, date);
-		
-		FileUploader.saveFile(IMAGE_DIR, imageName, multiPartFile);
-		
-		model.addAttribute("artwork",savedOpera);
-		
-		return "admin/insertedArtwork";
+										@RequestParam("date") String date,
+										BindingResult operaBindingResult, Model model) throws IOException {
+		this.operaValidator.validate(opera, operaBindingResult);
+		if(!operaBindingResult.hasErrors()) {
+			String imageName = StringUtils.cleanPath(multiPartFile.getOriginalFilename());
+			opera.setImmagine(imageName);
+			Opera savedOpera =this.operaService.save(opera, date);
+			
+			FileUploader.saveFile(IMAGE_DIR, imageName, multiPartFile);
+			
+			model.addAttribute("artwork",savedOpera);
+			
+			return "admin/insertedArtwork";
+		}
+		model.addAttribute("artwork", opera);
+		return "admin/insertArtwork";
 	}
 	
 	@GetMapping("/admin/editArtwork/{id}")
 	public String editArtwork(@PathVariable("id") Long id, Model model) {
 		Opera opera = this.operaService.findOperaById(id);
-		System.out.println(opera.stringDate() + "\n\n\n\n\n\n\n\n\n\n");
-		model.addAttribute("date", opera.stringDate());
+		//System.out.println(this.converter.revertConversion(opera.getAnnoDiRealizzazione()) + "\n\n\n\n\n\n\n\n\n\n");
+		model.addAttribute("date", converter.revertConversion(opera.getAnnoDiRealizzazione()));
 		model.addAttribute("artwork", opera);
 		model.addAttribute("collections",this.collezioneService.getAllCollezioni());
 		return "admin/editArtwork";
@@ -105,19 +122,19 @@ public class OperaController {
 	@PostMapping("/admin/editArtwork/{id}")
 	public String editingArtwork(@PathVariable("id") Long id,
 									@ModelAttribute("artwork") Opera opera,
-									@RequestParam("image") MultipartFile multiPartFile,
+									//@RequestParam("image") MultipartFile multiPartFile,
 									@RequestParam("date") String date,
 									Model model) throws IOException {
-		String fileName = StringUtils.cleanPath(multiPartFile.getOriginalFilename());
+		//String fileName = StringUtils.cleanPath(multiPartFile.getOriginalFilename());
 		Opera originalOpera = this.operaService.findOperaById(id);
 		originalOpera.setNome(opera.getNome());
 		originalOpera.setDescrizione(opera.getDescrizione());
 		originalOpera.setCollezione(opera.getCollezione());
-		originalOpera.setAutore(opera.getAutore());
-		originalOpera.setImmagine(fileName);
+		//originalOpera.setAutore(opera.getAutore());
+		//originalOpera.setImmagine(fileName);
 		
-		FileUploader.deleteFile(IMAGE_DIR, opera.getImmagine());
-		FileUploader.saveFile(IMAGE_DIR, fileName, multiPartFile);
+		//FileUploader.deleteFile(IMAGE_DIR, opera.getImmagine());
+		//FileUploader.saveFile(IMAGE_DIR, fileName, multiPartFile);
 		
 		this.operaService.save(originalOpera, date);
 		

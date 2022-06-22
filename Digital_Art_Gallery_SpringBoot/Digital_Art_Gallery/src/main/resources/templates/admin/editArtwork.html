@@ -6,10 +6,10 @@
 	<title>Digital Art Gallery</title>
 </head>
 <body>
-	<h1>Insert artwork</h1>
-	<form th:action="@{/admin/editArtwork}" method="post"
+	<h1>Edit artwork</h1>
+	<form th:action="@{/admin/editArtwork/{id}(id=${artwork.id})}" method="post"
 		th:object="${artwork}" enctype="multipart/form-data">
-		<h1>Inserimento Authore</h1>
+		
 		<table>
 			<tr>
 				<td>Nome:</td>
@@ -23,7 +23,7 @@
 			<tr>
 				<td>Data di realizzazione:</td>
 				<td><label><input type="text" th:placeholder="yyyy-MM-dd"
-						required name="date"></label></td>
+						required name="date" ></label></td>
 			</tr>
 			
 			
@@ -31,14 +31,14 @@
 			
 			<tr>
 				<td>Descrizione</td>
-				<td><label><input type="text" th:field="*{descrizione}"></label></td>
+				<td><textarea  required th:field="*{descrizione}" ></textarea></td>
 			</tr>
-			<tr>
+			<!-- <tr>
 				<td>Immagine</td>
 				<td><label><input type="file"
 						accept="image/png, image/jpeg, image/svg"
 						name="image"></label></td>
-			</tr>
+			</tr> -->
 			<tr>
 				<td><label th:for="selettore2" th:text="#{chef.message}">
 				</label></td>

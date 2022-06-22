@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 
 import it.uniroma3.siw.digital_art_gallery.model.Autore;
 import it.uniroma3.siw.digital_art_gallery.repository.AutoreRepository;
-import it.uniroma3.siw.digital_art_gallery.validator.LocalDateConverter;
+import it.uniroma3.siw.digital_art_gallery.utility.LocalDateConverter;
 
 @Service
 public class AutoreService {
