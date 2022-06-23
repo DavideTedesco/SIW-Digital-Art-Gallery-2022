@@ -17,6 +17,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import it.uniroma3.siw.digital_art_gallery.model.Autore;
 import it.uniroma3.siw.digital_art_gallery.model.Opera;
 import it.uniroma3.siw.digital_art_gallery.service.AutoreService;
+import it.uniroma3.siw.digital_art_gallery.utility.LocalDateConverter;
+import it.uniroma3.siw.digital_art_gallery.validator.AutoreValidator;
 
 @Controller
 public class AutoreController {
@@ -24,7 +26,11 @@ public class AutoreController {
 	@Autowired
 	AutoreService autoreService;
 	
+	@Autowired
+	AutoreValidator autoreValidator;
 	
+	@Autowired
+	LocalDateConverter converter;
 
 	@GetMapping("/authors")
 	public String autori(Model model) {
@@ -63,8 +69,9 @@ public class AutoreController {
 	}
 	
 	@PostMapping("/admin/insertAuthor")
-	public String insertingAuthor(@Valid @ModelAttribute("author") Autore autore, 
-									@RequestParam("date") String date,Model model, BindingResult autoreBindingResults) {
+	public String insertingAuthor(@ModelAttribute("author") Autore autore, 
+									@RequestParam("date") String date,Model model, 
+									BindingResult autoreBindingResults) {
 		
 		if(!autoreBindingResults.hasErrors()) {
 			this.autoreService.save(autore, date);
@@ -75,6 +82,41 @@ public class AutoreController {
 		model.addAttribute("author", autore);
 		return "admin/insertAuthor";
 	}
+	
+	@GetMapping("/admin/editAuthor/{id}")
+	public String editAuthor(@PathVariable("id") Long id ,
+							Model model) {
+		Autore autore = this.autoreService.findAutoreById(id);
+		model.addAttribute("data", this.converter.revertConversion(autore.getDataDiNascita()));
+		model.addAttribute("author", autore);
+		return "/admin/editAuthor";
+	}
+	
+	@PostMapping("/admin/editAuthor/{id}")
+	public String editingAuthor(@PathVariable("id") Long id,
+								@RequestParam("date") String date,
+								@ModelAttribute("author") Autore autore,
+								Model model,
+								BindingResult authorBindingResults) {
+		
+		Autore autoreOriginale = this.autoreService.findAutoreById(id);
+		autoreOriginale.setNome(autore.getNome());
+		autoreOriginale.setCognome(autore.getCognome());
+		autoreOriginale.setLuogoDiNascita(autore.getLuogoDiNascita());
+		
+		//this.autoreValidator.validate(autoreOriginale, authorBindingResults);
+		
+		if(!authorBindingResults.hasErrors()) {
+			this.autoreService.save(autoreOriginale, date);
+			model.addAttribute("authors", autoreService.getAllAutori());
+			return "admin/showContentAuthors";
+		}
+		
+		model.addAttribute("author", autoreService.findAutoreById(id));
+		return "/admin/editAuthor";
+	}
+	
+	
 	
 	@GetMapping("/authorDetails/{id}")
 	public String dettagliAutore(@PathVariable("id") Long id, Model model) {

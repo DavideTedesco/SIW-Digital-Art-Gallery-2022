@@ -21,8 +21,8 @@ public class AutoreService {
 	@Autowired
 	LocalDateConverter converter;
 	
-	public boolean verificaDuplicati(String nome, String Cognome, LocalDate dataDiNascita) {
-		return this.autoreRepository.existsByNomeAndCognomeAndDataDiNascita(nome, Cognome, dataDiNascita);
+	public boolean verificaDuplicati(String nome, String Cognome) {
+		return this.autoreRepository.existsByNomeAndCognome(nome, Cognome);
 	}
 	
 	public List<Autore> getAllAutori(){
@@ -37,12 +37,12 @@ public class AutoreService {
 	public Autore findAutoreById(Long id) {
 		return this.autoreRepository.findById(id).get();
 	}
-	
-	@Transactional
-	public Autore save(Autore autore) {
-		return this.autoreRepository.save(autore);
-	}
-	
+//	
+//	@Transactional
+//	public Autore save(Autore autore) {
+//		return this.autoreRepository.save(autore);
+//	}
+//	
 	@Transactional
 	public Autore save(Autore autore, String date) {
 		autore.setDataDiNascita(converter.convert(date));

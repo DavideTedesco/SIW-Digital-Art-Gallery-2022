@@ -10,8 +10,7 @@ import it.uniroma3.siw.digital_art_gallery.model.Autore;
 
 public interface AutoreRepository extends CrudRepository<Autore, Long> {
 
-		boolean existsByNomeAndCognomeAndDataDiNascita(String nome, String Cognome, 
-				LocalDate dataDiNascita);
+		boolean existsByNomeAndCognome(String nome, String Cognome);
 		
 		Optional<Autore> findById(Long id);
 }
