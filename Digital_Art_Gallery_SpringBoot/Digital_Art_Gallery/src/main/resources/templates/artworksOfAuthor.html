@@ -2,13 +2,45 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 	<meta charset="UTF-8" />
-	<link href="/css/my-style.css" rel="stylesheet">
-	<title>Digital Art Gallery</title>
+	<link href="/css/showcontent.css" rel="stylesheet">
+	<title>Digital Art Gallery - Artworks of author</title>
 </head>
 <body>
-	<div th:each="artwork : ${artworks}">
-		<span><a th:text="${artwork.nome}" th:href="@{'/artworkDetails' + '/' + ${artwork.id}}"></a></span>
+
+	<div class="grid-megacontainer">
+		<div class="grid-container-one">
+			<div class="grid-item-white">
+				<h3 class="white"><a class="white" ,"link" th:href="@{/default}">Personal page</a></h3>
+			</div>
+			<div class="grid-item-blue">
+			</div>
+		</div>
+		<div class="grid-container-two">
+			<div class="grid-item-yellow">
+				<h1 class="yellow" th:text="#{operedellautore.message}+${author.nome}+ ' ' +${author.cognome}"> Opere dell'autore'</h1>
+				<div class="yellow" th:each="artwork : ${artworks}">
+		<span class="yellow"><a class="yellow" th:text="${artwork.nome}" th:href="@{'/artworkDetails' + '/' + ${artwork.id}}"></a></span>
 	</div>
+
+			</div>
+		</div>
+
+		<div class="grid-container-three">
+			<div class="grid-item-white">
+			</div>
+			<div class="grid-item-red">
+			</div>
+			<div class="grid-subcontainer-one">
+				<div class="grid-item-white">
+				</div>
+				<div class="grid-item-gray">
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+	
 		
 </body>
 </html>

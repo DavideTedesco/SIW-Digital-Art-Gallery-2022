@@ -1,18 +1,59 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+
 <head>
 	<meta charset="UTF-8" />
-	<link href="/css/my-style.css" rel="stylesheet">
-	<title>Digital Art Gallery</title>
+	<link href="/css/showcontent.css" rel="stylesheet">
+	<title>Digital Art Gallery - Artworks Admin</title>
 </head>
+
 <body>
-	<h1>Artworks</h1>
-	<div><a th:href="@{/admin/insertArtwork}">Insert a new artwork</a></div>
-	<div th:each="artwork : ${artworks}">
-		 <span th:text="${artwork.nome}">Nome opera</span> 
-		<span ><a th:href="@{'/admin/confirmArtworkDeletion' + '/' + ${artwork.id}}">Remove</a></span>
-		<span><a th:href="@{'/admin/editArtwork' + '/' + ${artwork.id}}">Edit</a></span>
-		<img th:alt="${artwork.immagine}" th:src="@{'/images' + '/' +  ${artwork.immagine}}">
+
+	<div class="grid-megacontainer">
+		<div class="grid-container-one">
+			<div class="grid-item-white">
+				<h3 class="white"><a class="white" ,"link" th:href="@{/default}">Personal page</a></h3>
+			</div>
+			<div class="grid-item-blue">
+			</div>
+		</div>
+		<div class="grid-container-two">
+			<div class="grid-item-yellow">
+				<h1 class="yellow">Artworks</h1>
+				<p class="yellow-paragraph">
+
+
+				<div class="yellow"><a class="yellow" th:href="@{/admin/insertArtwork}">Insert a new artwork</a></div>
+				<div class="yellow" th:each="artwork : ${artworks}">
+					<div class="yellow" th:text="${artwork.nome}">Nome opera</div>
+					<div class="yellow"><a class="yellow"
+							th:href="@{'/admin/confirmArtworkDeletion' + '/' + ${artwork.id}}">Remove</a></div>
+					<div class="yellow"><a class="yellow"
+							th:href="@{'/admin/editArtwork' + '/' + ${artwork.id}}">Edit</a></div>
+					<img th:alt="${artwork.immagine}" th:src="@{'/images' + '/' +  ${artwork.immagine}}" width="50%">
+				</div>
+				</p>
+			</div>
+		</div>
+
+		<div class="grid-container-three">
+			<div class="grid-item-white">
+			</div>
+			<div class="grid-item-red">
+			</div>
+			<div class="grid-subcontainer-one">
+				<div class="grid-item-white">
+				</div>
+				<div class="grid-item-gray">
+				</div>
+			</div>
+
+		</div>
+
 	</div>
+
+	==============
+
 </body>
+
 </html>

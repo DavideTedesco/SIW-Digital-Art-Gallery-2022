@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<link href="/css/my-style.css" rel="stylesheet">
+<title>Digital Art Gallery - Author editing</title>
+</head>
+<body>
+	<h1>Edit collection</h1>
+	<form th:action="@{/admin/editAuthor/{id}(id=${author.id})}" method="post"
+		th:object="${author}" >
+		<table>
+			<tr>
+				<td>Nome:</td>
+				<td><label><input type="text" required
+						th:field="*{nome}"></label></td>
+			</tr>
+			<tr>
+				<td>Cognome:</td>
+				<td><label><input type="text" required
+						th:field="*{cognome}"></label></td>
+			</tr>
+			<tr>
+				<td>Data di nascita:</td>
+				<td th:text="#{previousdate.message}+' '+${data}">data precedente:</td>
+				<td><label><input type="text" name="date" th:placeholder="yyyy-mm-dd" required></label></td>
+			</tr>
+			<tr>
+				<td>Luogo di nascita:</td>
+				<td><label><input type="text" required
+						th:field="*{luogoDiNascita}"></label></td>
+			</tr>
+			
+		</table>
+
+		<div>
+			<span>
+				<button type="submit" th:text="#{register.button}">Register</button>
+			</span>
+		</div>
+	</form>
+</body>
+</html>

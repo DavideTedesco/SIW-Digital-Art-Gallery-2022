@@ -1,18 +1,53 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+
 <head>
 	<meta charset="UTF-8" />
-	<link href="/css/my-style.css" rel="stylesheet">
-	<title>Digital Art Gallery</title>
+	<link href="/css/showcontent.css" rel="stylesheet">
+	<title>Digital Art Gallery - Collection details</title>
 </head>
+
 <body>
-	<h2 th:text="${collection.nome}"></h2>
-	<p th:text="${collection.descrizione}"></p>
-	<div>
-		<ul>
-			<li th:each="artwork : ${collection.opere}"><a th:text="${artwork.nome}" 
-						th:href="@{'/artworkDetails' + '/' + ${artwork.id}}"></a></li>
-		</ul>
+
+	<div class="grid-megacontainer">
+		<div class="grid-container-one">
+			<div class="grid-item-white">
+				<h3 class="white"><a class="white" ,"link" th:href="@{/default}">Personal page</a></h3>
+			</div>
+			<div class="grid-item-blue">
+			</div>
+		</div>
+		<div class="grid-container-two">
+			<div class="grid-item-yellow">
+				<h1 class="yellow" th:text="#{collectionname.message}+${collection.nome}">Nome collezione</h1>
+				<p class="yellow" th:text="#{descriptioncollection.message}+${collection.descrizione}"></p>
+				<ul class="yellow">
+					<li class="yellow" th:each="artwork : ${collection.opere}"><a class="yellow" th:text="${artwork.nome}"
+							th:href="@{'/artworkDetails' + '/' + ${artwork.id}}"></a></li>
+				</ul>
+
+
+			</div>
+		</div>
+
+		<div class="grid-container-three">
+			<div class="grid-item-white">
+			</div>
+			<div class="grid-item-red">
+			</div>
+			<div class="grid-subcontainer-one">
+				<div class="grid-item-white">
+				</div>
+				<div class="grid-item-gray">
+				</div>
+			</div>
+
+		</div>
+
 	</div>
+
+	=====================
+
 </body>
+
 </html>

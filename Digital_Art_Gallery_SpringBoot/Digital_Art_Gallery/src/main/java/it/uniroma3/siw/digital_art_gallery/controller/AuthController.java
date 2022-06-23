@@ -1,8 +1,13 @@
 package it.uniroma3.siw.digital_art_gallery.controller;
 
+import java.util.Collections;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.oauth2.core.user.OAuth2User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -87,6 +92,10 @@ public class AuthController {
 	public String welcomePage(Model model) {
 		return "welcomePage";
 		
+	}
+	@GetMapping("/user")
+	public Map<String, Object> user(@AuthenticationPrincipal OAuth2User principal) {
+		return Collections.singletonMap("name", principal.getAttribute("name"));
 	}
 
 }

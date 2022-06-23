@@ -124,8 +124,16 @@ p{
 
 .blue{
   background-color: var(--blue-mondrian);
+  color: white;
+  text-align: center;
 }
 
 h1{
   font-size: calc(0.06*100vh);
+}
+
+#welcome{
+	background-color: var(--yellow-mondrian);
+  	text-align: center;
+ 	color: black;
 }

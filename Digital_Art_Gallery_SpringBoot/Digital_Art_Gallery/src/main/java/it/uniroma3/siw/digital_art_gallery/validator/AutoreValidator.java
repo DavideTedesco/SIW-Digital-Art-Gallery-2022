@@ -3,12 +3,14 @@ package it.uniroma3.siw.digital_art_gallery.validator;
 import java.time.LocalDate;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 
 import it.uniroma3.siw.digital_art_gallery.model.Autore;
 import it.uniroma3.siw.digital_art_gallery.service.AutoreService;
 
+@Component
 public class AutoreValidator implements Validator {
 	
 	 final Integer MAX_NOME_LENGTH = 100;
@@ -41,7 +43,7 @@ public class AutoreValidator implements Validator {
 	        else if (cognome.length() < MIN_COGNOME_LENGTH || cognome.length() > MAX_COGNOME_LENGTH)
 	            errors.rejectValue("cognome", "size");
 	        
-	        if(this.autoreService.verificaDuplicati(nome, cognome, dataDiNascita)) {
+	        if(this.autoreService.verificaDuplicati(nome, cognome)) {
 	        	errors.reject("autore.duplicate", "autore duplicato");
 	        }
 

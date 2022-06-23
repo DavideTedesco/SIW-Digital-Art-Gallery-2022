@@ -13,7 +13,7 @@
 			<div class="grid-item-red">
 				<div class="red">
 					<h4 class="red">
-						Logout
+						<a class="red" th:href="@{/index}">Logout</a>
 						<h4>
 				</div>
 			</div>
@@ -48,18 +48,29 @@
 				<br>
 				<br>
 				<h4 class="gray">
-					Cancella account
+					<a class="gray" th:href="@{/removeUser}">Cancella account</a>
 				</h4>
 			</div>
 
 		</div>
 		<div class="grid-container-three">
 			<div class="grid-item-yellow-last">
+				<div id="welcome">
+					<br>
+					<br>
+					<br>
+					<br>
+					<br>
+					Welcome back User
+				</div>
 			</div>
 			<div class="grid-item-white-second">
-			</div>
-
-			<div class="grid-container-white">
+				<div class="white">
+					Made by <br>
+					Kevin Santodonato <br>
+					& <br>
+					Davide Tedesco
+				</div>
 			</div>
 		</div>
 

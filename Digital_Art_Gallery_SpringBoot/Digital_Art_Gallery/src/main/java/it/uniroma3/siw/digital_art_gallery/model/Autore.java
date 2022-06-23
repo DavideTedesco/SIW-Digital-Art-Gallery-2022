@@ -43,10 +43,13 @@ public class Autore {
 	private String cognome;
 	
 	
-	//@Temporal(TemporalType.TIMESTAMP)
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	@NotNull
 	private LocalDate dataDiNascita;
+	
+//	@DateTimeFormat(pattern = "yyyy-MM-dd")
+//	@NotNull
+//	private LocalDate dataDiMorte;
 	
 	@NotBlank
 	private String luogoDiNascita;
