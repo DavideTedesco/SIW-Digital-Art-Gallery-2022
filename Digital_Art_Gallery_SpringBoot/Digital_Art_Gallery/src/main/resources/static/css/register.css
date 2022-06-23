@@ -1,3 +1,12 @@
+:root{
+--yellow-mondrian: rgb(254, 197, 93);
+--red-mondrian: rgb(231,0,30);
+--blue-mondrian: rgb(25, 84, 140);
+--gray-mondrian: rgb(199,199,198);
+--lightblue-mondrian: rgb(170, 216, 228);
+--gray-mondrian: rgb(199,199,198);
+
+}
 
 @import url('https://fonts.googleapis.com/css2?family=Potta+One&display=swap');
 
@@ -23,6 +32,8 @@
 
 *{
 	background-color: black;
+  	margin: 0;
+  	padding: 0;
 }
 
 body{
@@ -31,104 +42,155 @@ body{
     /*font-family: 'IM Fell English', serif;*/
     /*font-family: 'new_yorkerregular';*/
     font-family: 'dryhtenregular';
+    /*overflow: hidden;*/
 }
 
 p{
 	font-size: 15pt;
 }
-.flex-megacontainer{
-	display: flex;
-	flex-direction: row;
+.grid-megacontainer{
+	display: grid;
+  grid-template-columns: 10% 56% 30%;
+  grid-column-gap: 2%;
+  grid-row-gap: 2%;
+  height: calc(100vh);
 }
 
-.flex-container{
-	display: flex;
-	flex-direction: column;
+.grid-container-one{
+	display: grid;
+  grid-template-rows: 5% 92%;
+  grid-row-gap: calc(0.03*(100vh));
 }
 
-.flex-item-white{
-	background-color:  white;
-	align-self: flex-start;
-	width: 1000px;
-	height: 450px;
-	text-align: center;
+.grid-container-two{
+	display: grid;
+  	grid-template-rows: 11% 60% 23%;
+  grid-row-gap: calc(0.03*(100vh));
+
 }
+
+.grid-container-three{
+	display: grid;
+  	grid-template-rows: 28% 10% 56%;
+  	grid-row-gap: calc(0.03*(100vh));
+}
+
+.grid-subcontainer-one{
+	display: grid;
+  grid-template-columns: 66% 7% 27%;
+
+}
+
+.grid-subcontainer-two{
+	display: grid;
+  	grid-template-columns: 53% 47%;
+}
+
+.grid-item-red{
+  background-color: var(--red-mondrian);
+}
+
+.grid-item-black-sub{
+  background-color: black;
+}
+
+.grid-item-blue{
+  background-color: var(--blue-mondrian);
+}
+
+.grid-item-gray{
+  background-color: var(--gray-mondrian);
+  text-align: center;
+  color: black;
+}
+
+.grid-item-white-first{
+  background-color: white;
+  color: black;
+  text-align: center;
+}
+
+.grid-item-white-third-first{
+  background-color: white;
+  color: black;
+  text-align: center;
+}
+
+
+.grid-item-white{
+  background-color: white;
+  color: black;
+  text-align: center;
+}
+
+.grid-item-yellow-first{
+  background-color: var(--yellow-mondrian);
+  text-align: center;
+}
+
+.grid-item-yellow-second{
+  background-color: var(--yellow-mondrian);
+  text-align: center;
+}
+
+.grid-item-lightblue{
+  background-color: var(--lightblue-mondrian);
+  text-align: center;
+}
+
+.grid-item-gray{
+  background-color: var(--gray-mondrian);
+  text-align: center;
+  color: black;
+}
+
+
+.red{
+  background-color: var(--red-mondrian);
+}
+
 
 .white{
-	background-color:  white;
-	color: black;
+  color: black;
+  background-color: white;
 }
 
-.white-paragraph{
-	background-color:  white;
-	color: black;
-	padding: 5%;
-}
-
-.flex-item-yellow{
-	background-color:  rgb(254, 197, 93);
-	align-self: flex-end;
-	width: 320px;
-	height: 520px;
-	text-align: center;
-	color: white;
-	/*text-shadow: 2px 2px 4px #000000;*/
-}
-
-.yellow{
-	background-color:  rgb(254, 197, 93);
-}
-
-.flex-item-blue{
-	align-self: flex-start;
-	background-color: rgb(25, 84, 140);
-	width: 1000px;
-	height: 170px;
-	text-align: center;
+.gray{
+  background-color: var(--gray-mondrian);
 }
 
 .blue{
-	background-color: rgb(25, 84, 140);
-}
-.flex-item-red{
-	align-self: flex-end;
-	background-color:  rgb(231,0,30);
-	width: 320px;
-	height: 100px;
-	text-align: center;
+  background-color: var(--blue-mondrian);
 }
 
-.red{
-	background-color:  rgb(231,0,30);
-}
-
-.flex-item-black{
-	background-color:  black;
-	height: 24px;
-}
-
-.flex-item-black-vertical{
-	background-color:  black;
-	width: 24px;
-}
-
-
-.link{
-        color: white;
+.yellow{
+	  background-color: var(--yellow-mondrian);
 
 }
 
-.link::after{
-	
+.lightblue{
+	 background-color: var(--lightblue-mondrian);
+	color: black;
 }
 
-.link:hover::after{
+h1{
+  font-size: calc(0.06*100vh);
 }
 
-.login-table{
-	align-items: center;
+.login-form {
+  align-items: center;
 }
 
-.button{
-	font-family: 'dryhtenregular';
+input {
+  font-family: 'dryhtenregular';
+}
+
+button{
+  border-radius: 10%;
+  font-family: 'dryhtenregular';
+
+}
+
+ul {
+  list-style-type: none;
 }

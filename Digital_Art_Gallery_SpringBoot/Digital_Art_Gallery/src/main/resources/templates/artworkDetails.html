@@ -7,13 +7,11 @@
 </head>
 <body>
 	<div>
-		<span th:text="${artwork.nome}"> Nome opera</span>
-		<span><a th:href="@{'/authorDetails' + '/' + ${artwork.autore.id}}" th:text="${artwork.autore.nome}">
+		<span th:text="#{artworkname.message}+${artwork.nome}"> Nome opera</span>
+		<span><a th:href="@{'/authorDetails' + '/' + ${artwork.autore.id}}" th:text="${artwork.autore.nome}+' '+${artwork.autore.cognome}">
 				Nome autore che ha realizzato l'opera</a></span>
-		<span><a th:href="@{'/collectionDetails' + '/' + ${artwork.collezione.id}}" th:text="${artwork.collezione.nome}"></a></span>
+		<span><a th:href="@{'/collectionDetails' + '/' + ${artwork.collezione.id}}" th:text="#{artworkincollection.message}+${artwork.collezione.nome}"></a></span>
 	</div>
 	
 </body>
 </html>
-
-<!--  -->

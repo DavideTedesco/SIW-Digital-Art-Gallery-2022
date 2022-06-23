@@ -58,32 +58,26 @@ p{
 
 .grid-container-one{
 	display: grid;
-  grid-template-rows: 5% 92%;
+  grid-template-rows: 67% 30%;
   grid-row-gap: calc(0.03*(100vh));
 }
 
 .grid-container-two{
 	display: grid;
-  	grid-template-rows: 11% 60% 23%;
-  grid-row-gap: calc(0.03*(100vh));
-
+  	grid-template-rows: 70% 27%;
+    grid-row-gap: calc(0.03*(100vh));
 }
 
 .grid-container-three{
 	display: grid;
-  	grid-template-rows: 28% 10% 56%;
+  	grid-template-rows: 45% 52%;
   	grid-row-gap: calc(0.03*(100vh));
 }
 
 .grid-subcontainer-one{
 	display: grid;
-  grid-template-columns: 66% 7% 27%;
-
-}
-
-.grid-subcontainer-two{
-	display: grid;
-  	grid-template-columns: 53% 47%;
+  grid-template-columns: 57% 37%;
+  grid-column-gap: 6%;
 }
 
 .grid-item-red{
@@ -123,14 +117,15 @@ p{
   text-align: center;
 }
 
-.grid-item-yellow-first{
+.grid-item-yellow{
   background-color: var(--yellow-mondrian);
   text-align: center;
+  overflow: hidden;
 }
 
-.grid-item-yellow-second{
+.yellow-paragraph{
   background-color: var(--yellow-mondrian);
-  text-align: center;
+  overflow: scroll;
 }
 
 .grid-item-lightblue{
@@ -166,11 +161,6 @@ p{
 .yellow{
 	  background-color: var(--yellow-mondrian);
 
-}
-
-.lightblue{
-	 background-color: var(--lightblue-mondrian);
-	color: black;
 }
 
 h1{

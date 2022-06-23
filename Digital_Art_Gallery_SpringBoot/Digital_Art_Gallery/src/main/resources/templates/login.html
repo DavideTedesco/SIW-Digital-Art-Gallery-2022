@@ -4,7 +4,7 @@
 <head>
 	<meta charset="UTF-8" />
 	<link href="/css/login.css" rel="stylesheet">
-	<title>Digital Art Gallery</title>
+	<title>Digital Art Gallery - Login Page</title>
 </head>
 
 <body>
@@ -12,6 +12,7 @@
 	<div class="grid-megacontainer">
 		<div class="grid-container-one">
 			<div class="grid-item-red">
+				<h3 class="red"><a class="red" ,"link" th:href="@{/index}">Home</a></h3>
 			</div>
 			<div class="grid-item-gray">
 			</div>
@@ -48,18 +49,23 @@
 								</script>
 							</div>
 						</li>
+
 					</ul>
 					<div class="white">
 						<div class="white">
 							<button class="white" ,"button" type="submit" th:text="#{login.button}">Login</button>
 						</div>
 					</div>
+					<div>
+						<h5 class="white"><a class="white" ,"link" th:href="@{/oauth2/authorization/github}">Login with Oauth</a></h5>
+
+					</div>
 
 			</div>
 			<div class="grid-item-blue">
 				<h2 class="blue">Contacts</h2>
 				<div class="blue">
-					E-mail:<a href="mailto:info@digitalartgallery.com">info@digitalartgallery.com</a>
+					E-mail:<a class="blue" href="mailto:info@digitalartgallery.com">info@digitalartgallery.com</a>
 				</div>
 				<div class="blue">Phone: 0044 0848 44 66 88</div>
 				<div class="blue">London - New York - Genève - Milan</div>
@@ -69,18 +75,26 @@
 
 		<div class="grid-container-three">
 			<div class="grid-subcontainer-one">
-				<div class="grid-container-yellow">
+				<div class="grid-item-yellow-second">
 				</div>
-				<div class="grid-container-white">
+				<div class="grid-item-black-sub">
+				</div>
+				<div class="grid-item-white-third-first">
 				</div>
 			</div>
 			<div class="grid-subcontainer-two">
-				<div class="grid-container-black">
+				<div class="grid-item-black">
 				</div>
-				<div class="grid-container-white">
+				<div class="grid-item-white">
 				</div>
 			</div>
-			<div class="grid-container-lightblue">
+			<div class="grid-item-lightblue">
+				<div class="lightblue">
+					Made by <br>
+					Kevin Santodonato <br>
+					& <br>
+					Davide Tedesco
+				</div>
 			</div>
 		</div>
 

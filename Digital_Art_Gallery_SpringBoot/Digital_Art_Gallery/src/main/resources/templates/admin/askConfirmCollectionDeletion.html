@@ -1,15 +1,43 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+
 <head>
 	<meta charset="UTF-8" />
-	<link href="/css/my-style.css" rel="stylesheet">
-	<title>Digital Art Gallery</title>
+	<link href="/css/confirmdeletion.css" rel="stylesheet">
+	<title>Digital Art Gallery - Collection deletion confirm page</title>
 </head>
+
 <body>
-	<div>
-		<span th:text="${collection.nome}">Nome Collezione</span>
+
+	<div class="grid-megacontainer">
+		<div class="grid-container-one">
+			<div class="grid-item-gray">
+			</div>
+			<div class="grid-item-blue">
+			</div>
+		</div>
+
+		<div class="grid-container-two">
+			<div class="grid-item-red">
+				<div class="red">
+					<span class="red" th:text="#{confirmremovecollection.message}+' '+${collection.nome}">Nome Collezione</span>
+				</div>
+				<div class="red"> <a class="red" th:href="@{'/admin/removeCollection' + '/' + ${collection.id}}">Remove</a></div>
+				<div class="red"> <a class="red" th:href="@{'/admin/showContent/collections}">Abort</a></div>
+			</div>
+			<div class="grid-item-white">
+			</div>
+		</div>
+
+		<div class="grid-container-three">
+			<div class="grid-item-blue">
+			</div>
+			<div class="grid-item-yellow">
+			</div>
+		</div>
+
 	</div>
-	<div> <a th:href="@{'/admin/removeCollection' + '/' + ${collection.id}}">Remove</a></div>
-	<div> <a th:href="@{'/admin/showContent/collections}">Abort</a></div>
+
 </body>
+
 </html>

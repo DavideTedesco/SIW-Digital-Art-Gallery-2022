@@ -55,19 +55,20 @@ p{
 
 .grid-container-one{
 	display: grid;
-  grid-template-rows: 69% 29%;
-  grid-row-gap: calc(0.02*(100vw));
+  grid-template-rows: 68% 29%;
+  grid-row-gap: calc(0.03*(100vh));
 }
 
 .grid-container-two{
 	display: grid;
-  grid-template-rows: 79% 19%;
-  grid-row-gap: calc(0.02*(100vw));
+  grid-template-rows: 79% 18%;
+  grid-row-gap: calc(0.03*(100vh));
 }
 
 
 .grid-item-red{
   background-color: var(--red-mondrian);
+  text-align: center;
 }
 
 .grid-item-blue{

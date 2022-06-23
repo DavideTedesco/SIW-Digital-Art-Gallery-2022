@@ -84,6 +84,7 @@ public class AutoreController {
 	
 	@GetMapping("/author/{id}/artworks")
 	public String operePerAutore(@PathVariable("id") Long id, Model model) {
+		model.addAttribute("author", this.autoreService.findAutoreById(id) );
 		model.addAttribute("artworks", this.autoreService.findAutoreById(id).getOpere());
 		return "artworksOfAuthor";
 	}

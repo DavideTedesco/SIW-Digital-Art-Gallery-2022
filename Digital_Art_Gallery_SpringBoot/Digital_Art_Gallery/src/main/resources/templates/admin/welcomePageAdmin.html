@@ -1,27 +1,78 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+
 <head>
 	<meta charset="UTF-8" />
-	<link href="/css/my-style.css" rel="stylesheet">
-	<title>Digital Art Gallery</title>
+	<link href="/css/welcomePage.css" rel="stylesheet">
+	<title>Digital Art Gallery - Welcome page Admin</title>
 </head>
-<body>
-Pluto
 
-	<div>
-		<a th:href="@{/admin/showContent/users}"> Users</a>
-	</div>
-	
-	<div>
-		<a th:href="@{/admin/showContent/authors}"> Authors</a>
-	</div>
-	
-	<div>	
-		<a th:href="@{/admin/showContent/collections}"> Collections</a>
-	</div>
-	
-	<div>
-		<a th:href="@{/admin/showContent/artworks}"> Artworks</a>
-	</div>
+<body>
+
+	<div class="grid-megacontainer">
+		<div class="grid-container-one">
+			<div class="grid-item-red">
+				<div class="red">
+					<h4 class="red">
+						<a class="red" th:href="@{/index}">Logout</a>
+						<h4>
+				</div>
+			</div>
+			<div class="grid-item-yellow-first">
+			</div>
+		</div>
+		<div class="grid-container-two">
+			<div class="grid-item-white-first">
+				<br>
+				<h1 class="white" ,"header">
+					Digital Art Gallery
+				</h1>
+			</div>
+			<div class="grid-item-blue">
+				<div class="blue">
+					<a class="blue" th:href="@{/admin/showContent/users}"> Users</a>
+				</div>
+
+				<div class="blue">
+					<a class="blue" th:href="@{/admin/showContent/authors}"> Authors</a>
+				</div>
+
+				<div class="blue">
+					<a class="blue" th:href="@{/admin/showContent/collections}"> Collections</a>
+				</div>
+
+				<div class="blue">
+					<a class="blue" th:href="@{/admin/showContent/artworks}"> Artworks</a>
+				</div>
+			</div>
+			<div class="grid-item-gray">
+
+			</div>
+
+		</div>
+		<div class="grid-container-three">
+			<div class="grid-item-yellow-last">
+				<div id="welcome">
+					<br>
+					<br>
+					<br>
+					<br>
+					<br>
+					Welcome back Admin
+				</div>
+			</div>
+			<div class="grid-item-white-second">
+			<div class="white">
+					Made by <br>
+					Kevin Santodonato <br>
+					& <br>
+					Davide Tedesco
+				</div>
+			</div>
+
+			
+		</div>
+
 </body>
+
 </html>

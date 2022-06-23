@@ -2,14 +2,44 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 	<meta charset="UTF-8" />
-	<link href="/css/my-style.css" rel="stylesheet">
-	<title>Digital Art Gallery</title>
+	<link href="/css/showcontent.css" rel="stylesheet">
+	<title>Digital Art Gallery - Collections</title>
 </head>
 <body>
-	<h1>Collections</h1>
-		<ul>
-			<li th:each="collection : ${collections}">
-					<a th:href="@{'/collectionDetails' + '/' + ${collection.id}}" th:text="${collection.nome}"></a></li> 
-		</ul>
+
+<div class="grid-megacontainer">
+		<div class="grid-container-one">
+			<div class="grid-item-white">
+				<h3 class="white"><a class="white" ,"link" th:href="@{/default}">Personal page</a></h3>
+			</div>
+			<div class="grid-item-blue">
+			</div>
+		</div>
+		<div class="grid-container-two">
+			<div class="grid-item-yellow">
+				<h1 class="yellow">Collections</h1>
+				<ul class="yellow-paragraph">
+					<li class="yellow" th:each="collection : ${collections}">
+					<a class="yellow" th:href="@{'/collectionDetails' + '/' + ${collection.id}}" th:text="${collection.nome}"></a></li> 
+				</ul>
+			</div>
+		</div>
+
+		<div class="grid-container-three">
+			<div class="grid-item-white">
+			</div>
+			<div class="grid-item-red">
+			</div>
+			<div class="grid-subcontainer-one">
+				<div class="grid-item-white">
+				</div>
+				<div class="grid-item-gray">
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+			
 </body>
 </html>
