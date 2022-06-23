@@ -15,21 +15,13 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.http.HttpStatus;
-import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.core.annotation.AuthenticationPrincipal;
-import org.springframework.security.oauth2.core.user.OAuth2User;
-import org.springframework.security.web.authentication.HttpStatusEntryPoint;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
+
+
 
 @SuppressWarnings("deprecation")
 @Configuration
 @EnableWebSecurity
-@RestController
 public class AuthConfiguration extends WebSecurityConfigurerAdapter {
 
 	@Autowired
@@ -42,7 +34,7 @@ public class AuthConfiguration extends WebSecurityConfigurerAdapter {
                 // authorization paragraph: qui definiamo chi può accedere a cosa
                 .authorizeRequests()
                 // chiunque (autenticato o no) può accedere alle pagine index, login, register, ai css e alle immagini
-                .antMatchers(HttpMethod.GET, "/", "/index", "/login", "/register", "/css/**", "/images/**", "/loginError", "/error").permitAll()
+                .antMatchers(HttpMethod.GET, "/", "/index", "/login", "/register", "/css/**", "/images/**", "/loginError", "/error", "/oauth2/authorization/google").permitAll()
                 // chiunque (autenticato o no) può mandare richieste POST al punto di accesso per login e register 
                 .antMatchers(HttpMethod.POST, "/login", "/register").permitAll()
                 // solo gli utenti autenticati con ruolo ADMIN possono accedere a risorse con path /admin/**
@@ -63,11 +55,13 @@ public class AuthConfiguration extends WebSecurityConfigurerAdapter {
                 // se il login non ha successo si viene rediretti sulla pagina di errore del login
 				.failureUrl("/loginError")
 				
-//				.and()
-//				.exceptionHandling(e -> e
-//				.authenticationEntryPoint(new HttpStatusEntryPoint(HttpStatus.UNAUTHORIZED))
-//				)
-//				.oauth2Login()
+		      
+				.and()
+				.oauth2Login()
+				.loginPage("/login")
+                .defaultSuccessUrl("/welcomePage")
+				.failureUrl("/loginError")
+
 				
                 // logout paragraph: qui definiamo il logout
                 .and().logout()
@@ -76,6 +70,8 @@ public class AuthConfiguration extends WebSecurityConfigurerAdapter {
                 // in caso di successo, si viene reindirizzati alla /index page
                 .logoutSuccessUrl("/index")        
                 .invalidateHttpSession(true)
+                .deleteCookies("JSESSIONID")
+                .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
                 .clearAuthentication(true).permitAll();
     }
     
