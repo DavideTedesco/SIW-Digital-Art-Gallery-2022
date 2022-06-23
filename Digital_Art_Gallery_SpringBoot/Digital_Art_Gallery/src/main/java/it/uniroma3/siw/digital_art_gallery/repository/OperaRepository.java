@@ -1,5 +1,6 @@
 package it.uniroma3.siw.digital_art_gallery.repository;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import org.springframework.data.jpa.repository.Query;
@@ -13,5 +14,7 @@ public interface OperaRepository extends CrudRepository<Opera, Long> {
 	
 	@Query(value = "SELECT * FROM opera WHERE collezione_id IS null", nativeQuery = true )
 	List<Opera> opereSenzaCollezione();
+	
+	boolean existsByNome(String nome);
 	
 }

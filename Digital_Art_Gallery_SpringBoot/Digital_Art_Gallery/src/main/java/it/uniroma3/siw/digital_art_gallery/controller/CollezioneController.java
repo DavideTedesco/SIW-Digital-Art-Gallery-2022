@@ -3,11 +3,12 @@ package it.uniroma3.siw.digital_art_gallery.controller;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.transaction.Transactional;
+import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -44,7 +45,7 @@ public class CollezioneController {
 	public String removeAutore(@PathVariable("id") Long id, Model model) {
 		this.collezioneService.deleteCollectionById(id);
 		model.addAttribute("authors", this.collezioneService.getAllCollezioni());
-		return "admin/showContentCollections";
+		return this.adminCollezioni(model);
 	}
 
 	@GetMapping("/admin/confirmCollectionDeletion/{id}")
@@ -61,11 +62,17 @@ public class CollezioneController {
 	}
 
 	@PostMapping("/admin/insertCollection")
-	public String inserimentoCollezione(@ModelAttribute("collection") Collezione collezione, Model model) {
+	public String inserimentoCollezione(@Valid @ModelAttribute("collection") Collezione collezione,
+										BindingResult collectionBindingResult ,Model model) {
 
+		if(!collectionBindingResult.hasErrors()) {
+			model.addAttribute("collection", collezione);
+			this.collezioneService.save(collezione);
+			return "admin/insertedCollection";
+		}
+		
 		model.addAttribute("collection", collezione);
-		this.collezioneService.save(collezione);
-		return "admin/insertedCollection";
+		return "admin/insertCollection";
 	}
 
 	@GetMapping("/admin/editCollection/{id}")

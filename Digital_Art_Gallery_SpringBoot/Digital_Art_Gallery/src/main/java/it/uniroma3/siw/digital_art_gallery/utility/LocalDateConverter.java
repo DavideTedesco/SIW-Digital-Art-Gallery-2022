@@ -1,4 +1,4 @@
-package it.uniroma3.siw.digital_art_gallery.validator;
+package it.uniroma3.siw.digital_art_gallery.utility;
 
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.stereotype.Component;
@@ -33,5 +33,9 @@ public class LocalDateConverter implements Converter<String, LocalDate> {
 
         throw new DateTimeException(String.format("unable to parse (%s) supported formats are %s",
                 s, String.join(", ", SUPPORTED_FORMATS)));
+    }
+    
+    public String revertConversion(LocalDate date) {
+    	return date.format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
     }
 }

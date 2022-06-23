@@ -1,5 +1,6 @@
 package it.uniroma3.siw.digital_art_gallery.service;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import javax.transaction.Transactional;
@@ -9,7 +10,7 @@ import org.springframework.stereotype.Service;
 
 import it.uniroma3.siw.digital_art_gallery.model.Opera;
 import it.uniroma3.siw.digital_art_gallery.repository.OperaRepository;
-import it.uniroma3.siw.digital_art_gallery.validator.LocalDateConverter;
+import it.uniroma3.siw.digital_art_gallery.utility.LocalDateConverter;
 
 @Service
 public class OperaService {
@@ -52,5 +53,9 @@ public class OperaService {
 		//opera.getCollezione().getOpere().add(opera);
 		opera.setAnnoDiRealizzazione(this.converter.convert(date));
 		return this.operaRepository.save(opera);
+	}
+	
+	public boolean verificaDuplicatiOpera(String nome) {
+		return this.operaRepository.existsByNome(nome);
 	}
 }
