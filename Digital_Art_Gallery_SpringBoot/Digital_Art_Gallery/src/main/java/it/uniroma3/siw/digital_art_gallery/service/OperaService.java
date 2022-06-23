@@ -1,6 +1,5 @@
 package it.uniroma3.siw.digital_art_gallery.service;
 
-import java.time.LocalDate;
 import java.util.List;
 
 import javax.transaction.Transactional;

@@ -3,9 +3,6 @@ package it.uniroma3.siw.digital_art_gallery.controller;
 import static it.uniroma3.siw.digital_art_gallery.constant.PathConstant.IMAGE_DIR;
 
 import java.io.IOException;
-import java.time.LocalDate;
-
-import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -23,6 +20,7 @@ import it.uniroma3.siw.digital_art_gallery.model.Opera;
 import it.uniroma3.siw.digital_art_gallery.service.AutoreService;
 import it.uniroma3.siw.digital_art_gallery.service.CollezioneService;
 import it.uniroma3.siw.digital_art_gallery.service.OperaService;
+import it.uniroma3.siw.digital_art_gallery.service.S3BucketService;
 import it.uniroma3.siw.digital_art_gallery.utility.FileUploader;
 import it.uniroma3.siw.digital_art_gallery.utility.LocalDateConverter;
 import it.uniroma3.siw.digital_art_gallery.validator.OperaValidator;
@@ -45,6 +43,9 @@ public class OperaController {
 	@Autowired
 	OperaValidator operaValidator;
 	
+	@Autowired
+	S3BucketService bucketService;
+	
 	@GetMapping("/artworks")
 	public String opere(Model model) {
 		model.addAttribute("artworks",this.operaService.getAllOpere());
@@ -54,6 +55,7 @@ public class OperaController {
 	@GetMapping("/admin/showContent/artworks")
 	public String adminOpere(Model model) {
 		model.addAttribute("artworks",this.operaService.getAllOpere());
+		System.out.println(this.bucketService.listFiles() + "\n\n\n\n\n\n\n\n\n\n\n\n"); 
 		return "/admin/showContentArtworks";
 	}
 	
@@ -63,9 +65,12 @@ public class OperaController {
 		//remove opera from the author
 		o.getAutore().getOpere().remove(o); 		
 		//remove the opera for the collection
-		o.getCollezione().getOpere().remove(o);
+		if(o.getCollezione() != null) {
+			o.getCollezione().getOpere().remove(o);
+		}
 		//remove image from directory
-		FileUploader.deleteFile(IMAGE_DIR, o.getImmagine());
+		//FileUploader.deleteFile(IMAGE_DIR, o.getImmagine());
+		this.bucketService.deleteFile(o.getImmagine());
 		this.operaService.deleteArtworkById(id);
 		model.addAttribute("artworks", this.operaService.getAllOpere());
 		return "admin/showContentArtworks";
@@ -96,10 +101,11 @@ public class OperaController {
 		this.operaValidator.validate(opera, operaBindingResult);
 		if(!operaBindingResult.hasErrors()) {
 			String imageName = StringUtils.cleanPath(multiPartFile.getOriginalFilename());
+			this.bucketService.uploadFile(imageName, multiPartFile);
 			opera.setImmagine(imageName);
 			Opera savedOpera =this.operaService.save(opera, date);
 			
-			FileUploader.saveFile(IMAGE_DIR, imageName, multiPartFile);
+			//FileUploader.saveFile(IMAGE_DIR, imageName, multiPartFile);
 			
 			model.addAttribute("artwork",savedOpera);
 			

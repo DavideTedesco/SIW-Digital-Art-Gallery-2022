@@ -30,7 +30,7 @@
 							th:href="@{'/admin/confirmArtworkDeletion' + '/' + ${artwork.id}}">Remove</a></div>
 					<div class="yellow"><a class="yellow"
 							th:href="@{'/admin/editArtwork' + '/' + ${artwork.id}}">Edit</a></div>
-					<img th:alt="${artwork.immagine}" th:src="@{'/images' + '/' +  ${artwork.immagine}}" width="50%">
+					<img th:alt="${artwork.immagine}" th:src="@{'https://digital-art-gallery.s3.eu-west-3.amazonaws.com' + '/' +  ${artwork.immagine}}" width="50%">
 				</div>
 				</p>
 			</div>
@@ -52,8 +52,10 @@
 
 	</div>
 
-	==============
 
 </body>
 
 </html>
+
+
+

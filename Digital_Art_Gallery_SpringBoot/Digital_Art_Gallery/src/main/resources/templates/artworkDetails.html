@@ -11,6 +11,7 @@
 		<span><a th:href="@{'/authorDetails' + '/' + ${artwork.autore.id}}" th:text="${artwork.autore.nome}+' '+${artwork.autore.cognome}">
 				Nome autore che ha realizzato l'opera</a></span>
 		<span><a th:href="@{'/collectionDetails' + '/' + ${artwork.collezione.id}}" th:text="#{artworkincollection.message}+${artwork.collezione.nome}"></a></span>
+		<img th:alt="${artwork.immagine}" th:src="@{'https://digital-art-gallery.s3.eu-west-3.amazonaws.com' + '/' +  ${artwork.immagine}}" width="50%">
 	</div>
 	
 </body>

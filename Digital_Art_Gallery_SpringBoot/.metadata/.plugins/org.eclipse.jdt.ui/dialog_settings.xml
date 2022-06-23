@@ -113,4 +113,7 @@
 			<item value="/home/davide/SIW-DAG.jar"/>
 		</list>
 	</section>
+	<section name="BuildPathsPropertyPage">
+		<item key="pageIndex" value="3"/>
+	</section>
 </section>
