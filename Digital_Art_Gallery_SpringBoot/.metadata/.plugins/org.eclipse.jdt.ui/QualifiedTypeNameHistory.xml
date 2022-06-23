@@ -1,11 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="java.util.Optional"/>
-    <fullyQualifiedTypeName name="it.uniroma3.siw.digital_art_gallery.service.CredentialsService"/>
-    <fullyQualifiedTypeName name="org.hibernate.validator.constraints.NotBlank"/>
-    <fullyQualifiedTypeName name="javax.persistence.Table"/>
-    <fullyQualifiedTypeName name="javax.validation.constraints.NotBlank"/>
-    <fullyQualifiedTypeName name="it.uniroma3.siw.digital_art_gallery.repository.UserRepository"/>
     <fullyQualifiedTypeName name="it.uniroma3.siw.digital_art_gallery.model.User"/>
     <fullyQualifiedTypeName name="org.springframework.security.core.userdetails.UserDetails"/>
     <fullyQualifiedTypeName name="org.springframework.security.core.context.SecurityContextHolder"/>
@@ -39,7 +33,6 @@
     <fullyQualifiedTypeName name="org.hibernate.mapping.List"/>
     <fullyQualifiedTypeName name="java.lang.System"/>
     <fullyQualifiedTypeName name="javax.transaction.Transactional"/>
-    <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="it.uniroma3.siw.digital_art_gallery.service.CollezioneService"/>
     <fullyQualifiedTypeName name="it.uniroma3.siw.digital_art_gallery.model.Opera"/>
@@ -56,8 +49,15 @@
     <fullyQualifiedTypeName name="it.uniroma3.siw.digital_art_gallery.model.Autore"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.ModelAttribute"/>
     <fullyQualifiedTypeName name="it.uniroma3.siw.digital_art_gallery.validator.AutoreValidator"/>
-    <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
     <fullyQualifiedTypeName name="it.uniroma3.siw.digital_art_gallery.utility.LocalDateConverter"/>
     <fullyQualifiedTypeName name="org.springframework.security.web.util.matcher.AndRequestMatcher"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.GetMapping"/>
+    <fullyQualifiedTypeName name="com.amazonaws.services.s3.AmazonS3"/>
+    <fullyQualifiedTypeName name="org.springframework.http.HttpStatus"/>
+    <fullyQualifiedTypeName name="lombok.Value"/>
+    <fullyQualifiedTypeName name="org.slf4j.Logger"/>
+    <fullyQualifiedTypeName name="org.slf4j.LoggerFactory"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+    <fullyQualifiedTypeName name="it.uniroma3.siw.digital_art_gallery.service.S3BucketService"/>
 </qualifiedTypeNameHistroy>
