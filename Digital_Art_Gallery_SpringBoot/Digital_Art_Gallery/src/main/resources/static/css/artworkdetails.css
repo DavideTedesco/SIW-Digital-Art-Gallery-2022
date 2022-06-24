@@ -67,6 +67,8 @@ p{
 	display: grid;
   grid-template-rows: 12% 70% 12%;
   grid-row-gap: calc(0.03*(100vh));
+  overflow: hidden;
+
 }
 
 .grid-container-three{
