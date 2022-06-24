@@ -4,6 +4,7 @@
 <head>
 	<meta charset="UTF-8" />
 	<link href="/css/index.css" rel="stylesheet">
+	<link rel="icon" href="/images/painting-art.svg" type="image/x-icon">
 	<title>Digital Art Gallery</title>
 </head>
 
@@ -15,7 +16,8 @@
 				<h1 class="white">
 					Digital Art Gallery
 				</h1>
-				<p class="white">
+				<br>
+				<p class="white-paragraph" th:text="#{aboutus.message}">
 					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, tortor eget fermentum ornare,
 					libero risus mattis lectus, in tristique ligula magna at nisi. Nunc augue sem, interdum non mi vel,
 					pharetra consequat dolor. Vivamus quis arcu sed risus vulputate rutrum sodales eget augue. Cras
@@ -33,7 +35,7 @@
 			<div class="grid-item-blue">
 				<h2 class="blue">Contacts</h2>
 				<div class="blue">
-					E-mail:<a class="blue" href="mailto:info@digitalartgallery.com">info@digitalartgallery.com</a>
+					E-mail:<a class="blue link-on-blue" href="mailto:info@digitalartgallery.com">info@digitalartgallery.com</a>
 				</div>
 				<div class="blue">
 					Phone: 0044 0848 44 66 88
@@ -53,18 +55,17 @@
 
 			<div class="grid-item-yellow">
 				<h2 class="yellow">Reserved Area</h2>
-				<h3 class="yellow"><a class="yellow" ,"link" th:href="@{/login}">login</a></h3>
-				<h3 class="yellow"><a class="yellow" th:href="@{/register}">register</a></h3>
+				<div class="yellow"><a class="yellow link-on-yellow" th:href="@{/login}">login</a></div>
+				<div class="yellow"><a class="yellow link-on-yellow" th:href="@{/register}">register</a></div>
 			</div>
 
 			<div class="grid-item-red">
 				<div class="red">
 					<br>
-					<br>
 					Designed and built by <br>
-					Kevin Santodonato <br>
+					<a class="red link-on-red" href="https://www.kevinsantodonato.it/">Kevin Santodonato</a> <br>
 					& <br>
-					Davide Tedesco
+					<a class="red link-on-red" href="https://www.davidetedesco.it/">Davide Tedesco</a>
 				</div>
 			</div>
 		</div>
