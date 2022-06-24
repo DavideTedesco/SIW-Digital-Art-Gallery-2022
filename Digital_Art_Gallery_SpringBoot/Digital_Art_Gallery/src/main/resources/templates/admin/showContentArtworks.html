@@ -25,8 +25,8 @@
 
 				<div class="yellow"><a class="yellow" th:href="@{/admin/insertArtwork}">Insert a new artwork</a></div>
 				<div class="yellow" th:each="artwork : ${artworks}">
-					<div class="yellow" th:text="${artwork.nome}">Nome opera</div>
-					<div th:text="${artwork.mediaVoti()}"></div>
+					<div class="yellow" th:text="#{artworkname.message}+' '+${artwork.nome}">Nome opera</div>
+					<div class="yellow" th:text="#{averagegrade.message}+' '+${artwork.mediaVoti()}"></div>
 					<div class="yellow"><a class="yellow"
 							th:href="@{'/admin/confirmArtworkDeletion' + '/' + ${artwork.id}}">Remove</a></div>
 					<div class="yellow"><a class="yellow"

@@ -168,6 +168,7 @@ public class OperaController {
 		User user = credentials.getUser();
 		Voto voto = this.votoService.votoUserOpera(user.getId(), opera.getId());
 		model.addAttribute("voto", voto);
+		model.addAttribute("date", converter.revertConversion(opera.getAnnoDiRealizzazione()));
 		model.addAttribute("artwork", opera);
 		return "artworkDetails";
 	}

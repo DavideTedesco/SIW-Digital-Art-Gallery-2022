@@ -39,9 +39,9 @@
 body{
 	color: white;
 	/*font-family: 'Potta One', cursive;*/
-    /*font-family: 'IM Fell English', serif;*/
+    font-family: 'IM Fell English', serif;
     /*font-family: 'new_yorkerregular';*/
-    font-family: 'dryhtenregular';
+    /*font-family: 'dryhtenregular';*/
     overflow: hidden;
 }
 
@@ -125,7 +125,8 @@ p{
 .grid-item-yellow{
   background-color: var(--yellow-mondrian);
   text-align: center;
-  	  overflow: scroll;
+  overflow: scroll;
+  color: black;
 }
 
 .yellow-paragraph{
@@ -187,4 +188,179 @@ button{
 
 ul {
   list-style-type: none;
+}
+
+.link-on-red {
+   text-decoration: none;
+   line-height: 1;
+   
+   position: relative;
+   z-index: 0;
+   display: inline-block;
+   padding: 2px 2px;
+   overflow: hidden;
+   color: #fff;
+   vertical-align: bottom;
+   transition: color .3s ease-out;
+}
+
+.link-on-red::before {
+   content: "";
+   position: absolute;
+   z-index: -1;
+   top: 0;
+   left: 0;
+   transform: translateY(calc(100% - 2px));
+   width: 100%;
+   height: 100%;
+   background-color: white;
+   transition: transform .30s ease-out;
+}
+
+.link-on-red:hover { 
+   color:var(--red-mondrian);
+}
+.link-on-red:hover::before {
+   transform: translateY(0);
+   transition: transform .30s ease-out;
+}
+
+.link-on-yellow {
+   text-decoration: none;
+   line-height: 1;
+   
+   position: relative;
+   z-index: 0;
+   display: inline-block;
+   padding: 2px 2px;
+   overflow: hidden;
+   color: black;
+   vertical-align: bottom;
+   transition: color .3s ease-out;
+}
+
+.link-on-yellow::before {
+   content: "";
+   position: absolute;
+   z-index: -1;
+   top: 0;
+   left: 0;
+   transform: translateY(calc(100% - 2px));
+   width: 100%;
+   height: 100%;
+   background-color: black;
+   transition: transform .30s ease-out;
+}
+
+.link-on-yellow:hover { 
+  color: var(--yellow-mondrian);
+}
+.link-on-yellow:hover::before {
+   transform: translateY(0);
+   transition: transform .30s ease-out;
+}
+
+.link-on-blue {
+   text-decoration: none;
+   line-height: 1;
+   
+   position: relative;
+   z-index: 0;
+   display: inline-block;
+   padding: 2px 2px;
+   overflow: hidden;
+   color: #fff;
+   vertical-align: bottom;
+   transition: color .3s ease-out;
+}
+
+.link-on-blue::before {
+   content: "";
+   position: absolute;
+   z-index: -1;
+   top: 0;
+   left: 0;
+   transform: translateY(calc(100% - 2px));
+   width: 100%;
+   height: 100%;
+   background-color: white;
+   transition: transform .30s ease-out;
+}
+
+.link-on-blue:hover { 
+  color: var(--blue-mondrian);
+}
+.link-on-blue:hover::before {
+   transform: translateY(0);
+   transition: transform .30s ease-out;
+}
+
+.link-on-lightblue {
+   text-decoration: none;
+   line-height: 1;
+   
+   position: relative;
+   z-index: 0;
+   display: inline-block;
+   padding: 2px 2px;
+   overflow: hidden;
+   color: black;
+   vertical-align: bottom;
+   transition: color .3s ease-out;
+}
+
+.link-on-lightblue::before {
+   content: "";
+   position: absolute;
+   z-index: -1;
+   top: 0;
+   left: 0;
+   transform: translateY(calc(100% - 2px));
+   width: 100%;
+   height: 100%;
+   background-color: black;
+   transition: transform .30s ease-out;
+}
+
+.link-on-lightblue:hover { 
+  color: var(--lightblue-mondrian);
+}
+.link-on-lightblue:hover::before {
+   transform: translateY(0);
+   transition: transform .30s ease-out;
+}
+
+.link-on-white {
+   text-decoration: none;
+   line-height: 1;
+   
+   position: relative;
+   z-index: 0;
+   display: inline-block;
+   padding: 2px 2px;
+   overflow: hidden;
+   color: black;
+   vertical-align: bottom;
+   transition: color .3s ease-out;
+}
+
+.link-on-white::before {
+   content: "";
+   position: absolute;
+   z-index: -1;
+   top: 0;
+   left: 0;
+   transform: translateY(calc(100% - 2px));
+   width: 100%;
+   height: 100%;
+   background-color: black;
+   transition: transform .30s ease-out;
+}
+
+.link-on-white:hover { 
+  color: white;
+}
+.link-on-white:hover::before {
+   transform: translateY(0);
+   transition: transform .30s ease-out;
 }
