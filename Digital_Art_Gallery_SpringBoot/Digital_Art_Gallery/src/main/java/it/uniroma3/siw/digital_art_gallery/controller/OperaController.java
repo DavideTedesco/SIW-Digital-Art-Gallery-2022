@@ -1,10 +1,10 @@
 package it.uniroma3.siw.digital_art_gallery.controller;
 
-import static it.uniroma3.siw.digital_art_gallery.constant.PathConstant.IMAGE_DIR;
-
 import java.io.IOException;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.StringUtils;
@@ -16,12 +16,16 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
+import it.uniroma3.siw.digital_art_gallery.model.Credentials;
 import it.uniroma3.siw.digital_art_gallery.model.Opera;
+import it.uniroma3.siw.digital_art_gallery.model.User;
+import it.uniroma3.siw.digital_art_gallery.model.Voto;
 import it.uniroma3.siw.digital_art_gallery.service.AutoreService;
 import it.uniroma3.siw.digital_art_gallery.service.CollezioneService;
+import it.uniroma3.siw.digital_art_gallery.service.CredentialsService;
 import it.uniroma3.siw.digital_art_gallery.service.OperaService;
 import it.uniroma3.siw.digital_art_gallery.service.S3BucketService;
-import it.uniroma3.siw.digital_art_gallery.utility.FileUploader;
+import it.uniroma3.siw.digital_art_gallery.service.VotoService;
 import it.uniroma3.siw.digital_art_gallery.utility.LocalDateConverter;
 import it.uniroma3.siw.digital_art_gallery.validator.OperaValidator;
 
@@ -45,6 +49,12 @@ public class OperaController {
 	
 	@Autowired
 	S3BucketService bucketService;
+	
+	@Autowired
+	VotoService votoService;
+	
+	@Autowired
+	CredentialsService credentialsService;
 	
 	@GetMapping("/artworks")
 	public String opere(Model model) {
@@ -108,7 +118,7 @@ public class OperaController {
 			//FileUploader.saveFile(IMAGE_DIR, imageName, multiPartFile);
 			
 			model.addAttribute("artwork",savedOpera);
-			
+			model.addAttribute("date", date);
 			return "admin/insertedArtwork";
 		}
 		model.addAttribute("artwork", opera);
@@ -153,6 +163,11 @@ public class OperaController {
 	@GetMapping("/artworkDetails/{id}")
 	public String dettagliOpera(@PathVariable("id") Long id, Model model) {
 		Opera opera = this.operaService.findOperaById(id);
+		UserDetails userDetails = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+		Credentials credentials = credentialsService.getCredentials(userDetails.getUsername());
+		User user = credentials.getUser();
+		Voto voto = this.votoService.votoUserOpera(user.getId(), opera.getId());
+		model.addAttribute("voto", voto);
 		model.addAttribute("artwork", opera);
 		return "artworkDetails";
 	}

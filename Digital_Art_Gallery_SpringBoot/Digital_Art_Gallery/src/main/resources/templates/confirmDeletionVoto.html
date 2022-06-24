@@ -14,13 +14,13 @@
 		 	<a th:href="@{'/collectionDetails' + '/' + ${artwork.collezione.id}}" th:text="#{artworkincollection.message}+${artwork.collezione.nome}">Pippo</a></span>  
 		<img th:alt="${artwork.immagine}" th:src="@{'https://digital-art-gallery.s3.eu-west-3.amazonaws.com' + '/' +  ${artwork.immagine}}" width="50%">
 	</div>
-	<div th:if="${voto == null}">
-		<a th:href="@{'/votazione' + '/' + ${artwork.id}}">Valuta l'opera</a>
-	</div>
-	<div th:unless="${voto == null}">
+	
+
+	<div >
 		<span th:text="${voto.valutazione}"></span>
-		<a th:href="@{'/editVoto' + '/' + ${voto.id}}">Edit</a>
-		<a th:href="@{'/removeVoto' + '/' + ${voto.id}}">Remove</a>
+		<a th:href="@{'/deletionVoto' + '/' + ${voto.id}}">Confirm</a>
+		<a th:href="@{'/artworkDetails' + '/' + ${artwork.id}}">Abort</a>
+		
 		
 	</div>
 </body>

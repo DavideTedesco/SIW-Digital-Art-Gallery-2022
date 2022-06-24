@@ -48,6 +48,10 @@ body{
 p{
 	font-size: 15pt;
 }
+
+.yellow-paragraph{
+	
+}
 .grid-megacontainer{
 	display: grid;
   grid-template-columns: 10% 56% 30%;

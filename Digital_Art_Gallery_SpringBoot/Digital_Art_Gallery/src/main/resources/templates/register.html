@@ -11,7 +11,7 @@
 	<div class="grid-megacontainer">
 		<div class="grid-container-one">
 			<div class="grid-item-red">
-				<h3 class="red"><a class="red" ,"link" th:href="@{/index}">Home</a></h3>
+				<h3 class="red"><a class="red" th:href="@{/index}">Home</a></h3>
 			</div>
 			<div class="grid-item-gray">
 			</div>
@@ -22,9 +22,9 @@
 			</div>
 			<div class="grid-item-white-first">
 
-				<form class="white" th:action="@{/login}" method="POST">
+				<form class="white" th:action="@{/register}" method="POST">
 					<h1 class="white" id="title" th:text="#{login.title}">Login</h1>
-					<ul class="white" , "login-form">
+					<ul class="white" >
 						<li>
 							<div class="white">Name:</div>
 							<div class="white"><label class="white">
@@ -63,10 +63,10 @@
 					</ul>
 					<div class="white">
 						<div class="white">
-							<button class="white" ,"button" type="submit" th:text="#{login.button}">Login</button>
+							<button class="white" type="submit" th:text="#{login.button}">Login</button>
 						</div>
 					</div>
-
+				</form>
 			</div>
 			<div class="grid-item-blue">
 				<h2 class="blue">Contacts</h2>

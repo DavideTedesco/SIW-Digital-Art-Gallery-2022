@@ -8,5 +8,6 @@
 <body>
 	<div th:text="${collection.nome}"></div>
 	<span><a th:href="@{/admin/showContent/collections}">Lista delle collezioni</a></span>
+	<span class="yellow"><a class="yellow" th:href="@{'/admin/editCollection' + '/' + ${collection.id}}">Edit</a></span>
 </body>
 </html>

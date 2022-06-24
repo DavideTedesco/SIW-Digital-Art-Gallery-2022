@@ -12,21 +12,23 @@
 		<table>
 			<tr>
 				<td>Nome:</td>
-				<!-- <td th:text="${artwork.nome}"></td> -->
+				 <td th:text="${artwork.nome}"></td> 
 			</tr>
 			<tr>
 				<td>Data di realizzazione:</td>
-				<!--<td th:text="${artwork.dataDiRealizzazione}"></td> -->
+				<td th:text="${date}"></td> 
 			</tr>
 			<tr>
 				<td>Descrizione</td>
-				<!--<td th:text="${artwork.descrizione}"></td> -->
+				<td th:text="${artwork.descrizione}"></td> 
 			</tr>
 		</table>
 
 		<div>
 			 <img th:alt="${artwork.immagine}" th:src="@{'https://digital-art-gallery.s3.eu-west-3.amazonaws.com' + '/' +  ${artwork.immagine}}"> 
 		</div>
+		<div class="yellow"><a class="yellow"
+							th:href="@{'/admin/editArtwork' + '/' + ${artwork.id}}">Edit</a></div>
 		
 		<div > <a th:href="@{/admin/showContent/artworks}"> Lista opere</a></div>
 </body>
