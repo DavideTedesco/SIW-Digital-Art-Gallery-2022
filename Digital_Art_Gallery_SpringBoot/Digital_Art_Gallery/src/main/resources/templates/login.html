@@ -12,7 +12,7 @@
 	<div class="grid-megacontainer">
 		<div class="grid-container-one">
 			<div class="grid-item-red">
-				<h3 class="red"><a class="red" ,"link" th:href="@{/index}">Home</a></h3>
+				<h3 class="red"><a class="red link-on-red" th:href="@{/index}">Home</a></h3>
 			</div>
 			<div class="grid-item-gray">
 			</div>
@@ -24,8 +24,12 @@
 			<div class="grid-item-white-first">
 
 				<form class="white" th:action="@{/login}" method="POST">
-					<h1 class="white" id="title" th:text="#{login.title}">Login</h1>
-					<ul class="white" , "login-form">
+					<br>
+					<br>
+					<br>
+
+					<h2 class="white" id="title" th:text="#{login.title}">Login</h2>
+					<ul class="white">
 						<li>
 							<div class="white" th:text="#{username.message}">Username:</div>
 							<div class="white"><label class="white"><input class="white" name="username" type="text"
@@ -53,23 +57,23 @@
 					</ul>
 					<div class="white">
 						<div class="white">
-							<button class="white" ,"button" type="submit" th:text="#{login.button}">Login</button>
+							<button class="white button" type="submit" th:text="#{login.button}">Login</button>
 						</div>
 					</div>
-					<div>
-						<h5 class="white"><a class="white" ,"link" href="/oauth2/authorization/google">Login with Google</a></h5>
-
+				</form>
+				<div class="white">
+					<div class="white">
+						Non sei registrato,
+						<a class="white link-on-white" th:href="@{/register}">registrati ora!</a>
 					</div>
+				</div>
+				<div class="white"><a class="white link-on-white" href="/oauth2/authorization/google">Login with Google</a>
+
+				</div>
 
 			</div>
 			<div class="grid-item-blue">
-				<h2 class="blue">Contacts</h2>
-				<div class="blue">
-					E-mail:<a class="blue" href="mailto:info@digitalartgallery.com">info@digitalartgallery.com</a>
-				</div>
-				<div class="blue">Phone: 0044 0848 44 66 88</div>
-				<div class="blue">London - New York - Genève - Milan</div>
-				<div class="blue">VAT ID: 86334519757</div>
+
 			</div>
 		</div>
 
@@ -90,10 +94,15 @@
 			</div>
 			<div class="grid-item-lightblue">
 				<div class="lightblue">
-					Made by <br>
-					Kevin Santodonato <br>
+					<br>
+					<br>
+					<br>
+					<br>
+					Designed and built by <br>
+					<a class="lightblue link-on-lightblue" href="https://www.kevinsantodonato.it/">Kevin Santodonato</a>
+					<br>
 					& <br>
-					Davide Tedesco
+					<a class="lightblue link-on-lightblue" href="https://www.davidetedesco.it/">Davide Tedesco</a>
 				</div>
 			</div>
 		</div>
