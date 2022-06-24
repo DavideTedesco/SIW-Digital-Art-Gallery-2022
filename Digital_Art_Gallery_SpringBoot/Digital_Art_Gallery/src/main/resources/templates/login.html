@@ -12,7 +12,7 @@
 	<div class="grid-megacontainer">
 		<div class="grid-container-one">
 			<div class="grid-item-red">
-				<h3 class="red"><a class="red link-on-red" th:href="@{/index}">Home</a></h3>
+				<div class="red"><a class="red link-on-red" th:href="@{/index}">Home</a></div>
 			</div>
 			<div class="grid-item-gray">
 			</div>
@@ -40,6 +40,7 @@
 							<div class="white"><label class="white"><input class="white" id="myInput" name="password"
 										type="password" th:placeholder="#{placeholder-password}" required></label></div>
 							<div class="white"><label class="white">
+							<br>
 									<input type="checkbox" onclick="showPassword()">Show Password</label>
 								<script>
 									function showPassword() {
@@ -67,7 +68,9 @@
 						<a class="white link-on-white" th:href="@{/register}">registrati ora!</a>
 					</div>
 				</div>
-				<div class="white"><a class="white link-on-white" href="/oauth2/authorization/google">Login with Google</a>
+				
+				<div class="white"><span class="white" th:text="#{or.message}+' '"></span>
+				<a class="white link-on-white" href="/oauth2/authorization/google" th:text="#{login.google}">Login with Google</a>
 
 				</div>
 

@@ -1,27 +1,83 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+
 <head>
 	<meta charset="UTF-8" />
-	<link href="/css/my-style.css" rel="stylesheet">
-	<title>Digital Art Gallery</title>
+	<link href="/css/artworkdetails.css" rel="stylesheet">
+	<title>Digital Art Gallery - Artwork details</title>
 </head>
+
 <body>
-	<div>
-		 <span th:text="#{artworkname.message}+${artwork.nome}"> Nome opera</span>
-		<span><a th:href="@{'/authorDetails' + '/' + ${artwork.autore.id}}" th:text="${artwork.autore.nome}+' '+${artwork.autore.cognome}">
-				Nome autore che ha realizzato l'opera</a></span>
-		 <span th:if="${artwork.collezione != null}">
-		 	<a th:href="@{'/collectionDetails' + '/' + ${artwork.collezione.id}}" th:text="#{artworkincollection.message}+${artwork.collezione.nome}">Pippo</a></span>  
-		<img th:alt="${artwork.immagine}" th:src="@{'https://digital-art-gallery.s3.eu-west-3.amazonaws.com' + '/' +  ${artwork.immagine}}" width="50%">
+
+
+	<div class="grid-megacontainer">
+
+		<div class="grid-container-one">
+			<div class="grid-item-red">
+				<br>
+				<br>
+				<div class="red"><a class="red link-on-red" th:href="@{/default}">Personal page</a></div>
+			</div>
+			<div class="grid-item-gray">
+			</div>
+		</div>
+
+		<div class="grid-container-two">
+			<div class="grid-item-blue">
+				<br>
+				<h1 class="blue">Digital Art Gallery</h1>
+			</div>
+			<div class="grid-item-white">
+				<div class="white">
+					<br>
+					<div class="white" th:text="#{artworkname.message}+' '+${artwork.nome}"> Nome opera</div>
+					<div class="white" th:text="#{artworkdate.message}+' '+${date}"> Data opera</div>
+					<div class="white">
+						<span class="white" th:text="#{authornamesurname}+' '"></span>
+						<a class="white link-on-white" th:href="@{'/authorDetails' + '/' + ${artwork.autore.id}}"
+							th:text="${artwork.autore.nome}+' '+${artwork.autore.cognome}">
+							Nome autore che ha realizzato l'opera</a>
+					</div>
+					<span class="white" th:if="${artwork.collezione != null}">
+						<a class="white link-on-white"
+							th:href="@{'/collectionDetails' + '/' + ${artwork.collezione.id}}"
+							th:text="#{artworkincollection.message}+${artwork.collezione.nome}">Pippo</a></span>
+					<br>
+					<img class="white" th:alt="${artwork.immagine}"
+						th:src="@{'https://digital-art-gallery.s3.eu-west-3.amazonaws.com' + '/' +  ${artwork.immagine}}"
+						width="50%">
+				</div>
+				<br>
+				<div class="white" th:if="${voto == null}">
+					<a class="white link-on-white" th:href="@{'/votazione' + '/' + ${artwork.id}}">Valuta l'opera</a>
+				</div>
+				<div class="white" th:unless="${voto == null}">
+					<div class="white" th:text="#{yourvote}+' '+${voto.valutazione}"></div>
+					<a class="white link-on-white" th:href="@{'/editVoto' + '/' + ${voto.id}}">Edit</a>
+					<a class="white link-on-white" th:href="@{'/removeVoto' + '/' + ${voto.id}}">Remove</a>
+
+				</div>
+
+
+			</div>
+			<div class="grid-item-lightblue">
+			</div>
+		</div>
+
+		<div class="grid-container-three">
+			<div class="grid-item-yellow">
+			</div>
+			<div class="grid-item-white">
+				<br>
+				Designed and built by <br>
+				<a class="white link-on-white" href="https://www.kevinsantodonato.it/">Kevin Santodonato</a> <br>
+				& <br>
+				<a class="white link-on-white" href="https://www.davidetedesco.it/">Davide Tedesco</a>
+			</div>
+		</div>
+
 	</div>
-	<div th:if="${voto == null}">
-		<a th:href="@{'/votazione' + '/' + ${artwork.id}}">Valuta l'opera</a>
-	</div>
-	<div th:unless="${voto == null}">
-		<span th:text="${voto.valutazione}"></span>
-		<a th:href="@{'/editVoto' + '/' + ${voto.id}}">Edit</a>
-		<a th:href="@{'/removeVoto' + '/' + ${voto.id}}">Remove</a>
-		
-	</div>
+
 </body>
+
 </html>

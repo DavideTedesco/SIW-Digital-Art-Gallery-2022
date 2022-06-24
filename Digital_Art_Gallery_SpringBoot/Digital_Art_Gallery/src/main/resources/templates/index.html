@@ -13,6 +13,7 @@
 
 		<div class="grid-container-one">
 			<div class="grid-item-white">
+				<br>
 				<h1 class="white">
 					Digital Art Gallery
 				</h1>
@@ -35,7 +36,8 @@
 			<div class="grid-item-blue">
 				<h2 class="blue">Contacts</h2>
 				<div class="blue">
-					E-mail:<a class="blue link-on-blue" href="mailto:info@digitalartgallery.com">info@digitalartgallery.com</a>
+					E-mail:<a class="blue link-on-blue"
+						href="mailto:info@digitalartgallery.com">info@digitalartgallery.com</a>
 				</div>
 				<div class="blue">
 					Phone: 0044 0848 44 66 88
@@ -55,8 +57,10 @@
 
 			<div class="grid-item-yellow">
 				<h2 class="yellow">Reserved Area</h2>
-				<div class="yellow"><a class="yellow link-on-yellow" th:href="@{/login}">login</a></div>
-				<div class="yellow"><a class="yellow link-on-yellow" th:href="@{/register}">register</a></div>
+				<div class="yellow"><a class="yellow link-on-yellow" th:href="@{/login}"
+						th:text="#{login.title}">login</a></div>
+				<div class="yellow"><a class="yellow link-on-yellow" th:href="@{/register}"
+						th:text="#{register.title}">register</a></div>
 			</div>
 
 			<div class="grid-item-red">

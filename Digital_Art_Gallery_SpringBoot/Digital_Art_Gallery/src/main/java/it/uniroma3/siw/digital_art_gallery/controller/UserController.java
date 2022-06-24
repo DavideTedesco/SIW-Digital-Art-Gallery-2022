@@ -22,15 +22,16 @@ public class UserController {
 		return "admin/showContentUsers";
 	}
 	
-	@GetMapping("/removeUser")
-	public String removeUser(Model model) {
-		//TODO
-		return "removedUser";
-	}
-	
-	@PostMapping("removeUser")
-	public String removingUser(Model model) {
-		//TODO
-		return "removedUser";
-	}
+//	METODI NON UTILIZZATI
+//	@GetMapping("/removeUser")
+//	public String removeUser(Model model) {
+//		//TODO
+//		return "removedUser";
+//	}
+//	
+//	@PostMapping("removeUser")
+//	public String removingUser(Model model) {
+//		//TODO
+//		return "removedUser";
+//	}
 }

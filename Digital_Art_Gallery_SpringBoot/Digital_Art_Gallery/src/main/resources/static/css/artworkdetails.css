@@ -3,6 +3,9 @@
 --red-mondrian: rgb(231,0,30);
 --blue-mondrian: rgb(25, 84, 140);
 --gray-mondrian: rgb(199,199,198);
+--lightblue-mondrian: rgb(170, 216, 228);
+--gray-mondrian: rgb(199,199,198);
+
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Potta+One&display=swap');
@@ -39,6 +42,7 @@ body{
     font-family: 'IM Fell English', serif;
     /*font-family: 'new_yorkerregular';*/
     /*font-family: 'dryhtenregular';*/
+    overflow: hidden;
 }
 
 p{
@@ -46,38 +50,47 @@ p{
 }
 .grid-megacontainer{
 	display: grid;
-  grid-template-columns: 12% 66% 18%;
+  grid-template-columns: 15% 66% 15%;
   grid-column-gap: 2%;
   grid-row-gap: 2%;
   height: calc(100vh);
+  overflow: hidden;
 }
 
 .grid-container-one{
 	display: grid;
-  grid-template-rows: 18% 79%;
+  grid-template-rows: 33% 64%;
   grid-row-gap: calc(0.03*(100vh));
 }
 
 .grid-container-two{
 	display: grid;
-  grid-template-rows: 22% 40% 32%;
+  grid-template-rows: 12% 70% 12%;
   grid-row-gap: calc(0.03*(100vh));
+  overflow: hidden;
+
 }
 
 .grid-container-three{
 	display: grid;
-  grid-template-rows: 48.5% 48.5%;
-  grid-row-gap: calc(0.03*(100vh));
+  	grid-template-rows: 79% 18%;
+  	grid-row-gap: calc(0.03*(100vh));
+}
+
+.grid-subcontainer-one{
+	display: grid;
+  grid-template-columns: 57% 37%;
+  grid-column-gap: 6%;
 }
 
 .grid-item-red{
   background-color: var(--red-mondrian);
   text-align: center;
-  align-content: center;
 }
 
 .grid-item-blue{
   background-color: var(--blue-mondrian);
+  text-align: center;
 }
 
 .grid-item-gray{
@@ -86,37 +99,39 @@ p{
   color: black;
 }
 
-.grid-item-white-first{
+.grid-item-white{
   background-color: white;
   color: black;
   text-align: center;
+  overflow: scroll;
 }
 
-.grid-item-white-second{
-  background-color: white;
+.grid-item-yellow{
+  background-color: var(--yellow-mondrian);
+  text-align: center;
+  overflow: hidden;
+}
+
+.yellow-paragraph{
+  background-color: var(--yellow-mondrian);
+  overflow: scroll;
+}
+
+.grid-item-lightblue{
+  background-color: var(--lightblue-mondrian);
+  text-align: center;
+}
+
+.grid-item-gray{
+  background-color: var(--gray-mondrian);
+  text-align: center;
   color: black;
-  text-align: center;
 }
-
-.grid-item-yellow-first{
-  background-color: var(--yellow-mondrian);
-  text-align: center;
-}
-
-.grid-item-yellow-last{
-  background-color: var(--yellow-mondrian);
-  text-align: center;
-}
-
-
 
 .red{
   background-color: var(--red-mondrian);
 }
 
-.yellow{
-	  background-color: var(--yellow-mondrian);
-}
 
 .white{
   color: black;
@@ -129,24 +144,38 @@ p{
 
 .blue{
   background-color: var(--blue-mondrian);
-  color: white;
-  text-align: center;
+}
+
+.yellow{
+	  background-color: var(--yellow-mondrian);
+
 }
 
 h1{
   font-size: calc(0.06*100vh);
 }
 
-#welcome{
-	background-color: var(--yellow-mondrian);
-  	text-align: center;
- 	color: black;
+.login-form {
+  align-items: center;
+}
+
+input {
+	font-family: 'IM Fell English', serif;
+}
+
+button{
+  border-radius: 10%;
+  font-family: 'IM Fell English', serif;
+}
+
+ul {
+  list-style-type: none;
 }
 
 .link-on-red {
    text-decoration: none;
    line-height: 1;
-   
+
    position: relative;
    z-index: 0;
    display: inline-block;
@@ -170,7 +199,7 @@ h1{
    transition: transform .30s ease-out;
 }
 
-.link-on-red:hover { 
+.link-on-red:hover {
    color:var(--red-mondrian);
 }
 .link-on-red:hover::before {
@@ -181,7 +210,7 @@ h1{
 .link-on-yellow {
    text-decoration: none;
    line-height: 1;
-   
+
    position: relative;
    z-index: 0;
    display: inline-block;
@@ -205,7 +234,7 @@ h1{
    transition: transform .30s ease-out;
 }
 
-.link-on-yellow:hover { 
+.link-on-yellow:hover {
   color: var(--yellow-mondrian);
 }
 .link-on-yellow:hover::before {
@@ -216,7 +245,7 @@ h1{
 .link-on-blue {
    text-decoration: none;
    line-height: 1;
-   
+
    position: relative;
    z-index: 0;
    display: inline-block;
@@ -240,7 +269,7 @@ h1{
    transition: transform .30s ease-out;
 }
 
-.link-on-blue:hover { 
+.link-on-blue:hover {
   color: var(--blue-mondrian);
 }
 .link-on-blue:hover::before {
@@ -248,51 +277,16 @@ h1{
    transition: transform .30s ease-out;
 }
 
-.link-on-lightblue {
-   text-decoration: none;
-   line-height: 1;
-   
-   position: relative;
-   z-index: 0;
-   display: inline-block;
-   padding: 2px 2px;
-   overflow: hidden;
-   color: black;
-   vertical-align: bottom;
-   transition: color .3s ease-out;
-}
-
-.link-on-lightblue::before {
-   content: "";
-   position: absolute;
-   z-index: -1;
-   top: 0;
-   left: 0;
-   transform: translateY(calc(100% - 2px));
-   width: 100%;
-   height: 100%;
-   background-color: black;
-   transition: transform .30s ease-out;
-}
-
-.link-on-lightblue:hover { 
-  color: var(--lightblue-mondrian);
-}
-.link-on-lightblue:hover::before {
-   transform: translateY(0);
-   transition: transform .30s ease-out;
-}
-
 .link-on-white {
    text-decoration: none;
    line-height: 1;
-   
+
    position: relative;
    z-index: 0;
    display: inline-block;
    padding: 2px 2px;
    overflow: hidden;
-   color: black;
+   color: #000;
    vertical-align: bottom;
    transition: color .3s ease-out;
 }
@@ -310,7 +304,7 @@ h1{
    transition: transform .30s ease-out;
 }
 
-.link-on-white:hover { 
+.link-on-white:hover {
   color: white;
 }
 .link-on-white:hover::before {

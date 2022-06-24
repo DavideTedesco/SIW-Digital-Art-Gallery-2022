@@ -3,6 +3,7 @@ package it.uniroma3.siw.digital_art_gallery.model;
 import java.time.LocalDate;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -51,7 +52,7 @@ public class Opera {
 	@OneToOne
 	private Collezione collezione;
 	
-	@OneToMany(mappedBy = "opera")
+	@OneToMany(mappedBy = "opera", cascade = CascadeType.REMOVE)
 	private List<Voto> voti;
 	
 	public  String mediaVoti() {

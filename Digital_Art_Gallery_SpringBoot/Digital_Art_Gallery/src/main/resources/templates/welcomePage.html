@@ -12,8 +12,10 @@
 		<div class="grid-container-one">
 			<div class="grid-item-red">
 				<div class="red">
+					<br>
+					<br>
 					<h4 class="red">
-						<a class="red" th:href="@{/index}">Logout</a>
+						<a class="red link-on-red" th:href="@{/index}">Logout</a>
 						<h4>
 				</div>
 			</div>
@@ -28,16 +30,20 @@
 				</h1>
 			</div>
 			<div class="grid-item-blue">
+			
+			<br>
+			<h2 class="blue" th:text="#{welcomepage.message}"}></h2>
+			<br>
 				<div class="blue">
-					<a class="blue" th:href="@{/authors}"> Authors</a>
+					<a class="blue link-on-blue" th:href="@{/authors}" th:text="#{authors.message}"> Authors</a>
 				</div>
-
+					<br>
 				<div class="blue">
-					<a class="blue" th:href="@{/collections}">Collections</a>
+					<a class="blue link-on-blue" th:href="@{/collections}" th:text="#{collections.message}">Collections</a>
 				</div>
-
+					<br>
 				<div class="blue">
-					<a class="blue" th:href="@{/artworks}">Artworks</a>
+					<a class="blue link-on-blue" th:href="@{/artworks}" th:text="#{artworks.message}">Artworks</a>
 				</div>
 			</div>
 			<div class="grid-item-gray">
@@ -47,29 +53,35 @@
 				<br>
 				<br>
 				<br>
-				<h4 class="gray">
-					<a class="gray" th:href="@{/removeUser}">Cancella account</a>
-				</h4>
+				<!--<h4 class="gray">
+					<a class="gray link-on-gray" th:href="@{/removeUser}">Cancella account</a>
+				</h4>-->
 			</div>
 
 		</div>
 		<div class="grid-container-three">
 			<div class="grid-item-yellow-last">
-				<div id="welcome">
+				<div id="welcome" class="yellow">
 					<br>
 					<br>
 					<br>
 					<br>
 					<br>
-					Welcome back User
+					<!--<div class="yellow" th:text="#{welcomeback.message} + ' ' + ${user.nome}">welcome back User</div>-->
+					<div class="yellow" th:text="#{welcomeback.message}">welcome back User</div>
 				</div>
 			</div>
 			<div class="grid-item-white-second">
 				<div class="white">
-					Made by <br>
-					Kevin Santodonato <br>
+					<br>
+					<br>
+					<br>
+					<br>
+					Designed and built by <br>
+					<a class="white link-on-white" href="https://www.kevinsantodonato.it/">Kevin Santodonato</a>
+					<br>
 					& <br>
-					Davide Tedesco
+					<a class="white link-on-white" href="https://www.davidetedesco.it/">Davide Tedesco</a>
 				</div>
 			</div>
 		</div>
