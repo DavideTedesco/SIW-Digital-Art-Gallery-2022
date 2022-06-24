@@ -54,5 +54,13 @@ public class Opera {
 	@OneToMany(mappedBy = "opera")
 	private List<Voto> voti;
 	
-	
+	public  String mediaVoti() {
+		Float numeroVoti = (float) this.voti.size();
+		Float totaleVoti = (float) 0;
+		for(Voto v : this.voti) {
+			totaleVoti+=v.getValutazione();
+		}
+		Float media = (totaleVoti/numeroVoti);
+		return String.format("%.2f", media) ;
+	}
 }

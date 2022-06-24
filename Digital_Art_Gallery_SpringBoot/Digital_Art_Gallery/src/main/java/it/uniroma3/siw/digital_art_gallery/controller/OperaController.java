@@ -118,7 +118,7 @@ public class OperaController {
 			//FileUploader.saveFile(IMAGE_DIR, imageName, multiPartFile);
 			
 			model.addAttribute("artwork",savedOpera);
-			
+			model.addAttribute("date", date);
 			return "admin/insertedArtwork";
 		}
 		model.addAttribute("artwork", opera);

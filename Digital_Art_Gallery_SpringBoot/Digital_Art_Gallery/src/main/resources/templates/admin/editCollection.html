@@ -2,6 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8" />
+<script src="/css/myscripts.js"></script> 
 <link href="/css/my-style.css" rel="stylesheet">
 <title>Digital Art Gallery</title>
 </head>
@@ -19,19 +20,12 @@
 				<td>Descrizione</td>
 				<td><label><input type="text" th:field="*{descrizione}"></label></td>
 			</tr>
-			 <!--<tr >
-				<td><label for="checklist1">Opere possibili:</label></td>
-				<td id="checklist1" th:each="artwork : ${artworks}"><input
-					type="checkbox" name="artworkList" th:value="${artwork.id}"
-					th:text="${artwork.nome}"/></td>
-			</tr>-->
-			
 			<tr>
 
 				<td><label for="checklist1">Opere selezionabili:</label></td>
-				<td id="checklist1" th:each="artwork : ${artworks}"><input
+				<td id="checklist1" class="options" th:each="artwork : ${artworks}"><input
 					type="checkbox" name="artworkList" th:value="${artwork.id}"
-					th:text="${artwork.nome}"/></td>
+					th:text="${artwork.nome}" required/></td>
 			</tr> 
 		</table>
 
