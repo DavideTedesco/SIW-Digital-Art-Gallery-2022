@@ -19,15 +19,39 @@ Repository of the Exam project for the realisation of a Spring Boot Application 
 
 ### Administrator
 
-- Insertion of an opera in the digital art gallery
+- Insertion of:
+  - Artworks
+  - Authors
+  - Collections
 
-- Editing of the parameters of an opera in the digital art gallery
+- Editing of:
+  - Artworks
+  - Authors
+  - Collections
+
+
+- Deletion of:
+  - Artworks
+  - Authors
+  - Collections
+
+- Viewing the details of:
+  - Artworks (including the average of grades for each artwork)
+  - Authors
+  - Collections
+ 
+- Viewing all registered users
 
 ### User
 
-- Viewing the details of an opera
-
-- Viewing all the operas of an author
+- Viewing the details of (with multiple possibilities of navigations):
+  - Artworks
+  - Authors
+  - Collections
+ 
+- Insertion of a grade of an artwork
+- Editing of a grade of an artwork
+- Deletion of a grade of an artwork
 
 ## Technologies used
 
@@ -37,8 +61,10 @@ Repository of the Exam project for the realisation of a Spring Boot Application 
 - Maven
 - Spring Boot
 - Heroku
+- Amazon AWS S3
+- Google OAuth2
 
 ## The authors
 
-- Kevin Santodonato
-- Davide Tedesco
+- [Kevin Santodonato](https://www.kevinsantodonato.it/)
+- [Davide Tedesco](https://www.davidetedesco.it/)
