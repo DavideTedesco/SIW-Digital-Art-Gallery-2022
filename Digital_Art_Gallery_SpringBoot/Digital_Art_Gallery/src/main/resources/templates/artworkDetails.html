@@ -40,9 +40,11 @@
 							Nome autore che ha realizzato l'opera</a>
 					</div>
 					<span class="white" th:if="${artwork.collezione != null}">
+					<span class="white" th:text="#{artworkincollection.message}+' '"></span>
 						<a class="white link-on-white"
 							th:href="@{'/collectionDetails' + '/' + ${artwork.collezione.id}}"
-							th:text="#{artworkincollection.message}+${artwork.collezione.nome}">Pippo</a></span>
+							th:text="${artwork.collezione.nome}">Pippo</a></span>
+					<br>
 					<br>
 					<img class="white" th:alt="${artwork.immagine}"
 						th:src="@{'https://digital-art-gallery.s3.eu-west-3.amazonaws.com' + '/' +  ${artwork.immagine}}"

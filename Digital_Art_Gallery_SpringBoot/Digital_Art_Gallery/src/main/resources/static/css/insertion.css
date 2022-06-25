@@ -42,7 +42,7 @@ body{
    	font-family: 'IM Fell English', serif;
     /*font-family: 'new_yorkerregular';*/
     /*font-family: 'dryhtenregular';*/
-    /*overflow: hidden;*/
+    overflow: hidden;
 }
 
 p{
@@ -55,6 +55,8 @@ p{
   grid-column-gap: 2%;
   grid-row-gap: 2%;
   height: calc(100vh);
+  overflow: hidden;
+
 }
 
 .grid-container-one{
@@ -67,6 +69,7 @@ p{
 	display: grid;
   	grid-template-rows: 5% 61%  28%;
     grid-row-gap: calc(0.03*(100vh));
+    overflow: hidden;
 }
 
 .grid-container-three{
@@ -77,6 +80,7 @@ p{
 
 .grid-item-red{
   background-color: var(--red-mondrian);
+  text-align: center;
 }
 
 .grid-item-black-sub{
@@ -87,6 +91,8 @@ p{
   background-color: var(--blue-mondrian);
   text-align: center;
   align-items: center;
+  overflow: scroll;
+
 }
 
 .grid-item-gray{

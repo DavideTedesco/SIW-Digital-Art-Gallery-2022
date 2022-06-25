@@ -4,7 +4,7 @@
 <head>
 	<meta charset="UTF-8" />
 	<link href="/css/artworkdetails.css" rel="stylesheet">
-	<link rel="icon" href="/images/painting-art.svg" type="image/x-icon">	
+	<link rel="icon" href="/images/painting-art.svg" type="image/x-icon">
 	<title>Digital Art Gallery - Artwork grading</title>
 </head>
 
@@ -31,7 +31,7 @@
 			<div class="grid-item-white">
 				<br>
 				<div class="white" th:text="#{insertvote}">
-				Inserisci qui il tuo voto:
+					Inserisci qui il tuo voto:
 				</div>
 				<div class="white">
 					<form th:action="@{/votazione/{id} (id=${artwork.id})}" method="POST" th:object="${voto}">
@@ -40,6 +40,8 @@
 									th:field="*{valutazione}"></label>
 						</div>
 						<div class="white">
+							<br>
+
 							<button class="white" type="submit" th:text="#{confirmvote}">Confirm</button>
 						</div>
 					</form>
@@ -50,7 +52,8 @@
 				</div>
 
 				<div class="white">
-					<a class="white link-on-white" th:href="@{'/artworkDetails' + '/' + ${artwork.id}}" th:text="#{abortvote}">Abort</a>
+					<a class="white link-on-white" th:href="@{'/artworkDetails' + '/' + ${artwork.id}}"
+						th:text="#{abortvote}">Abort</a>
 				</div>
 			</div>
 			<div class="grid-item-lightblue">
