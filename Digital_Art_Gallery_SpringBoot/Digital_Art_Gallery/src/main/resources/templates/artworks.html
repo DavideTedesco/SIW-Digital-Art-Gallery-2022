@@ -21,7 +21,7 @@
 		<div class="grid-container-two">
 			<div class="grid-item-yellow">
 				<h1 class="yellow" th:text="#{artworkslist.message}">Artworks</h1>
-				<div class="yellow" th:text="#{artworkdetailshover.message}"></div>
+				<h2 class="yellow" th:text="#{artworkdetailshover.message}"></h2>
 				<ul class="yellow-paragraph">
 					<li class="yellow" th:each="artwork : ${artworks}">
 						<a class="yellow link-on-yellow" th:href="@{'/artworkDetails' + '/' + ${artwork.id}}"
