@@ -43,7 +43,7 @@ public class CollezioneService {
 	}
 	
 	public boolean verificaDuplicatiCollezione(String nome) {
-		return this.verificaDuplicatiCollezione(nome);
+		return this.collezioneRepository.existsByNome(nome);
 	}
 	
 }

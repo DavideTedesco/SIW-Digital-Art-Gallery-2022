@@ -26,28 +26,35 @@
 				<h1 class=blue>Insert artwork</h1>
 				<form class="blue" th:action="@{/admin/insertArtwork}" method="post" th:object="${artwork}"
 					enctype="multipart/form-data">
-
-					<table class="blue">
+					<div class="blue">
+						<div th:if="${#fields.hasGlobalErrors()}">
+							<p th:each="err : ${#fields.globalErrors()}" th:text="${err}">...</p>
+						</div>
+					</div>
+					<div class="blue">
 						<div class="blue">
 							<div class="blue">Nome:</div>
-							<div class="blue"><label><input type="text" required th:field="*{nome}"></label></div>
+							<div class="blue"><label><input type="text" th:field="*{nome}"></label>
+							</div>
+							<span th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}" class="red"></span>
 						</div>
 						<div class="blue">
 							<div class="blue">Data di realizzazione:</div>
-							<div class="blue"><label><input type="text" th:placeholder="yyyy-MM-dd" required
-										name="date"></label></td>
+							<div class="blue"><label><input type="text" th:placeholder="yyyy-MM-dd" 
+										name="date"></label></div>
 							</div>
 							<div class="blue">
 								<div class="blue">Descrizione</div>
 								<div class="blue"><textarea class="blue" rows="3" cols="16"
 										th:field="*{descrizione}"></textarea></div>
+								<span th:if="${#fields.hasErrors('descrizione')}" th:errors="*{descrizione}" class="red"></span>
 							</div>
 							<div class="blue">
 								<div class="blue">Immagine</div>
 								<div class="blue">dimensione massima del file 10 MB</div>
 								<div class="blue"><label class="blue"><input class="blue input" type="file"
 											accept="image/png, image/jpeg, image/svg, image/jpg, image/tiff"
-											name="image"></label></div>
+											name="image" ></label></div>
 							</div>
 							<div class="blue">
 
@@ -58,8 +65,7 @@
 											th:text="${author.nome} + ' ' + ${author.cognome}"></option>
 									</select></div>
 							</div>
-
-					</table>
+						</div>
 					<br>
 					<div class="blue">
 						<div class="blue">

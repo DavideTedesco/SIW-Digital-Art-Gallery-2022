@@ -1,7 +1,5 @@
 package it.uniroma3.siw.digital_art_gallery.validator;
 
-import java.time.LocalDate;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
@@ -31,7 +29,6 @@ public class AutoreValidator implements Validator {
 		 Autore autore = (Autore) o;
 	        String nome = autore.getNome().trim();
 	        String cognome = autore.getCognome().trim();
-//	        LocalDate dataDiNascita = autore.getDataDiNascita();
 
 	        String luogoDiNascita = autore.getLuogoDiNascita().trim();
 
@@ -49,7 +46,7 @@ public class AutoreValidator implements Validator {
 	        	errors.rejectValue("luogoDiNascita", "required");
 	        
 	        if(this.autoreService.verificaDuplicati(nome, cognome)) {
-	        	errors.reject("autore.duplicate", "autore duplicato");
+	        	errors.reject("duplicate");
 	        }
 
 	}
