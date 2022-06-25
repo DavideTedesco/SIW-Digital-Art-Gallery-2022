@@ -11,7 +11,7 @@
 	<div class="grid-megacontainer">
 		<div class="grid-container-one">
 			<div class="grid-item-white">
-				<h3 class="white"><a class="white" ,"link" th:href="@{/default}">Personal page</a></h3>
+				<div class="white"><a class="white link-on-white" th:href="@{/default}">Personal page</a></div>
 			</div>
 			<div class="grid-item-blue">
 			</div>
@@ -19,11 +19,14 @@
 		<div class="grid-container-two">
 			<div class="grid-item-yellow">
 				<h1 class="yellow">Collections</h1>
-				<div class="yellow"><a class="yellow" th:href="@{/admin/insertCollection}">Insert a new collection</a></div>
+				<div class="yellow"><a class="yellow link-on-yellow" th:href="@{/admin/insertCollection}">Insert a new
+						collection</a></div>
 				<div class="yellow" th:each="collection : ${collections}">
 					<span class="yellow" th:text="${collection.nome}">Nome collezione</span>
-					<span class="yellow"><a class="yellow" th:href="@{'/admin/confirmCollectionDeletion' + '/' + ${collection.id}}">Remove</a></span>
-					<span class="yellow"><a class="yellow" th:href="@{'/admin/editCollection' + '/' + ${collection.id}}">Edit</a></span>
+					<span class="yellow"><a class="yellow link-on-yellow"
+							th:href="@{'/admin/confirmCollectionDeletion' + '/' + ${collection.id}}">Remove</a></span>
+					<span class="yellow"><a class="yellow link-on-yellow"
+							th:href="@{'/admin/editCollection' + '/' + ${collection.id}}">Edit</a></span>
 				</div>
 			</div>
 		</div>
@@ -35,12 +38,23 @@
 			</div>
 			<div class="grid-subcontainer-one">
 				<div class="grid-item-white">
+					<div class="white">
+						<br>
+						Designed and built by <br>
+						<a class="white link-on-white" href="https://www.kevinsantodonato.it/">Kevin Santodonato</a>
+						<br>
+						& <br>
+						<a class="white link-on-white" href="https://www.davidetedesco.it/">Davide Tedesco</a>
+					</div>
 				</div>
 				<div class="grid-item-gray">
 				</div>
 			</div>
-
+			<div class="grid-item-gray">
+			</div>
 		</div>
+
+	</div>
 
 	</div>
 

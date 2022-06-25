@@ -12,6 +12,9 @@
 	<div class="grid-megacontainer">
 		<div class="grid-container-one">
 			<div class="grid-item-gray">
+				<br>
+				<br>
+				<div class="gray"><a class="gray link-on-gray" th:href="@{/default}">Personal page</a></div>
 			</div>
 			<div class="grid-item-blue">
 			</div>
@@ -19,11 +22,14 @@
 
 		<div class="grid-container-two">
 			<div class="grid-item-red">
+				<h1 class="red">Sei sicuro di voler cancellare la seguente collezione?</h1>
 				<div class="red">
-					<span class="red" th:text="#{confirmremovecollection.message}+' '+${collection.nome}">Nome Collezione</span>
+					<span class="red" th:text="#{confirmremovecollection.message}+' '+${collection.nome}">Nome
+						Collezione</span>
 				</div>
-				<div class="red"> <a class="red" th:href="@{'/admin/removeCollection' + '/' + ${collection.id}}">Remove</a></div>
-				<div class="red"> <a class="red" th:href="@{/admin/showContent/collections}">Abort</a></div>
+				<div class="red"> <a class="red link-on-red"
+						th:href="@{'/admin/removeCollection' + '/' + ${collection.id}}">Remove</a></div>
+				<div class="red"> <a class="red link-on-red" th:href="@{/admin/showContent/collections}">Abort</a></div>
 			</div>
 			<div class="grid-item-white">
 			</div>
@@ -33,6 +39,16 @@
 			<div class="grid-item-blue">
 			</div>
 			<div class="grid-item-yellow">
+				<div class="yellow">
+						<br>
+						<br>
+						<br>
+						Designed and built by <br>
+						<a class="yellow link-on-yellow" href="https://www.kevinsantodonato.it/">Kevin Santodonato</a>
+						<br>
+						& <br>
+						<a class="yellow link-on-yellow" href="https://www.davidetedesco.it/">Davide Tedesco</a>
+					</div>
 			</div>
 		</div>
 

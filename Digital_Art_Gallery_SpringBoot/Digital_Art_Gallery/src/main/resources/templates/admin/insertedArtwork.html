@@ -1,35 +1,66 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head>
-<meta charset="UTF-8" />
-<link href="/css/my-style.css" rel="stylesheet">
-<title>Digital Art Gallery</title>
-</head>
-<body>
-	
-	
-		<h1>Insert artwork</h1>
-		<table>
-			<tr>
-				<td>Nome:</td>
-				 <td th:text="${artwork.nome}"></td> 
-			</tr>
-			<tr>
-				<td>Data di realizzazione:</td>
-				<td th:text="${date}"></td> 
-			</tr>
-			<tr>
-				<td>Descrizione</td>
-				<td th:text="${artwork.descrizione}"></td> 
-			</tr>
-		</table>
 
-		<div>
-			 <img th:alt="${artwork.immagine}" th:src="@{'https://digital-art-gallery.s3.eu-west-3.amazonaws.com' + '/' +  ${artwork.immagine}}"> 
+<head>
+	<meta charset="UTF-8" />
+	<link href="/css/insertion.css" rel="stylesheet">
+	<title>Digital Art Gallery</title>
+</head>
+
+<body>
+
+	<div class="grid-megacontainer">
+		<div class="grid-container-one">
+			<div class="grid-item-white">
+			</div>
+			<div class="grid-item-gray">
+			</div>
 		</div>
-		<div class="yellow"><a class="yellow"
-							th:href="@{'/admin/editArtwork' + '/' + ${artwork.id}}">Edit</a></div>
-		
-		<div > <a th:href="@{/admin/showContent/artworks}"> Lista opere</a></div>
+
+		<div class="grid-container-two">
+			<div class="grid-item-red">
+			</div>
+			<div class="grid-item-blue">
+				<h1 class="blue">Insert artwork</h1>
+				<table class="blue">
+					<div class="blue">
+						<span class="blue">Nome:</span>
+						<span class="blue" th:text="${artwork.nome}">
+					</div>
+			</div>
+			<div class="blue">
+				<span class="blue">Data di realizzazione:</span>
+				<span class="blue" th:text="${date}"></span>
+			</div>
+			<div class="blue">
+				<span class="blue">Descrizione:</span>
+				<span class="blue" th:text="${artwork.descrizione}"></span>
+			</div>
+			</table>
+
+			<div class="blue">
+				<img th:alt="${artwork.immagine}"
+					th:src="@{'https://digital-art-gallery.s3.eu-west-3.amazonaws.com' + '/' +  ${artwork.immagine}}">
+			</div>
+			<div class="blue"><a class="blue" th:href="@{'/admin/editArtwork' + '/' + ${artwork.id}}">Edit</a>
+			</div>
+
+			<div class="blue"> <a class="blue link-on-blue" th:href="@{/admin/showContent/artworks}"> Lista opere</a>
+			</div>
+		</div>
+		<div class="grid-item-yellow">
+		</div>
+	</div>
+
+	<div class="grid-container-three">
+		<div class="grid-item-yellow">
+		</div>
+		<div class="grid-item-white">
+		</div>
+	</div>
+
+	</div>
+
 </body>
+
 </html>

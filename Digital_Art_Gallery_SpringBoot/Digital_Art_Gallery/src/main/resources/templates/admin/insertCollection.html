@@ -1,44 +1,87 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+
 <head>
-<meta charset="UTF-8" />
-<link href="/css/my-style.css" rel="stylesheet">
-<title>Digital Art Gallery</title>
+	<meta charset="UTF-8" />
+	<link href="/css/insertion.css" rel="stylesheet">
+	<title>Digital Art Gallery</title>
 </head>
+
 <body>
 
+	<div class="grid-megacontainer">
+		<div class="grid-container-one">
+			<div class="grid-item-white">
+				<div class="white"><a class="white link-on-white" th:href="@{/default}">Personal page</a></div>
 
-	<form th:action="@{/admin/insertCollection}" method="post"
-		th:object="${collection}">
-		<h1>Inserimente Collezione</h1>
-		<table>
-			<tr>
-				<td>Nome:</td>
-				<td><label><input type="text" required
-						th:field="${collection.nome}"></label></td>
-			</tr>
-			<tr>
-				<td>Descrizione:</td>
-				<td><textarea rows="3" cols="2" required th:field="${collection.descrizione}"></textarea></td>
-			</tr>
-			
-			<tr>
-				<td><label th:for="selettore"> Opere Senza Collezione</label></td>
-				<td><select id="selettore" multiple="multiple"
-					th:field="*{opere}">
-						<option th:each="artwork : ${artworks}" th:value="${artwork.id}"
-							th:text="${artwork.nome}"></option>
-				</select></td>
-			</tr>
-		</table>
-
-		<div>
-			<span>
-				<button type="submit" th:text="#{register.button}">Register</button>
-			</span>
+			</div>
+			<div class="grid-item-gray">
+			</div>
 		</div>
-	</form>
+
+		<div class="grid-container-two">
+			<div class="grid-item-red">
+			</div>
+			<div class="grid-item-blue">
+				<form class="blue" th:action="@{/admin/insertCollection}" method="post" th:object="${collection}">
+					<h1 class="blue">Inserimento Collezione</h1>
+					<table class="blue">
+						<div class="blue">
+							<div class="blue">Nome:</div>
+							<div class="blue"><label><input class="blue input" type="text" required
+										th:field="${collection.nome}"></label></div>
+						</div>
+						<div class="blue">
+							<div class="blue">Descrizione:</div>
+							<div class="blue"><textarea class="blue textarea" rows="3" cols="16" required
+									th:field="${collection.descrizione}"></textarea>
+							</div>
+						</div>
+
+						<div class="blue">
+							<div class="blue"><label class="blue" th:for="selettore"> Opere Senza Collezione</label>
+							</div>
+							<div class="blue" th:if="${artworks.isEmpty()}">Non ci sono opere disponibili da poter
+								inserire nella collezione</div>
+							<div class="blue" th:unless="${artworks.isEmpty()}">
+								<select id="selettore" multiple="multiple" th:field="*{opere}">
+									<option th:each="artwork : ${artworks}" th:value="${artwork.id}"
+										th:text="${artwork.nome}"></option>
+								</select>
+							</div>
+						</div>
+					</table>
+
+					<div class="blue">
+						<div class="blue">
+							<button class="button" type="submit" th:text="#{register.button}">Register</button>
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="grid-item-yellow">
+			</div>
+		</div>
+
+		<div class="grid-container-three">
+			<div class="grid-item-yellow">
+			</div>
+			<div class="grid-item-white">
+				<div class="white">
+					<br>
+					Designed and built by <br>
+					<a class="white link-on-white" href="https://www.kevinsantodonato.it/">Kevin Santodonato</a>
+					<br>
+					& <br>
+					<a class="white link-on-white" href="https://www.davidetedesco.it/">Davide Tedesco</a>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
 
 
 </body>
+
 </html>
