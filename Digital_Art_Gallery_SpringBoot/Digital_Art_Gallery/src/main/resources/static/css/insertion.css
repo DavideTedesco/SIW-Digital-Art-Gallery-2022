@@ -176,7 +176,7 @@ h1{
 input {
 	font-family: 'IM Fell English', serif;
    	background-color: white;
-   	}
+}
 
 button{
  	border-radius: 10%;
@@ -397,4 +397,16 @@ ul {
 .link-on-gray:hover::before {
    transform: translateY(0);
    transition: transform .30s ease-out;
+}
+
+textarea{
+	border-radius: 2%;
+	font-family: 'IM Fell English', serif;
+   	background-color: white;
+}
+
+select{
+	border-radius: 2%;
+	font-family: 'IM Fell English', serif;
+   	background-color: white;
 }
