@@ -43,7 +43,7 @@ public class Autore {
 	private String cognome;
 	
 	
-	@DateTimeFormat(pattern = "yyyy-MM-dd")
+//	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	@NotNull
 	private LocalDate dataDiNascita;
 	
