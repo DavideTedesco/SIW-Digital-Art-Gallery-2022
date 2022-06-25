@@ -29,8 +29,8 @@
 					method="post" th:object="${collection}">
 					<h1 class="blue">Inserimento Collezione</h1>
 					<div class="blue">
-						<div th:if="${#fields.hasGlobalErrors()}">
-							<p th:each="err : ${#fields.globalErrors()}" th:text="${err}">...</p>
+						<div class="blue" th:if="${#fields.hasGlobalErrors()}">
+							<span class="red" th:each="err : ${#fields.globalErrors()}" th:text="${err}">...</span> 
 						</div>
 						<div class="blue">
 							<div class="blue">Nome:</div>
@@ -50,7 +50,7 @@
 									th:field="${collection.descrizione}"></textarea>
 							</div>
 							<div class="blue">
-								<span th:if="${#fields.hasErrors('${collection.descrizione}')}"
+								<span  th:if="${#fields.hasErrors('${collection.descrizione}')}"
 									th:errors="${collection.descrizione}" class="red"></span>
 							</div>
 						</div>
@@ -71,7 +71,7 @@
 
 					<div class="blue">
 						<div class="blue">
-							<button class="button" type="submit" th:text="#{register.button}">Register</button>
+							<button class="button" type="submit" th:text="#{confirm.button}">Register</button>
 						</div>
 					</div>
 				</form>

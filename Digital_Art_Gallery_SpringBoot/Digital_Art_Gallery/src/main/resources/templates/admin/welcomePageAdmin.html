@@ -5,7 +5,7 @@
 	<meta charset="UTF-8" />
 	<link href="/css/welcomePage.css" rel="stylesheet">
 	<link rel="icon" href="/images/painting-art.svg" type="image/x-icon">
-	<title>Digital Art Gallery - Welcome page Admin</title>
+	<title>Digital Art Gallery - Welcome Page Admin</title>
 </head>
 
 <body>
@@ -37,19 +37,19 @@
 				<h2 class="blue" th:text="#{welcomepage.message}" ></h2>
 				<br>
 				<div class="blue">
-					<a class="blue link-on-blue" th:href="@{/admin/showContent/users}"> Users</a>
+					<a class="blue link-on-blue" th:href="@{/admin/showContent/users}" th:text="#{userlist.admin}"> Users</a>
 				</div>
 
 				<div class="blue">
-					<a class="blue link-on-blue" th:href="@{/admin/showContent/authors}"> Authors</a>
+					<a class="blue link-on-blue" th:href="@{/admin/showContent/authors}" th:text="#{authors.message.admin}"> Authors</a>
 				</div>
 
 				<div class="blue">
-					<a class="blue link-on-blue" th:href="@{/admin/showContent/collections}"> Collections</a>
+					<a class="blue link-on-blue" th:href="@{/admin/showContent/collections}" th:text="#{collections.message.admin}"> Collections</a>
 				</div>
 
 				<div class="blue">
-					<a class="blue link-on-blue" th:href="@{/admin/showContent/artworks}"> Artworks</a>
+					<a class="blue link-on-blue" th:href="@{/admin/showContent/artworks}" th:text="#{artworks.message.admin}"> Artworks</a>
 				</div>
 			</div>
 			<div class="grid-item-gray">

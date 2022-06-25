@@ -39,7 +39,7 @@
 body{
 	color: white;
 	/*font-family: 'Potta One', cursive;*/
-    font-family: 'IM Fell English', serif;
+   	font-family: 'IM Fell English', serif;
     /*font-family: 'new_yorkerregular';*/
     /*font-family: 'dryhtenregular';*/
     overflow: hidden;
@@ -49,44 +49,38 @@ p{
 	font-size: 15pt;
 }
 
-.yellow-paragraph{
-	
-}
 .grid-megacontainer{
 	display: grid;
-  grid-template-columns: 10% 56% 30%;
+  grid-template-columns: 8% 65% 25%;
   grid-column-gap: 2%;
   grid-row-gap: 2%;
   height: calc(100vh);
+  overflow: hidden;
+
 }
 
 .grid-container-one{
 	display: grid;
-  grid-template-rows: 5% 92%;
+  grid-template-rows: 75% 22%;
   grid-row-gap: calc(0.03*(100vh));
 }
 
 .grid-container-two{
 	display: grid;
-  	grid-template-rows: 100%;
-  	  overflow: scroll;
-
+  	grid-template-rows: 10% 75% 9%;
+    grid-row-gap: calc(0.03*(100vh));
+    overflow: hidden;
 }
 
 .grid-container-three{
 	display: grid;
-  	grid-template-rows: 38% 38% 18%;
+  	grid-template-rows: 35% 62%;
   	grid-row-gap: calc(0.03*(100vh));
-}
-
-.grid-subcontainer-one{
-	display: grid;
-  grid-template-columns: 57% 37%;
-  grid-column-gap: 6%;
 }
 
 .grid-item-red{
   background-color: var(--red-mondrian);
+  text-align: center;
 }
 
 .grid-item-black-sub{
@@ -95,6 +89,10 @@ p{
 
 .grid-item-blue{
   background-color: var(--blue-mondrian);
+  text-align: center;
+  align-items: center;
+  overflow: scroll;
+
 }
 
 .grid-item-gray{
@@ -125,13 +123,12 @@ p{
 .grid-item-yellow{
   background-color: var(--yellow-mondrian);
   text-align: center;
-  align-content: center;
-  overflow: scroll;
-  color: black;
+  overflow: hidden;
 }
 
 .yellow-paragraph{
   background-color: var(--yellow-mondrian);
+  overflow: scroll;
 }
 
 .grid-item-lightblue{
@@ -162,6 +159,11 @@ p{
 
 .blue{
   background-color: var(--blue-mondrian);
+  color: white;
+}
+
+.blue-table{
+  background-color: var(--blue-mondrian);
 }
 
 .yellow{
@@ -178,18 +180,20 @@ h1{
 }
 
 input {
-  font-family: 'dryhtenregular';
+	font-family: 'IM Fell English', serif;
+   	background-color: white;
 }
 
 button{
-  border-radius: 10%;
-  font-family: 'dryhtenregular';
-
-}
+ 	border-radius: 10%;
+	font-family: 'IM Fell English', serif;
+   	background-color: white;
+ }
 
 ul {
   list-style-type: none;
 }
+
 
 .link-on-red {
    text-decoration: none;
@@ -366,10 +370,49 @@ ul {
    transition: transform .30s ease-out;
 }
 
-#yellow-table{
-	text-align: center;
-	display: table;
-	margin-left: auto;
-  margin-right: auto;
+.link-on-gray {
+   text-decoration: none;
+   line-height: 1;
+   
+   position: relative;
+   z-index: 0;
+   display: inline-block;
+   padding: 2px 2px;
+   overflow: hidden;
+   color: black;
+   vertical-align: bottom;
+   transition: color .3s ease-out;
 }
 
+.link-on-gray::before {
+   content: "";
+   position: absolute;
+   z-index: -1;
+   top: 0;
+   left: 0;
+   transform: translateY(calc(100% - 2px));
+   width: 100%;
+   height: 100%;
+   background-color: black;
+   transition: transform .30s ease-out;
+}
+
+.link-on-gray:hover { 
+  color: var(--gray-mondrian);
+}
+.link-on-gray:hover::before {
+   transform: translateY(0);
+   transition: transform .30s ease-out;
+}
+
+textarea{
+	border-radius: 2%;
+	font-family: 'IM Fell English', serif;
+   	background-color: white;
+}
+
+select{
+	border-radius: 2%;
+	font-family: 'IM Fell English', serif;
+   	background-color: white;
+}

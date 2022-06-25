@@ -1,14 +1,45 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+
 <head>
 	<meta charset="UTF-8" />
-	<link href="/css/my-style.css" rel="stylesheet">
+	<link href="/css/insertion.css" rel="stylesheet">
 	<link rel="icon" href="/images/painting-art.svg" type="image/x-icon">
 	<title>Digital Art Gallery</title>
 </head>
+
 <body>
-	<div th:text="${collection.nome}"></div>
-	<span><a th:href="@{/admin/showContent/collections}">Lista delle collezioni</a></span>
-	<span class="yellow"><a class="yellow" th:href="@{'/admin/editCollection' + '/' + ${collection.id}}">Edit</a></span>
+	<div class="grid-megacontainer">
+		<div class="grid-container-one">
+			<div class="grid-item-white">
+			</div>
+			<div class="grid-item-gray">
+			</div>
+		</div>
+
+		<div class="grid-container-two">
+			<div class="grid-item-red">
+			</div>
+			<div class="grid-item-blue">
+				<div th:text="${collection.nome}"></div>
+				<span><a th:href="@{/admin/showContent/collections}">Lista delle collezioni</a></span>
+				<span class="yellow"><a class="yellow"
+						th:href="@{'/admin/editCollection' + '/' + ${collection.id}}">Edit</a></span>
+			</div>
+			<div class="grid-item-yellow">
+			</div>
+		</div>
+
+		<div class="grid-container-three">
+			<div class="grid-item-yellow">
+			</div>
+			<div class="grid-item-white">
+			</div>
+		</div>
+
+	</div>
+
+
 </body>
+
 </html>
