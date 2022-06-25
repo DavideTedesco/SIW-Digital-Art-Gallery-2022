@@ -1,39 +1,80 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+
 <head>
-<meta charset="UTF-8" />
-<script src="/css/myscripts.js"></script> 
-<link href="/css/my-style.css" rel="stylesheet">
-<title>Digital Art Gallery</title>
+	<meta charset="UTF-8" />
+	<script src="/css/myscripts.js"></script>
+	<link href="/css/insertion.css" rel="stylesheet">
+	<title>Digital Art Gallery - Collection editing</title>
 </head>
+
 <body>
-	<h1>Edit collection</h1>
-	<form th:action="@{/admin/editCollection/{id}(id=${collection.id})}" method="post"
-		th:object="${collection}" >
-		<table>
-			<tr>
-				<td>Nome:</td>
-				<td><label><input type="text" required
-						th:field="*{nome}"></label></td>
-			</tr>
-			<tr>
-				<td>Descrizione</td>
-				<td><label><input type="text" th:field="*{descrizione}"></label></td>
-			</tr>
-			<tr>
 
-				<td><label for="checklist1">Opere selezionabili:</label></td>
-				<td id="checklist1" class="options" th:each="artwork : ${artworks}"><input
-					type="checkbox" name="artworkList" th:value="${artwork.id}"
-					th:text="${artwork.nome}" required/></td>
-			</tr> 
-		</table>
-
-		<div>
-			<span>
-				<button type="submit" th:text="#{register.button}">Register</button>
-			</span>
+	<div class="grid-megacontainer">
+		<div class="grid-container-one">
+			<div class="grid-item-white">
+				<div class="white"><a class="white link-on-white" th:href="@{/default}">Personal page</a></div>
+			</div>
+			<div class="grid-item-gray">
+			</div>
 		</div>
-	</form>
+
+		<div class="grid-container-two">
+			<div class="grid-item-red">
+			</div>
+			<div class="grid-item-blue">
+				<h1 class="blue">Edit collection</h1>
+				<form class="blue" th:action="@{/admin/editCollection/{id}(id=${collection.id})}" method="post"
+					th:object="${collection}">
+					<table class="blue">
+						<div class="blue">
+							<div class="blue">Nome:</div>
+							<div class="blue"><label class="blue"><input class="blue input" type="text" required
+										th:field="*{nome}"></label></div>
+						</div>
+						<div class="blue">
+							<div class="blue">Descrizione</div>
+							<div class="blue"><label><input type="text" th:field="*{descrizione}"></label></div>
+						</div>
+						<div class="blue">
+							<div class="blue"><label class="blue" for="checklist1">Opere selezionabili:</label></div>
+							<div class="blue options" id="checklist1" th:each="artwork : ${artworks}"><input
+									class="blue input" type="checkbox" name="artworkList" th:value="${artwork.id}"
+									th:text="${artwork.nome}" required />
+							</div>
+						</div>
+					</table>
+
+					<div class="blue">
+						<div class="blue">
+							<button class="blue button" type="submit" th:text="#{register.button}">Register</button>
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="grid-item-yellow">
+			</div>
+		</div>
+
+		<div class="grid-container-three">
+			<div class="grid-item-yellow">
+			</div>
+			<div class="grid-item-white">
+				<div class="white">
+					<br>
+					<br>
+					<br>
+					Designed and built by <br>
+					<a class="white link-on-white" href="https://www.kevinsantodonato.it/">Kevin Santodonato</a>
+					<br>
+					& <br>
+					<a class="white link-on-white" href="https://www.davidetedesco.it/">Davide Tedesco</a>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
 </body>
+
 </html>

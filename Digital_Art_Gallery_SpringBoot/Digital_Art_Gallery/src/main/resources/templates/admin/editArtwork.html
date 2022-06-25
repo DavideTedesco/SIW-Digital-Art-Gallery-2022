@@ -1,59 +1,93 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+
 <head>
 	<meta charset="UTF-8" />
-	<link href="/css/my-style.css" rel="stylesheet">
+	<link href="/css/insertion.css" rel="stylesheet">
 	<title>Digital Art Gallery</title>
 </head>
-<body>
-	<h1>Edit artwork</h1>
-	<form th:action="@{/admin/editArtwork/{id}(id=${artwork.id})}" method="post"
-		th:object="${artwork}" enctype="multipart/form-data">
-		
-		<table>
-			<tr>
-				<td>Nome:</td>
-				<td><label><input type="text" required
-						th:field="*{nome}"></label></td>
-			</tr>
-			<tr>
-				<td></td>
-				<td th:text="'Previous date ' + ${date} "></td>
-			</tr>
-			<tr>
-				<td>Data di realizzazione:</td>
-				<td><label><input type="text" th:placeholder="yyyy-MM-dd"
-						required name="date" ></label></td>
-			</tr>
-			
-			
-			
-			
-			<tr>
-				<td>Descrizione</td>
-				<td><textarea  required th:field="*{descrizione}" ></textarea></td>
-			</tr>
-			<!-- <tr>
-				<td>Immagine</td>
-				<td><label><input type="file"
-						accept="image/png, image/jpeg, image/svg"
-						name="image"></label></td>
-			</tr> -->
-			<tr>
-				<td><label th:for="selettore2" th:text="#{chef.message}">
-				</label></td>
-				<td><select id="selettore2" th:field="*{collezione}">
-						<option th:each="collection : ${collections}" th:value="${collection.id}"
-							th:text="${collection.nome} "></option>
-				</select></td>
-			</tr>
-		</table>
 
-		<div>
-			<span>
-				<button type="submit" th:text="#{register.button}">Register</button>
-			</span>
+<body>
+
+	<div class="grid-megacontainer">
+		<div class="grid-container-one">
+			<div class="grid-item-white">
+				<div class="white"><a class="white link-on-white" th:href="@{/default}">Personal page</a></div>
+			</div>
+			<div class="grid-item-gray">
+			</div>
 		</div>
-	</form>
+
+		<div class="grid-container-two">
+			<div class="grid-item-red">
+			</div>
+			<div class="grid-item-blue">
+				<h1 class="blue">Edit artwork</h1>
+				<form class="blue" th:action="@{/admin/editArtwork/{id}(id=${artwork.id})}" method="post"
+					th:object="${artwork}" enctype="multipart/form-data">
+
+					<table class="blue">
+						<div class="blue">
+							<div class="blue">Nome:</div>
+							<div class="blue"><label class="blue"><input class="blue" type="text" required
+										th:field="*{nome}"></label></div>
+						</div>
+						<div class="blue">
+							<div class="blue" th:text="'Previous date ' + ${date} "></div>
+						</div>
+						<div class="blue">
+							<div class="blue">Data di realizzazione:</div>
+							<div class="blue"><label class="blue"><input class="blue" type="text"
+										th:placeholder="yyyy-MM-dd" required name="date"></label></div>
+						</div>
+
+
+
+
+						<div class="blue">
+							<div class="blue">Descrizione</div>
+							<div class="blue"><textarea class="blue" required th:field="*{descrizione}"></textarea>
+							</div>
+						</div>
+
+						<div class="blue">
+							<div class="blue"><label class="blue" th:for="selettore2" th:text="#{selector.message}">
+								</label></div>
+							<div class="blue"><select class="blue" id="selettore2" th:field="*{collezione}">
+									<option class="blue" th:each="collection : ${collections}"
+										th:value="${collection.id}" th:text="${collection.nome} "></option>
+								</select></div>
+						</div>
+					</table>
+
+					<div class="blue">
+						<div class="blue">
+							<button type="submit" th:text="#{register.button}">Register</button>
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="grid-item-yellow">
+			</div>
+		</div>
+
+		<div class="grid-container-three">
+			<div class="grid-item-yellow">
+			</div>
+			<div class="grid-item-white">
+				<div class="white">
+					<br>
+					Designed and built by <br>
+					<a class="white link-on-white" href="https://www.kevinsantodonato.it/">Kevin Santodonato</a>
+					<br>
+					& <br>
+					<a class="white link-on-white" href="https://www.davidetedesco.it/">Davide Tedesco</a>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
 </body>
+
 </html>
