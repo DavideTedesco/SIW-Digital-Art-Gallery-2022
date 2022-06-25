@@ -3,7 +3,7 @@
 
 <head>
 	<meta charset="UTF-8" />
-	<script src="/css/myscripts.js"></script>
+	<!--  <script src="/css/myscripts.js"></script>-->
 	<link href="/css/insertion.css" rel="stylesheet">
 	<link rel="icon" href="/images/painting-art.svg" type="image/x-icon">
 	<title>Digital Art Gallery - Collection editing</title>
@@ -27,10 +27,10 @@
 				<h1 class="blue">Edit collection</h1>
 				<form class="blue" th:action="@{/admin/editCollection/{id}(id=${collection.id})}" method="post"
 					th:object="${collection}">
-					<table class="blue">
+					<div class="blue">
 						<div class="blue">
 							<div class="blue">Nome:</div>
-							<div class="blue"><label class="blue"><input class="blue input" type="text" required
+							<div class="blue"><label class="blue"><input class="blue input" type="text" 
 										th:field="*{nome}"></label></div>
 						</div>
 						<div class="blue">
@@ -40,11 +40,12 @@
 						<div class="blue">
 							<div class="blue"><label class="blue" for="checklist1">Opere selezionabili:</label></div>
 							<div class="blue options" id="checklist1" th:each="artwork : ${artworks}"><input
-									class="blue input" type="checkbox" name="artworkList" th:value="${artwork.id}"
-									th:text="${artwork.nome}" required />
+									class="blue input" type="checkbox" name="artworks" th:value="${artwork.id}"
+									th:text="${artwork.nome}" />
 							</div>
+							
 						</div>
-					</table>
+					</div>
 
 					<div class="blue">
 						<div class="blue">

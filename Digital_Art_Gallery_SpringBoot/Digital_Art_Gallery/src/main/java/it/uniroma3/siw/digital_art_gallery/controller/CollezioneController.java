@@ -3,8 +3,6 @@ package it.uniroma3.siw.digital_art_gallery.controller;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.validation.Valid;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,6 +17,7 @@ import it.uniroma3.siw.digital_art_gallery.model.Collezione;
 import it.uniroma3.siw.digital_art_gallery.model.Opera;
 import it.uniroma3.siw.digital_art_gallery.service.CollezioneService;
 import it.uniroma3.siw.digital_art_gallery.service.OperaService;
+import it.uniroma3.siw.digital_art_gallery.validator.CollezioneValidator;
 
 @Controller
 public class CollezioneController {
@@ -28,6 +27,9 @@ public class CollezioneController {
 
 	@Autowired
 	OperaService operaService;
+
+	@Autowired
+	CollezioneValidator collezioneValidator;
 
 	@GetMapping("/collections")
 	public String collezioni(Model model) {
@@ -62,15 +64,16 @@ public class CollezioneController {
 	}
 
 	@PostMapping("/admin/insertCollection")
-	public String inserimentoCollezione(@Valid @ModelAttribute("collection") Collezione collezione,
-										BindingResult collectionBindingResult ,Model model) {
+	public String inserimentoCollezione(@ModelAttribute("collection") Collezione collezione,
+			BindingResult collectionBindingResult ,Model model) {
 
+		this.collezioneValidator.validate(collezione, collectionBindingResult);
 		if(!collectionBindingResult.hasErrors()) {
 			model.addAttribute("collection", collezione);
 			this.collezioneService.save(collezione);
 			return "admin/insertedCollection";
 		}
-		
+		model.addAttribute("artworks", this.operaService.opereSenzaCollezione());
 		model.addAttribute("collection", collezione);
 		return "admin/insertCollection";
 	}
@@ -88,34 +91,25 @@ public class CollezioneController {
 
 	@PostMapping("/admin/editCollection/{id}")
 	public String editingCollection(@ModelAttribute("collection") Collezione collezione,
-			@RequestParam("artworkList") List<Opera> opere,
+			BindingResult collezioneBindingResults,
+			@RequestParam("artworks") List<Opera> opere,
 			@PathVariable("id") Long id, Model model) {
+		
+			Collezione originalCollezione = this.collezioneService.findCollezioneById(id);
+			originalCollezione.setId(id);
+			originalCollezione.setDescrizione(collezione.getDescrizione());
+			originalCollezione.setNome(collezione.getNome());
+			for (Opera o : originalCollezione.getOpere()) {
+				o.setCollezione(null);
+			}
+			originalCollezione.setOpere(opere);
+	
+			this.collezioneService.save(originalCollezione);
+	
+			model.addAttribute(this.collezioneService.getAllCollezioni());
+	
+			return this.adminCollezioni(model);
 
-		// System.out.println(collezione.getId());
-		// System.out.println("\n \n \n \n \n \n \n");
-		//
-		Collezione originalCollezione = this.collezioneService.findCollezioneById(id);
-
-//		if (!opereNonPresenti.isEmpty()) {
-//			operePresenti.addAll(opereNonPresenti);
-//		}
-
-		originalCollezione.setId(id);
-		originalCollezione.setDescrizione(collezione.getDescrizione());
-		originalCollezione.setNome(collezione.getNome());
-		for (Opera o : originalCollezione.getOpere()) {
-			o.setCollezione(null);
-		}
-		originalCollezione.setOpere(opere);
-
-		this.collezioneService.save(originalCollezione);
-
-		System.out.println("\n \n \n \n \n \n \n");
-		System.out.println(this.collezioneService.getAllCollezioni() + "vuotaa");
-
-		model.addAttribute(this.collezioneService.getAllCollezioni());
-
-		return this.adminCollezioni(model);
 	}
 
 	@GetMapping("/collectionDetails/{id}")

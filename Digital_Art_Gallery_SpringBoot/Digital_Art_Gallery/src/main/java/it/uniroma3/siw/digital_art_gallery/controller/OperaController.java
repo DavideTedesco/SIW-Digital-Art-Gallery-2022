@@ -93,21 +93,21 @@ public class OperaController {
 	}
 	
 	@GetMapping("/admin/insertArtwork")
-	public String insertArtworkForAuthor(Model model) {
+	public String insertArtwork(Model model) {
 		
 		model.addAttribute("artwork", new Opera());
 		model.addAttribute("authors", this.autoreService.getAllAutori());
-		//model.addAttribute("collections", this.collezioneService.getAllCollezioni());
-		//model.addAttribute("flag", false);
+
 		return "admin/insertArtwork";
 	}
 	
 
 	@PostMapping("/admin/insertArtwork")
-	public String insertArtworkForAuthor(@ModelAttribute("artwork") Opera opera, 
+	public String insertingArtwork(@ModelAttribute("artwork") Opera opera, 
+										BindingResult operaBindingResult,
 										@RequestParam("image") MultipartFile multiPartFile,
 										@RequestParam("date") String date,
-										BindingResult operaBindingResult, Model model) throws IOException {
+										Model model) throws IOException {
 		this.operaValidator.validate(opera, operaBindingResult);
 		if(!operaBindingResult.hasErrors()) {
 			String imageName = StringUtils.cleanPath(multiPartFile.getOriginalFilename());
@@ -121,6 +121,7 @@ public class OperaController {
 			model.addAttribute("date", date);
 			return "admin/insertedArtwork";
 		}
+		model.addAttribute("authors", this.autoreService.getAllAutori());
 		model.addAttribute("artwork", opera);
 		return "admin/insertArtwork";
 	}

@@ -27,6 +27,11 @@
 				<form class="blue-table" th:action="@{/admin/insertAuthor}" method="post" th:object="${author}">
 					<h1 class="blue">Inserimento Autore</h1>
 					<div class="blue">
+						<div th:if="${#fields.hasGlobalErrors()}">
+							<p th:each="err : ${#fields.globalErrors()}" th:text="${err}">...</p>
+						</div>
+					</div>
+					<div class="blue">
 						<div class="blue">
 							<div class="blue">Nome:</div>
 							<div class="blue">
@@ -44,7 +49,7 @@
 						<div class="blue">
 							<div class="blue">Data di nascita</div>
 							<div class="blue"><label class="blue"><input class="blue" name="date" type="text"
-										th:placeholder="yyyy-mm-dd"></label></div>
+										th:placeholder="yyyy-mm-dd" required></label></div>
 						</div>
 						<div class="blue">
 							<div class="blue">Luogo di nascita:</div>
