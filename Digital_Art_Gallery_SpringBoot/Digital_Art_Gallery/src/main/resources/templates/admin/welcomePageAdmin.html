@@ -13,8 +13,10 @@
 		<div class="grid-container-one">
 			<div class="grid-item-red">
 				<div class="red">
+					<br>
+					<br>
 					<h4 class="red">
-						<a class="red" th:href="@{/index}">Logout</a>
+						<a class="red link-on-red" th:href="@{/index}">Logout</a>
 						<h4>
 				</div>
 			</div>
@@ -29,20 +31,24 @@
 				</h1>
 			</div>
 			<div class="grid-item-blue">
+
+				<br>
+				<h2 class="blue" th:text="#{welcomepage.message}" ></h2>
+				<br>
 				<div class="blue">
-					<a class="blue" th:href="@{/admin/showContent/users}"> Users</a>
+					<a class="blue link-on-blue" th:href="@{/admin/showContent/users}"> Users</a>
 				</div>
 
 				<div class="blue">
-					<a class="blue" th:href="@{/admin/showContent/authors}"> Authors</a>
+					<a class="blue link-on-blue" th:href="@{/admin/showContent/authors}"> Authors</a>
 				</div>
 
 				<div class="blue">
-					<a class="blue" th:href="@{/admin/showContent/collections}"> Collections</a>
+					<a class="blue link-on-blue" th:href="@{/admin/showContent/collections}"> Collections</a>
 				</div>
 
 				<div class="blue">
-					<a class="blue" th:href="@{/admin/showContent/artworks}"> Artworks</a>
+					<a class="blue link-on-blue" th:href="@{/admin/showContent/artworks}"> Artworks</a>
 				</div>
 			</div>
 			<div class="grid-item-gray">
@@ -62,15 +68,20 @@
 				</div>
 			</div>
 			<div class="grid-item-white-second">
-			<div class="white">
-					Made by <br>
-					Kevin Santodonato <br>
+				<div class="white">
+					<br>
+					<br>
+					<br>
+					<br>
+					Designed and built by <br>
+					<a class="white link-on-white" href="https://www.kevinsantodonato.it/">Kevin Santodonato</a>
+					<br>
 					& <br>
-					Davide Tedesco
+					<a class="white link-on-white" href="https://www.davidetedesco.it/">Davide Tedesco</a>
 				</div>
 			</div>
 
-			
+
 		</div>
 
 </body>

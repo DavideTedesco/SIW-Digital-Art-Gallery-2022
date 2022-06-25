@@ -1,43 +1,83 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head>
-<meta charset="UTF-8" />
-<link href="/css/my-style.css" rel="stylesheet">
-<title>Digital Art Gallery - Author editing</title>
-</head>
-<body>
-	<h1>Edit collection</h1>
-	<form th:action="@{/admin/editAuthor/{id}(id=${author.id})}" method="post"
-		th:object="${author}" >
-		<table>
-			<tr>
-				<td>Nome:</td>
-				<td><label><input type="text" required
-						th:field="*{nome}"></label></td>
-			</tr>
-			<tr>
-				<td>Cognome:</td>
-				<td><label><input type="text" required
-						th:field="*{cognome}"></label></td>
-			</tr>
-			<tr>
-				<td>Data di nascita:</td>
-				<td th:text="#{previousdate.message}+' '+${data}">data precedente:</td>
-				<td><label><input type="text" name="date" th:placeholder="yyyy-mm-dd" required></label></td>
-			</tr>
-			<tr>
-				<td>Luogo di nascita:</td>
-				<td><label><input type="text" required
-						th:field="*{luogoDiNascita}"></label></td>
-			</tr>
-			
-		</table>
 
-		<div>
-			<span>
-				<button type="submit" th:text="#{register.button}">Register</button>
-			</span>
+<head>
+	<meta charset="UTF-8" />
+	<link href="/css/insertion.css" rel="stylesheet">
+	<title>Digital Art Gallery - Author editing</title>
+</head>
+
+<body>
+
+	<div class="grid-megacontainer">
+		<div class="grid-container-one">
+			<div class="grid-item-white">
+				<div class="white"><a class="white link-on-white" th:href="@{/default}">Personal page</a></div>
+			</div>
+			<div class="grid-item-gray">
+			</div>
 		</div>
-	</form>
+
+		<div class="grid-container-two">
+			<div class="grid-item-red">
+			</div>
+			<div class="grid-item-blue">
+				<h1 class="blue">Edit Author</h1>
+				<form th:action="@{/admin/editAuthor/{id}(id=${author.id})}" method="post" th:object="${author}">
+					<table class="blue">
+						<div class="blue">
+							<div class="blue">Nome:</div>
+							<div class="blue"><label class="blue"><input class="blue input" type="text" required
+										th:field="*{nome}"></label></div>
+						</div>
+						<div class="blue">
+							<div class="blue">Cognome:</div>
+							<div class="blue"><label class="blue"><input class="blue input" type="text" required
+										th:field="*{cognome}"></label></div>
+						</div>
+						<div class="blue">
+							<div class="blue">Data di nascita:</div>
+							<div class="blue" th:text="#{previousdate.message}+' '+${data}">data precedente:</div>
+							<div class="blue"><label class="blue"><input class="blue input" type="text" name="date"
+										th:placeholder="yyyy-mm-dd" required></label></div>
+						</div>
+						<div>
+							<div class="blue">Luogo di nascita:</div>
+							<div class="blue"><label class="blue"><input class="blue input" type="text" required
+										th:field="*{luogoDiNascita}"></label></div>
+						</div>
+
+					</table>
+
+					<div class="blue">
+						<span class="blue">
+							<button class="blue button" type="submit" th:text="#{register.button}">Register</button>
+						</span>
+					</div>
+				</form>
+			</div>
+			<div class="grid-item-yellow">
+			</div>
+		</div>
+
+		<div class="grid-container-three">
+			<div class="grid-item-yellow">
+			</div>
+			<div class="grid-item-white">
+				<div class="white">
+					<br>
+					Designed and built by <br>
+					<a class="white link-on-white" href="https://www.kevinsantodonato.it/">Kevin Santodonato</a>
+					<br>
+					& <br>
+					<a class="white link-on-white" href="https://www.davidetedesco.it/">Davide Tedesco</a>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+
 </body>
+
 </html>
