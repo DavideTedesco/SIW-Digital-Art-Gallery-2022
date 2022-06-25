@@ -69,9 +69,10 @@ public class AutoreController {
 	}
 
 	@PostMapping("/admin/insertAuthor")
-	public String insertingAuthor(@ModelAttribute("author") Autore autore, @RequestParam("date") String date,
-			Model model, BindingResult autoreBindingResults) {
+	public String insertingAuthor(@ModelAttribute("author") Autore autore, BindingResult autoreBindingResults,
+			@RequestParam("date") String date, Model model) {
 
+		this.autoreValidator.validate(autore, autoreBindingResults);
 		if (!autoreBindingResults.hasErrors()) {
 			this.autoreService.save(autore, date);
 			model.addAttribute("authors", this.autoreService.getAllAutori());

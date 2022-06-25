@@ -4,6 +4,7 @@
 <head>
 	<meta charset="UTF-8" />
 	<link href="/css/register.css" rel="stylesheet">
+	<link rel="icon" href="/images/painting-art.svg" type="image/x-icon">
 	<title>Digital Art Gallery - Register page</title>
 </head>
 
@@ -11,7 +12,7 @@
 	<div class="grid-megacontainer">
 		<div class="grid-container-one">
 			<div class="grid-item-red">
-				<h3 class="red"><a class="red" th:href="@{/index}">Home</a></h3>
+				<h3 class="red"><a class="red link-on-red" th:href="@{/index}">Home</a></h3>
 			</div>
 			<div class="grid-item-gray">
 			</div>
@@ -23,29 +24,44 @@
 			<div class="grid-item-white-first">
 
 				<form class="white" th:action="@{/register}" method="POST">
-					<h1 class="white" id="title" th:text="#{login.title}">Login</h1>
-					<ul class="white" >
+					<h1 class="white" id="title" th:text="#{register.title}">reg mock</h1>
+					<ul class="white">
 						<li>
-							<div class="white">Name:</div>
+							<div class="white" th:text="#{name.message}">Name:</div>
 							<div class="white"><label class="white">
-									<input class="white" type="text" required th:field="${user.nome}"
-									th:placeholder="#{placeholder-name}"></label></div>
+									<input class="white" type="text" th:field="${user.nome}"
+										th:placeholder="#{placeholder-name}"></label>
+							</div>
+							<div class="white">
+								<span th:if="${#fields.hasErrors('${user.nome}')}" th:errors="${user.nome}" class="red">
+								</span>
+							</div>
 						</li>
 						<li>
-							<div class="white">Surname:</div>
+							<div class="white" th:text="#{surname.message}">Surname:</div>
 							<div class="white"><label class="white">
-									<input class="white" type="text" required th:field="${user.cognome}"
-									th:placeholder="#{placeholder-surname}"></label></div>
+									<input class="white" type="text" th:field="${user.cognome}"
+										th:placeholder="#{placeholder-surname}"></label></div>
+							<div class="white">
+								<span th:if="${#fields.hasErrors('${user.cognome}')}" th:errors="${user.cognome}"
+									class="red"></span>
+							</div>
 						</li>
 						<li>
 							<div class="white" th:text="#{username.message}">Username:</div>
-							<div class="white"><label class="white"><input class="white" name="username" type="text"
-										th:placeholder="#{placeholder-username}" required></label></div>
+							<div class="white"><label class="white"><input class="white"
+										th:field="${credentials.username}" type="text"
+										th:placeholder="#{placeholder-username}"></label></div>
+							<div class="white">
+								<span th:if="${#fields.hasErrors('${credentials.username}')}"
+									th:errors="${credentials.username}" class="red"></span>
+							</div>
 						</li>
 						<li>
 							<div class="white" th:text="#{password.message}">Password:</div>
-							<div class="white"><label class="white"><input class="white" id="myInput" name="password"
-										type="password" th:placeholder="#{placeholder-password}" required></label></div>
+							<div class="white"><label class="white"><input class="white" id="myInput"
+										th:field="${credentials.password}" type="password"
+										th:placeholder="#{placeholder-password}"></label></div>
 							<div class="white"><label class="white">
 									<input type="checkbox" onclick="showPassword()">Show Password</label>
 								<script>
@@ -58,6 +74,10 @@
 										}
 									}
 								</script>
+								<div class="white">
+									<span th:if="${#fields.hasErrors('${credentials.password}')}"
+										th:errors="${credentials.password}" class="red"></span>
+								</div>
 							</div>
 						</li>
 					</ul>
@@ -69,13 +89,7 @@
 				</form>
 			</div>
 			<div class="grid-item-blue">
-				<h2 class="blue">Contacts</h2>
-				<div class="blue">
-					E-mail:<a class="blue" href="mailto:info@digitalartgallery.com">info@digitalartgallery.com</a>
-				</div>
-				<div class="blue">Phone: 0044 0848 44 66 88</div>
-				<div class="blue">London - New York - Genève - Milan</div>
-				<div class="blue">VAT ID: 86334519757</div>
+
 			</div>
 		</div>
 
@@ -96,10 +110,15 @@
 			</div>
 			<div class="grid-item-lightblue">
 				<div class="lightblue">
-					Made by <br>
-					Kevin Santodonato <br>
+					<br>
+					<br>
+					<br>
+					<br>
+					Designed and built by <br>
+					<a class="lightblue link-on-lightblue" href="https://www.kevinsantodonato.it/">Kevin Santodonato</a>
+					<br>
 					& <br>
-					Davide Tedesco
+					<a class="lightblue link-on-lightblue" href="https://www.davidetedesco.it/">Davide Tedesco</a>
 				</div>
 			</div>
 		</div>

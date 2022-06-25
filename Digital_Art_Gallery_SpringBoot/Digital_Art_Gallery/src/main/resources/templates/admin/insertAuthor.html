@@ -4,6 +4,7 @@
 <head>
 	<meta charset="UTF-8" />
 	<link href="/css/insertion.css" rel="stylesheet">
+	<link rel="icon" href="/images/painting-art.svg" type="image/x-icon">
 	<title>Digital Art Gallery</title>
 </head>
 
@@ -11,7 +12,8 @@
 	<div class="grid-megacontainer">
 		<div class="grid-container-one">
 			<div class="grid-item-white">
-							<div class="white"><a class="white link-on-white" th:href="@{/default}">Personal page</a></div>
+				<div class="white"><a class="white link-on-white" th:href="@{/default}">Personal
+						page</a></div>
 			</div>
 			<div class="grid-item-gray">
 			</div>
@@ -19,7 +21,6 @@
 
 		<div class="grid-container-two">
 			<div class="grid-item-red">
-
 			</div>
 			<div class="grid-item-blue">
 
@@ -28,13 +29,17 @@
 					<div class="blue">
 						<div class="blue">
 							<div class="blue">Nome:</div>
-							<div class="blue"><label class="blue"><input class="blue" type="text" required
-										th:field="${author.nome}"></label></div>
+							<div class="blue">
+								<label class="blue"><input class="blue" type="text" th:field="*{nome}"></label>
+							</div>
+							<span th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}" class="red"></span>
 						</div>
 						<div class="blue">
 							<div class="blue">Cognome:</div>
-							<div class="blue"><label class="blue"><input class="blue" type="text" required
-										th:field="${author.cognome}"></label></div>
+							<div class="blue">
+								<label class="blue"><input class="blue" type="text" th:field="*{cognome}"></label>
+							</div>
+							<span th:if="${#fields.hasErrors('cognome')}" th:errors="*{cognome}" class="red"></span>
 						</div>
 						<div class="blue">
 							<div class="blue">Data di nascita</div>
@@ -42,15 +47,19 @@
 										th:placeholder="yyyy-mm-dd"></label></div>
 						</div>
 						<div class="blue">
-							<div class="blue">Luogo di nascita</div>
-							<div class="blue"><label class="blue"><input class="blue" type="text"
-										th:field="${author.luogoDiNascita}"></label></div>
+							<div class="blue">Luogo di nascita:</div>
+							<div class="blue">
+								<label class="blue"><input class="blue" type="text"
+										th:field="*{luogoDiNascita}"></label>
+							</div>
+							<span th:if="${#fields.hasErrors('luogoDiNascita')}" th:errors="*{luogoDiNascita}"
+								class="red"></span>
 						</div>
 					</div>
 
 					<div class="blue">
 						<span class="blue">
-							<button class="blue button" type="submit" th:text="#{register.button}">Register</button>
+							<button class="blue button" type="submit" th:text="#{confirm.button}">Register</button>
 						</span>
 					</div>
 				</form>
@@ -74,6 +83,7 @@
 			</div>
 
 		</div>
+	</div>
 
 </body>
 

@@ -4,6 +4,7 @@
 <head>
 	<meta charset="UTF-8" />
 	<link href="/css/welcomePage.css" rel="stylesheet">
+	<link rel="icon" href="/images/painting-art.svg" type="image/x-icon">
 	<title>Welcome Page</title>
 </head>
 
@@ -30,18 +31,19 @@
 				</h1>
 			</div>
 			<div class="grid-item-blue">
-			
-			<br>
-			<h2 class="blue" th:text="#{welcomepage.message}"></h2>
-			<br>
+
+				<br>
+				<h2 class="blue" th:text="#{welcomepage.message}"></h2>
+				<br>
 				<div class="blue">
 					<a class="blue link-on-blue" th:href="@{/authors}" th:text="#{authors.message}"> Authors</a>
 				</div>
-					<br>
+				<br>
 				<div class="blue">
-					<a class="blue link-on-blue" th:href="@{/collections}" th:text="#{collections.message}">Collections</a>
+					<a class="blue link-on-blue" th:href="@{/collections}"
+						th:text="#{collections.message}">Collections</a>
 				</div>
-					<br>
+				<br>
 				<div class="blue">
 					<a class="blue link-on-blue" th:href="@{/artworks}" th:text="#{artworks.message}">Artworks</a>
 				</div>

@@ -15,8 +15,8 @@ public class AutoreValidator implements Validator {
 	
 	 final Integer MAX_NOME_LENGTH = 100;
 	 final Integer MAX_COGNOME_LENGTH = 100;
-	 final Integer MIN_NOME_LENGTH = 100;
-	 final Integer MIN_COGNOME_LENGTH = 100;
+	 final Integer MIN_NOME_LENGTH = 2;
+	 final Integer MIN_COGNOME_LENGTH = 2;
 	 
 	 @Autowired
 	 AutoreService autoreService;
@@ -31,7 +31,9 @@ public class AutoreValidator implements Validator {
 		 Autore autore = (Autore) o;
 	        String nome = autore.getNome().trim();
 	        String cognome = autore.getCognome().trim();
-	        LocalDate dataDiNascita = autore.getDataDiNascita();
+//	        LocalDate dataDiNascita = autore.getDataDiNascita();
+
+	        String luogoDiNascita = autore.getLuogoDiNascita().trim();
 
 	        if (nome.isEmpty())
 	            errors.rejectValue("nome", "required");
@@ -42,6 +44,9 @@ public class AutoreValidator implements Validator {
 	            errors.rejectValue("cognome", "required");
 	        else if (cognome.length() < MIN_COGNOME_LENGTH || cognome.length() > MAX_COGNOME_LENGTH)
 	            errors.rejectValue("cognome", "size");
+	        
+	        if(luogoDiNascita.isEmpty())
+	        	errors.rejectValue("luogoDiNascita", "required");
 	        
 	        if(this.autoreService.verificaDuplicati(nome, cognome)) {
 	        	errors.reject("autore.duplicate", "autore duplicato");
