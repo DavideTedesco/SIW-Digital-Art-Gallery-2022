@@ -5,7 +5,7 @@
 	<meta charset="UTF-8" />
 	<link href="/css/insertion.css" rel="stylesheet">
 	<link rel="icon" href="/images/painting-art.svg" type="image/x-icon">
-	<title>Digital Art Gallery</title>
+	<title>Digital Art Gallery - Insert collection</title>
 </head>
 
 <body>
@@ -25,7 +25,7 @@
 		<div class="grid-container-two">
 			<div class="grid-item-red"></div>
 			<div class="grid-item-blue">
-				<h1 class="blue">Inserimento Collezione</h1>
+				<h1 class="blue" th:text="#{insertnewcollection}">Inserimento Collezione</h1>
 				<div class="blue" th:if="${artworks.isEmpty()}">Non ci sono
 					opere disponibili da poter inserire nella collezione inserisci prima un'opera
 				<div class="blue">

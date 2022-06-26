@@ -1,8 +1,0 @@
-package it.uniroma3.siw.digital_art_gallery.model;
-
-import javax.persistence.Entity;
-
-@Entity
-public class Credentials {
-
-}
