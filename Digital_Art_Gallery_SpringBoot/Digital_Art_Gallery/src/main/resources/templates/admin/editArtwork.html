@@ -13,7 +13,8 @@
 	<div class="grid-megacontainer">
 		<div class="grid-container-one">
 			<div class="grid-item-white">
-				<div class="white"><a class="white link-on-white" th:href="@{/default}">Personal page</a></div>
+				<div class="white"><a class="white link-on-white" th:href="@{/default}"
+						th:text="#{personalpage.message}">Personal page</a></div>
 			</div>
 			<div class="grid-item-gray">
 			</div>
@@ -23,7 +24,7 @@
 			<div class="grid-item-red">
 			</div>
 			<div class="grid-item-blue">
-				<h1 class="blue">Edit artwork</h1>
+				<h1 class="blue" th:text"#{editartwork}">Edit artwork</h1>
 				<form class="blue" th:action="@{/admin/editArtwork/{id}(id=${artwork.id})}" method="post"
 					th:object="${artwork}" enctype="multipart/form-data">
 
@@ -52,7 +53,8 @@
 						</div>
 
 						<div class="blue">
-							<div class="blue"><label class="blue" th:for="selettore2" th:text="#{selector.message}">
+							<div class="blue"><label class="blue" th:for="selettore2"
+									th:text="#{selectorcollection.message}">
 								</label></div>
 							<div class="blue"><select class="blue" id="selettore2" th:field="*{collezione}">
 									<option class="blue" th:each="collection : ${collections}"
@@ -63,7 +65,8 @@
 
 					<div class="blue">
 						<div class="blue">
-							<button type="submit" th:text="#{register.button}">Register</button>
+							<br>
+							<button type="submit" th:text="#{confirm.button}">Register</button>
 						</div>
 					</div>
 				</form>

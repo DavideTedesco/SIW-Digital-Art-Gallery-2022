@@ -125,6 +125,7 @@ p{
 .grid-item-yellow{
   background-color: var(--yellow-mondrian);
   text-align: center;
+  align-content: center;
   overflow: scroll;
   color: black;
 }
@@ -364,3 +365,11 @@ ul {
    transform: translateY(0);
    transition: transform .30s ease-out;
 }
+
+#yellow-table{
+	text-align: center;
+	display: table;
+	margin-left: auto;
+  margin-right: auto;
+}
+

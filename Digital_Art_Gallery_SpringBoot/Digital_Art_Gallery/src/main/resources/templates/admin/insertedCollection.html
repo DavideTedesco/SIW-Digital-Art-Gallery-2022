@@ -1,14 +1,47 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+
 <head>
 	<meta charset="UTF-8" />
-	<link href="/css/my-style.css" rel="stylesheet">
+	<link href="/css/insertion.css" rel="stylesheet">
 	<link rel="icon" href="/images/painting-art.svg" type="image/x-icon">
 	<title>Digital Art Gallery</title>
 </head>
+
 <body>
-	<div th:text="${collection.nome}"></div>
-	<span><a th:href="@{/admin/showContent/collections}">Lista delle collezioni</a></span>
-	<span class="yellow"><a class="yellow" th:href="@{'/admin/editCollection' + '/' + ${collection.id}}">Edit</a></span>
+	<div class="grid-megacontainer">
+		<div class="grid-container-one">
+			<div class="grid-item-white">
+			</div>
+			<div class="grid-item-gray">
+			</div>
+		</div>
+
+		<div class="grid-container-two">
+			<div class="grid-item-red">
+			</div>
+			<div class="grid-item-blue">
+				<h1 class="blue" th:text="#{insertedcollection}">La Collezione inserita</h1>
+				<br>
+				<h2 class="blue" th:text="${collection.nome}"></h2>
+				<div class="blue"><a class="blue link-on-blue" th:href="@{/admin/showContent/collections}" th:text="#{collections.intro.message}">Lista delle collezioni</a></div>
+				<div class="blue"><a class="blue link-on-blue"
+						th:href="@{'/admin/editCollection' + '/' + ${collection.id}}" th:text="#{edit.message}">Edit</a></div>
+			</div>
+			<div class="grid-item-yellow">
+			</div>
+		</div>
+
+		<div class="grid-container-three">
+			<div class="grid-item-yellow">
+			</div>
+			<div class="grid-item-white">
+			</div>
+		</div>
+
+	</div>
+
+
 </body>
+
 </html>

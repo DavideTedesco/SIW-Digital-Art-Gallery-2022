@@ -13,19 +13,42 @@
 	<div class="grid-megacontainer">
 		<div class="grid-container-one">
 			<div class="grid-item-white">
-				<h3 class="white"><a class="white" ,"link" th:href="@{/default}">Personal page</a></h3>
+				<div class="white"><a class="white link-on-white" th:href="@{/default}" th:text="#{personalpage.message}">Personal page</a></div>
 			</div>
 			<div class="grid-item-blue">
 			</div>
 		</div>
 		<div class="grid-container-two">
 			<div class="grid-item-yellow">
-				<h1 class="yellow">Users</h1>
-				<ul class="yellow-paragraph">
+				<h1 class="yellow" th:text="#{userspage}">Users</h1>
+				<!--<ul class="yellow-paragraph">
 					<li class="yellow" th:each="user : ${users}">
-						<span class="yellow" th:text="${user.nome}+' '+${user.cognome}+' '+${user.id}">Nome e cognome User</span>
+						<span class="yellow" th:text="${user.nome}+' '+${user.cognome}+' '+${user.id}">Nome e cognome
+							User</span>
 					</li>
-				</ul>
+				</ul>-->
+				<div class="yellow" id="yellow-table">
+					<table class="yellow">
+						<thead>
+							<th class="yellow" th:text="#{nome.message}">
+								nome
+							</th>
+							<th class="yellow" th:text="#{cognome.message}">
+								cognome
+							</th>
+							<th class="yellow">
+								id
+							</th>
+						</thead>
+						<tbody class="yellow">
+							<tr class="yellow" th:each="user : ${users}">
+								<td class="yellow" th:text="${user.nome}">mimmo</td>
+								<td class="yellow" th:text="${user.cognome}">mimmo</td>
+								<td class="yellow" th:text="${user.id}">mimmo</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
 			</div>
 		</div>
 
@@ -36,6 +59,14 @@
 			</div>
 			<div class="grid-subcontainer-one">
 				<div class="grid-item-white">
+					<div class="white">
+						<br>
+						Designed and built by <br>
+						<a class="white link-on-white" href="https://www.kevinsantodonato.it/">Kevin Santodonato</a>
+						<br>
+						& <br>
+						<a class="white link-on-white" href="https://www.davidetedesco.it/">Davide Tedesco</a>
+					</div>
 				</div>
 				<div class="grid-item-gray">
 				</div>

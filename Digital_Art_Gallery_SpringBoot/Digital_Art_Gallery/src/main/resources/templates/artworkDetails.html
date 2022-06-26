@@ -17,7 +17,8 @@
 			<div class="grid-item-red">
 				<br>
 				<br>
-				<div class="red"><a class="red link-on-red" th:href="@{/default}">Personal page</a></div>
+				<div class="red"><a class="red link-on-red" th:href="@{/default}"
+						th:text="#{personalpage.message}">Personal page</a></div>
 			</div>
 			<div class="grid-item-gray">
 			</div>
@@ -39,10 +40,15 @@
 							th:text="${artwork.autore.nome}+' '+${artwork.autore.cognome}">
 							Nome autore che ha realizzato l'opera</a>
 					</div>
+					<div class="white" th:text="#{artworkdescription.message}+ ' '+${artwork.descrizione}">
+						Descrizione
+					</div>
 					<span class="white" th:if="${artwork.collezione != null}">
+						<span class="white" th:text="#{artworkincollection.message}+' '"></span>
 						<a class="white link-on-white"
 							th:href="@{'/collectionDetails' + '/' + ${artwork.collezione.id}}"
-							th:text="#{artworkincollection.message}+${artwork.collezione.nome}">Pippo</a></span>
+							th:text="${artwork.collezione.nome}">Pippo</a></span>
+					<br>
 					<br>
 					<img class="white" th:alt="${artwork.immagine}"
 						th:src="@{'https://digital-art-gallery.s3.eu-west-3.amazonaws.com' + '/' +  ${artwork.immagine}}"
@@ -54,10 +60,10 @@
 				</div>
 				<div class="white" th:unless="${voto == null}">
 					<div class="white" th:text="#{yourvote}+' '+${voto.valutazione}"></div>
-					<a class="white link-on-white" th:href="@{'/editVoto' + '/' + ${voto.id}}">Edit</a>
-					<a class="white link-on-white" th:href="@{'/removeVoto' + '/' + ${voto.id}}">Remove</a>
-
+					<a class="white link-on-white" th:href="@{'/editVoto' + '/' + ${voto.id}}" th:text="#{edit.message}">Edit</a>
+					<a class="white link-on-white" th:href="@{'/removeVoto' + '/' + ${voto.id}}" th:text="#{remove.message}">Remove</a>
 				</div>
+				<br>
 
 
 			</div>

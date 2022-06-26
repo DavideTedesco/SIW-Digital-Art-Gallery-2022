@@ -183,13 +183,12 @@ h1{
 }
 
 input {
-  font-family: 'dryhtenregular';
+	font-family: 'IM Fell English', serif;
 }
 
 button{
-  border-radius: 10%;
-  font-family: 'dryhtenregular';
-
+  	border-radius: 10%;
+  	font-family: 'IM Fell English', serif;
 }
 
 ul {

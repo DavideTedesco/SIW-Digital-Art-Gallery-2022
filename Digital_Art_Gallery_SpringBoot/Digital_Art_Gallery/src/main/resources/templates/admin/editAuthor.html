@@ -13,7 +13,8 @@
 	<div class="grid-megacontainer">
 		<div class="grid-container-one">
 			<div class="grid-item-white">
-				<div class="white"><a class="white link-on-white" th:href="@{/default}">Personal page</a></div>
+				<div class="white"><a class="white link-on-white" th:href="@{/default}"
+						th:text="#{personalpage.message}">Personal page</a></div>
 			</div>
 			<div class="grid-item-gray">
 			</div>
@@ -23,7 +24,7 @@
 			<div class="grid-item-red">
 			</div>
 			<div class="grid-item-blue">
-				<h1 class="blue">Edit Author</h1>
+				<h1 class="blue" th:text="#{editauthor.message}">Edit Author</h1>
 				<form th:action="@{/admin/editAuthor/{id}(id=${author.id})}" method="post" th:object="${author}">
 					<table class="blue">
 						<div class="blue">
@@ -52,7 +53,8 @@
 
 					<div class="blue">
 						<span class="blue">
-							<button class="blue button" type="submit" th:text="#{register.button}">Register</button>
+							<br>
+							<button class="button" type="submit" th:text="#{confirm.button}">Register</button>
 						</span>
 					</div>
 				</form>

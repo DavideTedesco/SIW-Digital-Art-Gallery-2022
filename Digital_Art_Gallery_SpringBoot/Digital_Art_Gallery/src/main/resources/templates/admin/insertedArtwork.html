@@ -3,7 +3,7 @@
 
 <head>
 	<meta charset="UTF-8" />
-	<link href="/css/insertion.css" rel="stylesheet">
+	<link href="/css/insertion_custom.css" rel="stylesheet">
 	<link rel="icon" href="/images/painting-art.svg" type="image/x-icon">
 	<title>Digital Art Gallery</title>
 </head>
@@ -13,6 +13,8 @@
 	<div class="grid-megacontainer">
 		<div class="grid-container-one">
 			<div class="grid-item-white">
+				<div class="white"><a class="white link-on-white" th:href="@{/default}"
+						th:text="#{personalpage.message}">Personal page</a></div>
 			</div>
 			<div class="grid-item-gray">
 			</div>
@@ -20,9 +22,9 @@
 
 		<div class="grid-container-two">
 			<div class="grid-item-red">
+				<h1 class="red" th:text="#{insertedartwork}">Inserted artwork</h1>
 			</div>
 			<div class="grid-item-blue">
-				<h1 class="blue">Insert artwork</h1>
 				<table class="blue">
 					<div class="blue">
 						<span class="blue">Nome:</span>
@@ -41,9 +43,10 @@
 
 			<div class="blue">
 				<img th:alt="${artwork.immagine}"
-					th:src="@{'https://digital-art-gallery.s3.eu-west-3.amazonaws.com' + '/' +  ${artwork.immagine}}">
+					th:src="@{'https://digital-art-gallery.s3.eu-west-3.amazonaws.com' + '/' +  ${artwork.immagine}}"
+					width="35%">
 			</div>
-			<div class="blue"><a class="blue" th:href="@{'/admin/editArtwork' + '/' + ${artwork.id}}">Edit</a>
+			<div class="blue"><a class="blue link-on-blue" th:href="@{'/admin/editArtwork' + '/' + ${artwork.id}}" th:text="#{edit.message}">Edit</a>
 			</div>
 
 			<div class="blue"> <a class="blue link-on-blue" th:href="@{/admin/showContent/artworks}"> Lista opere</a>
@@ -57,6 +60,15 @@
 		<div class="grid-item-yellow">
 		</div>
 		<div class="grid-item-white">
+			<br>
+			<br>
+			<br>
+			<br>
+			Designed and built by <br>
+			<a class="white link-on-white" href="https://www.kevinsantodonato.it/">Kevin Santodonato</a>
+			<br>
+			& <br>
+			<a class="white link-on-white" href="https://www.davidetedesco.it/">Davide Tedesco</a>
 		</div>
 	</div>
 

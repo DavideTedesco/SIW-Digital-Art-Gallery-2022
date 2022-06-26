@@ -63,7 +63,7 @@
 										th:field="${credentials.password}" type="password"
 										th:placeholder="#{placeholder-password}"></label></div>
 							<div class="white"><label class="white">
-									<input type="checkbox" onclick="showPassword()">Show Password</label>
+									<input type="checkbox" onclick="showPassword()" th:text="#{showpassword}"></label>
 								<script>
 									function showPassword() {
 										var x = document.getElementById("myInput");
@@ -83,7 +83,7 @@
 					</ul>
 					<div class="white">
 						<div class="white">
-							<button class="white" type="submit" th:text="#{login.button}">Login</button>
+							<button class="white" type="submit" th:text="#{register.button}">Login</button>
 						</div>
 					</div>
 				</form>

@@ -5,7 +5,7 @@
 	<meta charset="UTF-8" />
 	<link href="/css/welcomePage.css" rel="stylesheet">
 	<link rel="icon" href="/images/painting-art.svg" type="image/x-icon">
-	<title>Welcome Page</title>
+	<title>Digital Art Gallery - Welcome Page</title>
 </head>
 
 <body>
@@ -16,7 +16,7 @@
 					<br>
 					<br>
 					<h4 class="red">
-						<a class="red link-on-red" th:href="@{/index}">Logout</a>
+						<a class="red link-on-red" th:href="@{/index}" th:text="#{logout}">Logout</a>
 						<h4>
 				</div>
 			</div>
@@ -26,7 +26,7 @@
 		<div class="grid-container-two">
 			<div class="grid-item-white-first">
 				<br>
-				<h1 class="white" ,"header">
+				<h1 class="white">
 					Digital Art Gallery
 				</h1>
 			</div>
@@ -55,9 +55,6 @@
 				<br>
 				<br>
 				<br>
-				<!--<h4 class="gray">
-					<a class="gray link-on-gray" th:href="@{/removeUser}">Cancella account</a>
-				</h4>-->
 			</div>
 
 		</div>

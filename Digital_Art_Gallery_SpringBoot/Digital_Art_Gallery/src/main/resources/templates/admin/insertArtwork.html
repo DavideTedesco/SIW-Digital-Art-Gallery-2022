@@ -12,8 +12,9 @@
 	<div class="grid-megacontainer">
 		<div class="grid-container-one">
 			<div class="grid-item-white">
-			<br>
-				<div class="white"><a class="white link-on-white" th:href="@{/default}">Personal page</a></div>
+				<br>
+				<div class="white"><a class="white link-on-white" th:href="@{/default}"
+						th:text="#{personalpage.message}">Personal page</a></div>
 			</div>
 			<div class="grid-item-gray">
 			</div>
@@ -40,36 +41,41 @@
 						</div>
 						<div class="blue">
 							<div class="blue">Data di realizzazione:</div>
-							<div class="blue"><label><input type="text" th:placeholder="yyyy-MM-dd" 
-										name="date"></label></div>
-							</div>
-							<div class="blue">
-								<div class="blue">Descrizione</div>
-								<div class="blue"><textarea class="blue" rows="3" cols="16"
-										th:field="*{descrizione}"></textarea></div>
-								<span th:if="${#fields.hasErrors('descrizione')}" th:errors="*{descrizione}" class="red"></span>
-							</div>
-							<div class="blue">
-								<div class="blue">Immagine</div>
-								<div class="blue">dimensione massima del file 10 MB</div>
-								<div class="blue"><label class="blue"><input class="blue input" type="file"
-											accept="image/png, image/jpeg, image/svg, image/jpg, image/tiff"
-											name="image" ></label></div>
-							</div>
-							<div class="blue">
+							<div class="blue"><label><input type="text" th:placeholder="yyyy-MM-dd" name="date"
+										required></label></div>
+						</div>
+						<div class="blue">
+							<div class="blue">Descrizione</div>
+							<div class="blue"><textarea class="blue" rows="3" cols="16"
+									th:field="*{descrizione}"></textarea></div>
+							<span th:if="${#fields.hasErrors('descrizione')}" th:errors="*{descrizione}"
+								class="red"></span>
+						</div>
+						<div class="blue">
+							<div class="blue">Immagine</div>
+							<div class="blue">dimensione massima del file 10 MB</div>
+							<div class="blue"><label class="blue"><input class="blue input" type="file"
+										accept="image/png, image/jpeg, image/svg, image/jpg, image/tiff" name="image"
+										required></label></div>
+						</div>
+						<div class="blue">
 
-								<div class="blue"><label class="blue" th:for="selettore1" th:text="#{artwork.message}">
-									</label></div>
-								<div class="blue"><select class="blue" id="selettore1" th:field="*{autore}">
-										<option class="blue" th:each="author : ${authors}" th:value="${author.id}"
-											th:text="${author.nome} + ' ' + ${author.cognome}"></option>
-									</select></div>
+							<div class="blue"><label class="blue" th:for="selettore1"
+									th:text="#{artworkauthorselection}">
+								</label></div>
+							<div class="blue"><select class="blue" id="selettore1" th:field="*{autore}">
+									<option class="blue" th:each="author : ${authors}" th:value="${author.id}"
+										th:text="${author.nome} + ' ' + ${author.cognome}"></option>
+								</select>
+								<!--<span th:if="${#fields.hasErrors('autore')}" th:errors="*{autore}"
+									class="red"></span>-->
 							</div>
 						</div>
+					</div>
 					<br>
 					<div class="blue">
 						<div class="blue">
-							<button class="blue button" type="submit" th:text="#{register.button}">Register</button>
+							<button class="blue button" type="submit" th:text="#{confirm.button}">Register</button>
 						</div>
 					</div>
 				</form>

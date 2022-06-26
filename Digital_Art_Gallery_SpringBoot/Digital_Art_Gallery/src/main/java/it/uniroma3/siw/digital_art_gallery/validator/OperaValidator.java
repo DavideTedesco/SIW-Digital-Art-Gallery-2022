@@ -5,6 +5,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 
+import it.uniroma3.siw.digital_art_gallery.model.Autore;
 import it.uniroma3.siw.digital_art_gallery.model.Opera;
 import it.uniroma3.siw.digital_art_gallery.service.OperaService;
 
@@ -29,6 +30,7 @@ public class OperaValidator implements Validator  {
 		Opera opera = (Opera)target;
 		String nome = opera.getNome();
 		String descrizione = opera.getDescrizione();
+		Autore autore = opera.getAutore();
 		
 		if(nome.isEmpty())
 			errors.rejectValue("nome", "required");
@@ -39,6 +41,10 @@ public class OperaValidator implements Validator  {
 			errors.rejectValue("descrizione", "required");
 		else if(descrizione.length() < MIN_NOME_LENGTH || descrizione.length() > MAX_NOME_LENGTH)
 			errors.rejectValue("descrizione", "size");
+		
+		if(autore == null) {
+			errors.rejectValue("autore", "required");
+		}
 		
 		 if(this.operaService.verificaDuplicatiOpera(nome))
 			 errors.reject("duplicate");

@@ -1,28 +1,34 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+
 <head>
 	<meta charset="UTF-8" />
 	<link href="/css/showcontent.css" rel="stylesheet">
 	<link rel="icon" href="/images/painting-art.svg" type="image/x-icon">
 	<title>Digital Art Gallery - Artworks of author</title>
 </head>
-	<!-- PAGINA NON UTILIZZATA -->
+
 <body>
 
 	<div class="grid-megacontainer">
 		<div class="grid-container-one">
 			<div class="grid-item-white">
-				<h3 class="white"><a class="white" ,"link" th:href="@{/default}">Personal page</a></h3>
+				<div class="white"><a class="white link-on-white" th:href="@{/default}"
+						th:text="#{personalpage.message}">Personal page</a></div>
 			</div>
 			<div class="grid-item-blue">
 			</div>
 		</div>
 		<div class="grid-container-two">
 			<div class="grid-item-yellow">
-				<h1 class="yellow" th:text="#{operedellautore.message}+${author.nome}+ ' ' +${author.cognome}"> Opere dell'autore'</h1>
+				<h1 class="yellow" th:text="#{artworksofauthor.message}+' '+${author.nome}+ ' ' +${author.cognome}">
+					Opere
+					dell'autore'</h1>
+				<div class="yellow" th:if="${artworks.isEmpty()}" th:text="#{notpresent}"></div>
 				<div class="yellow" th:each="artwork : ${artworks}">
-		<span class="yellow"><a class="yellow" th:text="${artwork.nome}" th:href="@{'/artworkDetails' + '/' + ${artwork.id}}"></a></span>
-	</div>
+					<span class="yellow"><a class="yellow link-on-yellow" th:text="${artwork.nome}"
+							th:href="@{'/artworkDetails' + '/' + ${artwork.id}}"></a></span>
+				</div>
 
 			</div>
 		</div>
@@ -34,6 +40,12 @@
 			</div>
 			<div class="grid-subcontainer-one">
 				<div class="grid-item-white">
+					<br>
+					Designed and built by <br>
+					<a class="white link-on-white" href="https://www.kevinsantodonato.it/">Kevin Santodonato</a>
+					<br>
+					& <br>
+					<a class="white link-on-white" href="https://www.davidetedesco.it/">Davide Tedesco</a>
 				</div>
 				<div class="grid-item-gray">
 				</div>
@@ -42,7 +54,8 @@
 		</div>
 
 	</div>
-	
-		
+
+
 </body>
+
 </html>

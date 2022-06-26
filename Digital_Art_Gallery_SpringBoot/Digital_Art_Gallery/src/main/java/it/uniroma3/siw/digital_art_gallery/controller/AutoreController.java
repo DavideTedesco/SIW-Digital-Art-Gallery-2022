@@ -114,7 +114,9 @@ public class AutoreController {
 
 	@GetMapping("/authorDetails/{id}")
 	public String dettagliAutore(@PathVariable("id") Long id, Model model) {
-		model.addAttribute("author", this.autoreService.findAutoreById(id));
+		Autore autore = this.autoreService.findAutoreById(id);
+		model.addAttribute("data", this.converter.revertConversion(autore.getDataDiNascita()));
+		model.addAttribute("author", autore);
 		return "authorDetails";
 	}
 
