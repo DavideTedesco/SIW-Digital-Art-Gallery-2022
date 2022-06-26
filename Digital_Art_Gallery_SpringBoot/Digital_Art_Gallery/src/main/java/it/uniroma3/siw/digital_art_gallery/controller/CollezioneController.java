@@ -65,10 +65,11 @@ public class CollezioneController {
 
 	@PostMapping("/admin/insertCollection")
 	public String inserimentoCollezione(@ModelAttribute("collection") Collezione collezione,
-			BindingResult collectionBindingResult ,Model model) {
+			BindingResult collectionBindingResult, Model model) {
 
 		this.collezioneValidator.validate(collezione, collectionBindingResult);
-		if(!collectionBindingResult.hasErrors()) {
+		
+		if (!collectionBindingResult.hasErrors()) {
 			model.addAttribute("collection", collezione);
 			this.collezioneService.save(collezione);
 			return "admin/insertedCollection";
@@ -84,31 +85,33 @@ public class CollezioneController {
 		List<Opera> opere = new ArrayList<>(this.operaService.opereSenzaCollezione());
 		opere.addAll(this.collezioneService.findCollezioneById(id).getOpere());
 		model.addAttribute("artworks", opere);
-		model.addAttribute("collection",this.collezioneService.findCollezioneById(id));
+		model.addAttribute("collection", this.collezioneService.findCollezioneById(id));
 
 		return "admin/editCollection";
 	}
 
 	@PostMapping("/admin/editCollection/{id}")
 	public String editingCollection(@ModelAttribute("collection") Collezione collezione,
-			BindingResult collezioneBindingResults,
-			@RequestParam("artworks") List<Opera> opere,
+			BindingResult collezioneBindingResults, @RequestParam("artworks") List<Opera> opere,
 			@PathVariable("id") Long id, Model model) {
+
+		Collezione originalCollezione = this.collezioneService.findCollezioneById(id);
+		originalCollezione.setId(id);
+		originalCollezione.setDescrizione(collezione.getDescrizione());
+		originalCollezione.setNome(collezione.getNome());
 		
-			Collezione originalCollezione = this.collezioneService.findCollezioneById(id);
-			originalCollezione.setId(id);
-			originalCollezione.setDescrizione(collezione.getDescrizione());
-			originalCollezione.setNome(collezione.getNome());
+		if (originalCollezione.getOpere() != null) {
 			for (Opera o : originalCollezione.getOpere()) {
 				o.setCollezione(null);
 			}
-			originalCollezione.setOpere(opere);
-	
-			this.collezioneService.save(originalCollezione);
-	
-			model.addAttribute(this.collezioneService.getAllCollezioni());
-	
-			return this.adminCollezioni(model);
+		}
+		originalCollezione.setOpere(opere);
+
+		this.collezioneService.save(originalCollezione);
+
+		model.addAttribute(this.collezioneService.getAllCollezioni());
+
+		return this.adminCollezioni(model);
 
 	}
 

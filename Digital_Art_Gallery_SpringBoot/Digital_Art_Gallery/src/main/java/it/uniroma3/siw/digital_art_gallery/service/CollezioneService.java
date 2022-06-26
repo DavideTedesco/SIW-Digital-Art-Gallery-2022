@@ -19,10 +19,10 @@ public class CollezioneService {
 
 	@Transactional
 	public Collezione save(Collezione collezione) {
-		if(collezione.getOpere()!=null) {
-		for(Opera o : collezione.getOpere()) {
-			o.setCollezione(collezione);
-		}
+		if (collezione.getOpere() != null) {
+			for (Opera o : collezione.getOpere()) {
+				o.setCollezione(collezione);
+			}
 		}
 		return this.collezioneRepository.save(collezione);
 	}

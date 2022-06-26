@@ -42,7 +42,7 @@
 										type="password" th:placeholder="#{placeholder-password}" required></label></div>
 							<div class="white"><label class="white">
 							<br>
-									<input type="checkbox" onclick="showPassword()">Show Password</label>
+									<input type="checkbox" onclick="showPassword()" th:text="#{showpassword}"></label>
 								<script>
 									function showPassword() {
 										var x = document.getElementById("myInput");

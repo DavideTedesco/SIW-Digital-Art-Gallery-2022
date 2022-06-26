@@ -17,7 +17,8 @@
 			<div class="grid-item-red">
 				<br>
 				<br>
-				<div class="red"><a class="red link-on-red" th:href="@{/default}">Personal page</a></div>
+				<div class="red"><a class="red link-on-red" th:href="@{/default}"
+						th:text="#{personalpage.message}">Personal page</a></div>
 			</div>
 			<div class="grid-item-gray">
 			</div>
@@ -55,6 +56,7 @@
 					<a class="white link-on-white" th:href="@{'/artworkDetails' + '/' + ${artwork.id}}"
 						th:text="#{abortvote}">Abort</a>
 				</div>
+				<br>
 			</div>
 			<div class="grid-item-lightblue">
 			</div>

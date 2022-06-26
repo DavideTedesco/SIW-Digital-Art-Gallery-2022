@@ -12,8 +12,8 @@
 	<div class="grid-megacontainer">
 		<div class="grid-container-one">
 			<div class="grid-item-white">
-				<div class="white"><a class="white link-on-white" th:href="@{/default}">Personal
-						page</a></div>
+				<div class="white"><a class="white link-on-white" th:href="@{/default}"
+						th:text="#{personalpage.message}">Personal page</a></div>
 			</div>
 			<div class="grid-item-gray">
 			</div>
@@ -25,7 +25,7 @@
 			<div class="grid-item-blue">
 
 				<form class="blue-table" th:action="@{/admin/insertAuthor}" method="post" th:object="${author}">
-					<h1 class="blue">Inserimento Autore</h1>
+					<h1 class="blue" th:text="#{insertauthor}">Inserimento Autore</h1>
 					<div class="blue">
 						<div th:if="${#fields.hasGlobalErrors()}">
 							<p th:each="err : ${#fields.globalErrors()}" th:text="${err}">...</p>

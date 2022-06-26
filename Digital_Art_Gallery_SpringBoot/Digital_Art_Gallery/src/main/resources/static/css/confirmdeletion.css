@@ -120,6 +120,7 @@ p{
 .grid-item-yellow{
   background-color: var(--yellow-mondrian);
   text-align: center;
+  color: black;
   overflow: hidden;
 }
 

@@ -27,15 +27,16 @@
 				<div class="blue">
 				<br>
 					<div class="blue" th:text="#{artworkname.message}+' '+${artwork.nome}"> Nome opera</div>
-					<div class="blue"><a class="blue link-on-blue"
+					<div class="blue"><!--<a class="blue link-on-blue"
 							th:href="@{'/authorDetails' + '/' + ${artwork.autore.id}}"
 							th:text="${artwork.autore.nome}+' '+${artwork.autore.cognome}">
-							Nome autore che ha realizzato l'opera</a></div><a>
+							Nome autore che ha realizzato l'opera</a>-->
+							</div>
 						<div class="blue" th:if="${artwork.collezione != null}">
-							<span class="blue" th:text="#{artworkincollection.message}+' '"></span>
+							<!--<span class="blue" th:text="#{artworkincollection.message}+' '"></span>
 							<a class="blue link-on-blue"
 								th:href="@{'/collectionDetails' + '/' + ${artwork.collezione.id}}"
-								th:text="${artwork.collezione.nome}">Pippo</a>
+								th:text="${artwork.collezione.nome}">Pippo</a>-->
 						</div>
 						<br>
 						<img class="blue" th:alt="${artwork.immagine}"
@@ -50,12 +51,13 @@
 
 					<div class="blue">
 						<br>
-						<button class="button" type="submit">Confirm</button>
+						<button class="button" type="submit" th:text="#{confirm.button}">Confirm</button>
 					</div>
 				</form>
 				<div class="blue">
-					<a class="blue link-on-blue" th:href="@{'/artworkDetails' + '/' + ${artwork.id}}">Abort</a>
+					<a class="blue link-on-blue" th:href="@{'/artworkDetails' + '/' + ${artwork.id}}" th:text="#{abort.message}">Abort</a>
 				</div>
+				<br>
 			</div>
 			<div class="grid-item-yellow">
 			</div>

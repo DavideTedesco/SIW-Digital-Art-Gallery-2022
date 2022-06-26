@@ -20,14 +20,14 @@
 		<div class="grid-container-two">
 			<div class="grid-item-yellow">
 				<h1 class="yellow">Collections</h1>
-				<div class="yellow"><a class="yellow link-on-yellow" th:href="@{/admin/insertCollection}">Insert a new
+				<div class="yellow"><a class="yellow link-on-yellow" th:href="@{/admin/insertCollection}" th:text="#{insertcollection.message}">Insert a new
 						collection</a></div>
 				<div class="yellow" th:each="collection : ${collections}">
 					<span class="yellow" th:text="${collection.nome}">Nome collezione</span>
 					<span class="yellow"><a class="yellow link-on-yellow"
-							th:href="@{'/admin/confirmCollectionDeletion' + '/' + ${collection.id}}">Remove</a></span>
+							th:href="@{'/admin/confirmCollectionDeletion' + '/' + ${collection.id}}" th:text="#{remove.message}">Remove</a></span>
 					<span class="yellow"><a class="yellow link-on-yellow"
-							th:href="@{'/admin/editCollection' + '/' + ${collection.id}}">Edit</a></span>
+							th:href="@{'/admin/editCollection' + '/' + ${collection.id}}" th:text="#{edit.message}">Edit</a></span>
 				</div>
 			</div>
 		</div>

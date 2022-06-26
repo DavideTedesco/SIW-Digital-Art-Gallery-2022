@@ -30,6 +30,12 @@
 					<div class="yellow">=====================</div>
 					<div class="yellow" th:each="artwork : ${artworks}">
 						<div class="yellow" th:text="#{artworkname.message}+' '+${artwork.nome}">Nome opera</div>
+						<div class="yellow">
+							<span class="yellow" th:text="#{authornamesurname}+' '"></span>
+
+							<span class="yellow" th:text="${artwork.autore.nome}+' '+${artwork.autore.cognome}">
+								Nome autore che ha realizzato l'opera</span>
+						</div>
 						<div class="yellow" th:if="(${artwork.mediaVoti()}==NaN)"
 							th:text="#{averagegradenotpresent.message}"></div>
 						<div class="yellow" th:unless="(${artwork.mediaVoti()}==NaN)"

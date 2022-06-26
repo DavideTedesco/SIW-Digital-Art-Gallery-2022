@@ -154,8 +154,8 @@ INDEX VERSION 1.131+/home/davide/github/DavideTedesco/SIW-Digital-Art-Gallery-20
 988868721.index
 677024732.index
 2792190390.index
-1156302252.index
 1345489853.index
+1156302252.index
 3528081943.index
 814789486.index
 1851155516.index

@@ -17,7 +17,7 @@
 					<br>
 					<br>
 					<h4 class="red">
-						<a class="red link-on-red" th:href="@{/index}">Logout</a>
+						<a class="red link-on-red" th:href="@{/index}" th:text="#{logout}">Logout</a>
 						<h4>
 				</div>
 			</div>
@@ -34,23 +34,32 @@
 			<div class="grid-item-blue">
 
 				<br>
-				<h2 class="blue" th:text="#{welcomepage.message}" ></h2>
+				<h2 class="blue" th:text="#{welcomepage.message}"></h2>
 				<br>
 				<div class="blue">
-					<a class="blue link-on-blue" th:href="@{/admin/showContent/users}" th:text="#{userlist.admin}"> Users</a>
+					<a class="blue link-on-blue" th:href="@{/admin/showContent/users}" th:text="#{userlist.admin}">
+						Users</a>
 				</div>
+				<br>
 
 				<div class="blue">
-					<a class="blue link-on-blue" th:href="@{/admin/showContent/authors}" th:text="#{authors.message.admin}"> Authors</a>
+					<a class="blue link-on-blue" th:href="@{/admin/showContent/authors}"
+						th:text="#{authors.message.admin}"> Authors</a>
 				</div>
+				<br>
 
 				<div class="blue">
-					<a class="blue link-on-blue" th:href="@{/admin/showContent/collections}" th:text="#{collections.message.admin}"> Collections</a>
+					<a class="blue link-on-blue" th:href="@{/admin/showContent/collections}"
+						th:text="#{collections.message.admin}"> Collections</a>
 				</div>
+				<br>
 
 				<div class="blue">
-					<a class="blue link-on-blue" th:href="@{/admin/showContent/artworks}" th:text="#{artworks.message.admin}"> Artworks</a>
+					<a class="blue link-on-blue" th:href="@{/admin/showContent/artworks}"
+						th:text="#{artworks.message.admin}"> Artworks</a>
 				</div>
+				<br>
+
 			</div>
 			<div class="grid-item-gray">
 
@@ -66,7 +75,7 @@
 					<br>
 					<br>
 					<div class="yellow" th:text="#{welcomeback.message}">welcome back User</div>
-                    <span class="yellow" sec:authentication="name"></span>
+					<span class="yellow" sec:authentication="name"></span>
 				</div>
 			</div>
 			<div class="grid-item-white-second">
