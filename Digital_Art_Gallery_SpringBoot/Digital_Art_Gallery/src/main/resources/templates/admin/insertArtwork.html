@@ -34,26 +34,26 @@
 					</div>
 					<div class="blue">
 						<div class="blue">
-							<div class="blue">Nome:</div>
+							<div class="blue" th:text="#{artworkname.message}">Nome:</div>
 							<div class="blue"><label><input type="text" th:field="*{nome}"></label>
 							</div>
 							<span th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}" class="red"></span>
 						</div>
 						<div class="blue">
-							<div class="blue">Data di realizzazione:</div>
+							<div class="blue" th:text="#{artworkdate.message}">Data di realizzazione:</div>
 							<div class="blue"><label><input type="text" th:placeholder="yyyy-MM-dd" name="date"
 										required></label></div>
 						</div>
 						<div class="blue">
-							<div class="blue">Descrizione</div>
+							<div class="blue" th:text="#{artworkdescription.message}">Descrizione</div>
 							<div class="blue"><textarea class="blue" rows="3" cols="16"
 									th:field="*{descrizione}"></textarea></div>
 							<span th:if="${#fields.hasErrors('descrizione')}" th:errors="*{descrizione}"
 								class="red"></span>
 						</div>
 						<div class="blue">
-							<div class="blue">Immagine</div>
-							<div class="blue">dimensione massima del file 10 MB</div>
+							<div class="blue" th:text="#{artworkimage.message}">Immagine</div>
+							<div class="blue" th:text="#{artworkdimension.message}">dimensione massima del file 10 MB</div>
 							<div class="blue"><label class="blue"><input class="blue input" type="file"
 										accept="image/png, image/jpeg, image/svg, image/jpg, image/tiff" name="image"
 										required></label></div>
@@ -75,7 +75,7 @@
 					<br>
 					<div class="blue">
 						<div class="blue">
-							<button class="blue button" type="submit" th:text="#{confirm.button}">Register</button>
+							<button class="button" type="submit" th:text="#{confirm.button}">Register</button>
 						</div>
 					</div>
 				</form>

@@ -33,25 +33,25 @@
 					</div>
 					<div class="blue">
 						<div class="blue">
-							<div class="blue">Nome:</div>
+							<div class="blue" th:text="#{name.message}">Nome:</div>
 							<div class="blue">
 								<label class="blue"><input class="blue" type="text" th:field="*{nome}"></label>
 							</div>
 							<span th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}" class="red"></span>
 						</div>
 						<div class="blue">
-							<div class="blue">Cognome:</div>
+							<div class="blue" th:text="#{surname.message}">Cognome:</div>
 							<div class="blue">
 								<label class="blue"><input class="blue" type="text" th:field="*{cognome}"></label>
 							</div>
 							<span th:if="${#fields.hasErrors('cognome')}" th:errors="*{cognome}" class="red"></span>
 						</div>
 						<div class="blue">
-							<div class="blue">Data di nascita</div>
+							<div class="blue" th:text="#{birthdate}">Data di nascita</div>
 							<div class="blue"><label class="blue"><input class="blue" name="date" type="text"
 										th:placeholder="yyyy-mm-dd" required></label></div>
 						</div>
-						<div class="blue">
+						<div class="blue" th:text="#{birthplace}">
 							<div class="blue">Luogo di nascita:</div>
 							<div class="blue">
 								<label class="blue"><input class="blue" type="text"

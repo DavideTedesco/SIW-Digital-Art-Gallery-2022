@@ -28,16 +28,16 @@
 				<table class="blue">
 					<div class="blue">
 						<span class="blue">Nome:</span>
-						<span class="blue" th:text="${artwork.nome}">
+						<span class="blue" th:text="#{artworkname.message}+' '+${artwork.nome}">
 					</div>
 			</div>
 			<div class="blue">
 				<span class="blue">Data di realizzazione:</span>
-				<span class="blue" th:text="${date}"></span>
+				<span class="blue" th:text="#{artworkdate.message}+' '+${date}"></span>
 			</div>
 			<div class="blue">
 				<span class="blue">Descrizione:</span>
-				<span class="blue" th:text="${artwork.descrizione}"></span>
+				<span class="blue" th:text="#{artworkdescription.message}+' '+${artwork.descrizione}"></span>
 			</div>
 			</table>
 
@@ -49,7 +49,7 @@
 			<div class="blue"><a class="blue link-on-blue" th:href="@{'/admin/editArtwork' + '/' + ${artwork.id}}" th:text="#{edit.message}">Edit</a>
 			</div>
 
-			<div class="blue"> <a class="blue link-on-blue" th:href="@{/admin/showContent/artworks}"> Lista opere</a>
+			<div class="blue"> <a class="blue link-on-blue" th:href="@{/admin/showContent/artworks}" th:text="#{artworkslistadmin.message}"> Lista opere</a>
 			</div>
 		</div>
 		<div class="grid-item-yellow">
