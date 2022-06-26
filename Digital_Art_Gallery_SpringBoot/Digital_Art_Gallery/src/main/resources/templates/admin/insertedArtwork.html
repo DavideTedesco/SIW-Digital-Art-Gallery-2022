@@ -25,10 +25,10 @@
 				<h1 class="red" th:text="#{insertedartwork}">Inserted artwork</h1>
 			</div>
 			<div class="grid-item-blue">
-				<table class="blue">
+				<div class="blue">
 					<div class="blue">
 						<span class="blue">Nome:</span>
-						<span class="blue" th:text="#{artworkname.message}+' '+${artwork.nome}">
+						<span class="blue" th:text="#{artworkname.message}+' '+${artwork.nome}"></span>
 					</div>
 			</div>
 			<div class="blue">
@@ -39,7 +39,7 @@
 				<span class="blue">Descrizione:</span>
 				<span class="blue" th:text="#{artworkdescription.message}+' '+${artwork.descrizione}"></span>
 			</div>
-			</table>
+			</div>
 
 			<div class="blue">
 				<img th:alt="${artwork.immagine}"
@@ -51,10 +51,10 @@
 
 			<div class="blue"> <a class="blue link-on-blue" th:href="@{/admin/showContent/artworks}" th:text="#{artworkslistadmin.message}"> Lista opere</a>
 			</div>
+			<div class="grid-item-yellow">
 		</div>
-		<div class="grid-item-yellow">
 		</div>
-	</div>
+		
 
 	<div class="grid-container-three">
 		<div class="grid-item-yellow">
@@ -67,7 +67,7 @@
 			Designed and built by <br>
 			<a class="white link-on-white" href="https://www.kevinsantodonato.it/">Kevin Santodonato</a>
 			<br>
-			& <br>
+			and <br>
 			<a class="white link-on-white" href="https://www.davidetedesco.it/">Davide Tedesco</a>
 		</div>
 	</div>

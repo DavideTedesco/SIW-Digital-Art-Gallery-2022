@@ -30,15 +30,11 @@
 				<div class="yellow" id="yellow-table">
 					<table class="yellow">
 						<thead>
-							<th class="yellow" th:text="#{nome.message}">
-								nome
-							</th>
-							<th class="yellow" th:text="#{cognome.message}">
-								cognome
-							</th>
-							<th class="yellow">
-								id
-							</th>
+							<tr>
+								<th class="yellow" th:text="#{nome.message}">nome</th>
+								<th class="yellow" th:text="#{cognome.message}">cognome</th>
+								<th class="yellow">id</th>
+							</tr>
 						</thead>
 						<tbody class="yellow">
 							<tr class="yellow" th:each="user : ${users}">
@@ -64,7 +60,7 @@
 						Designed and built by <br>
 						<a class="white link-on-white" href="https://www.kevinsantodonato.it/">Kevin Santodonato</a>
 						<br>
-						& <br>
+						and <br>
 						<a class="white link-on-white" href="https://www.davidetedesco.it/">Davide Tedesco</a>
 					</div>
 				</div>

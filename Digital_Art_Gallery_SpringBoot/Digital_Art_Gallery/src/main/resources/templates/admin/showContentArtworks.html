@@ -28,6 +28,8 @@
 					<div class="yellow"><a class="yellow link-on-yellow" th:href="@{/admin/insertArtwork}"
 							th:text="#{insertartwork.message}">Insert a new artwork</a></div>
 					<div class="yellow">=====================</div>
+					<div class="yellow" th:if="${artworks.isEmpty()}"> Non ci sono opere presenti</div>
+					<div class="yellow" th:unless="${artworks.isEmpty()}">
 					<div class="yellow" th:each="artwork : ${artworks}">
 						<div class="yellow" th:text="#{artworkname.message}+' '+${artwork.nome}">Nome opera</div>
 						<div class="yellow">
@@ -51,6 +53,7 @@
 							width="50%">
 						<div class="yellow">=====================</div>
 					</div>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -67,7 +70,7 @@
 						Designed and built by <br>
 						<a class="white link-on-white" href="https://www.kevinsantodonato.it/">Kevin Santodonato</a>
 						<br>
-						& <br>
+						and <br>
 						<a class="white link-on-white" href="https://www.davidetedesco.it/">Davide Tedesco</a>
 					</div>
 				</div>

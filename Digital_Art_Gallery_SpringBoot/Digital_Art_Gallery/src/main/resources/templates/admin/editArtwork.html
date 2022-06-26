@@ -24,11 +24,11 @@
 			<div class="grid-item-red">
 			</div>
 			<div class="grid-item-blue">
-				<h1 class="blue" th:text"#{editartwork}">Edit artwork</h1>
+				<h1 class="blue" th:text="#{editartwork}">Edit artwork</h1>
 				<form class="blue" th:action="@{/admin/editArtwork/{id}(id=${artwork.id})}" method="post"
 					th:object="${artwork}" enctype="multipart/form-data">
 
-					<table class="blue">
+					<div class="blue">
 						<div class="blue">
 							<div class="blue" th:text="#{artworkname.message}">Nome:</div>
 							<div class="blue"><label class="blue"><input class="blue" type="text" required
@@ -61,7 +61,7 @@
 										th:value="${collection.id}" th:text="${collection.nome} "></option>
 								</select></div>
 						</div>
-					</table>
+					</div>
 
 					<div class="blue">
 						<div class="blue">
@@ -84,7 +84,7 @@
 					Designed and built by <br>
 					<a class="white link-on-white" href="https://www.kevinsantodonato.it/">Kevin Santodonato</a>
 					<br>
-					& <br>
+					and <br>
 					<a class="white link-on-white" href="https://www.davidetedesco.it/">Davide Tedesco</a>
 				</div>
 			</div>

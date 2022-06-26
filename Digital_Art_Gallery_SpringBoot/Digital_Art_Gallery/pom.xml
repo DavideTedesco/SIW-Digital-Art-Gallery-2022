@@ -15,7 +15,7 @@
 	<name>Digital_Art_Gallery</name>
 	<description>System that manges a Digital Art Gallery</description>
 	<properties>
-		<java.version>11</java.version>
+		<java.version>1.8</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
