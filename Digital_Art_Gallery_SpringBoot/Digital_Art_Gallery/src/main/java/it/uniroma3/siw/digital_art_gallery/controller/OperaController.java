@@ -65,7 +65,6 @@ public class OperaController {
 	@GetMapping("/admin/showContent/artworks")
 	public String adminOpere(Model model) {
 		model.addAttribute("artworks",this.operaService.getAllOpere());
-		System.out.println(this.bucketService.listFiles() + "\n\n\n\n\n\n\n\n\n\n\n\n"); 
 		return "/admin/showContentArtworks";
 	}
 	
