@@ -25,7 +25,7 @@
 				<div class="yellow" th:text="#{birthplace}+' '+${author.luogoDiNascita}"></div>
 				<div class="yellow" th:text="#{birthdate}+' '+${data}"></div>
 				<div class="yellow"><a class="yellow link-on-yellow"
-						th:href="@{'/author' + '/' + ${author.id} + '/' + 'artworks'}">Vai alla lista opere
+						th:href="@{'/author' + '/' + ${author.id} + '/' + 'artworks'}" th:text="#{listartworkofauthor}">Vai alla lista opere
 						dell'autore</a></div>
 			</div>
 		</div>

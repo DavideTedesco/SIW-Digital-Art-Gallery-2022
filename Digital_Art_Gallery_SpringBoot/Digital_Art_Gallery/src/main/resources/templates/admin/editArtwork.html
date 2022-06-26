@@ -30,7 +30,7 @@
 
 					<table class="blue">
 						<div class="blue">
-							<div class="blue">Nome:</div>
+							<div class="blue" th:text="#{artworkname.message}">Nome:</div>
 							<div class="blue"><label class="blue"><input class="blue" type="text" required
 										th:field="*{nome}"></label></div>
 						</div>
@@ -38,7 +38,7 @@
 							<div class="blue" th:text="'Previous date ' + ${date} "></div>
 						</div>
 						<div class="blue">
-							<div class="blue">Data di realizzazione:</div>
+							<div class="blue" th:text="#{artworkdate.message}">Data di realizzazione:</div>
 							<div class="blue"><label class="blue"><input class="blue" type="text"
 										th:placeholder="yyyy-MM-dd" required name="date"></label></div>
 						</div>
@@ -47,7 +47,7 @@
 
 
 						<div class="blue">
-							<div class="blue">Descrizione</div>
+							<div class="blue" th:text="#{artworkdescription.message}">Descrizione</div>
 							<div class="blue"><textarea class="blue" required th:field="*{descrizione}"></textarea>
 							</div>
 						</div>
