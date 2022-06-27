@@ -30,47 +30,51 @@
 						<span class="blue">Nome:</span>
 						<span class="blue" th:text="#{artworkname.message}+' '+${artwork.nome}"></span>
 					</div>
-			</div>
-			<div class="blue">
-				<span class="blue">Data di realizzazione:</span>
-				<span class="blue" th:text="#{artworkdate.message}+' '+${date}"></span>
-			</div>
-			<div class="blue">
-				<span class="blue">Descrizione:</span>
-				<span class="blue" th:text="#{artworkdescription.message}+' '+${artwork.descrizione}"></span>
-			</div>
-			</div>
-
-			<div class="blue">
+				</div>
+				<div class="blue">
+					<span class="blue">Data di realizzazione:</span>
+					<span class="blue" th:text="#{artworkdate.message}+' '+${date}"></span>
+				</div>
+				<div class="blue">
+					<span class="blue">Descrizione:</span>
+					<span class="blue" th:text="#{artworkdescription.message}+' '+${artwork.descrizione}"></span>
+				</div>
 				<img th:alt="${artwork.immagine}"
 					th:src="@{'https://digital-art-gallery.s3.eu-west-3.amazonaws.com' + '/' +  ${artwork.immagine}}"
 					width="35%">
-			</div>
-			<div class="blue"><a class="blue link-on-blue" th:href="@{'/admin/editArtwork' + '/' + ${artwork.id}}" th:text="#{edit.message}">Edit</a>
+				<div class="blue">
+
+				</div>
+				<div class="blue"><a class="blue link-on-blue" th:href="@{'/admin/editArtwork' + '/' + ${artwork.id}}"
+						th:text="#{edit.message}">Edit</a>
+				</div>
+
+				<div class="blue"> <a class="blue link-on-blue" th:href="@{/admin/showContent/artworks}"
+						th:text="#{artworkslistadmin.message}"> Lista opere</a>
+				</div>
 			</div>
 
-			<div class="blue"> <a class="blue link-on-blue" th:href="@{/admin/showContent/artworks}" th:text="#{artworkslistadmin.message}"> Lista opere</a>
-			</div>
+
 			<div class="grid-item-yellow">
+			</div>
 		</div>
-		</div>
-		
 
-	<div class="grid-container-three">
-		<div class="grid-item-yellow">
+
+		<div class="grid-container-three">
+			<div class="grid-item-yellow">
+			</div>
+			<div class="grid-item-white">
+				<br>
+				<br>
+				<br>
+				<br>
+				Designed and built by <br>
+				<a class="white link-on-white" href="https://www.kevinsantodonato.it/">Kevin Santodonato</a>
+				<br>
+				and <br>
+				<a class="white link-on-white" href="https://www.davidetedesco.it/">Davide Tedesco</a>
+			</div>
 		</div>
-		<div class="grid-item-white">
-			<br>
-			<br>
-			<br>
-			<br>
-			Designed and built by <br>
-			<a class="white link-on-white" href="https://www.kevinsantodonato.it/">Kevin Santodonato</a>
-			<br>
-			and <br>
-			<a class="white link-on-white" href="https://www.davidetedesco.it/">Davide Tedesco</a>
-		</div>
-	</div>
 
 	</div>
 

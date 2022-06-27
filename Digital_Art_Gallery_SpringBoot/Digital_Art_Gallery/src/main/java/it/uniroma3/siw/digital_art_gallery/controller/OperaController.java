@@ -65,7 +65,7 @@ public class OperaController {
 	@GetMapping("/admin/showContent/artworks")
 	public String adminOpere(Model model) {
 		model.addAttribute("artworks",this.operaService.getAllOpere());
-		return "/admin/showContentArtworks";
+		return "admin/showContentArtworks";
 	}
 	
 	@GetMapping("/admin/removeArtwork/{id}")

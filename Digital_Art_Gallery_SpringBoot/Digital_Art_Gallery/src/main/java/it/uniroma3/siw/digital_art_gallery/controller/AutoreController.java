@@ -88,7 +88,7 @@ public class AutoreController {
 		Autore autore = this.autoreService.findAutoreById(id);
 		model.addAttribute("data", this.converter.revertConversion(autore.getDataDiNascita()));
 		model.addAttribute("author", autore);
-		return "/admin/editAuthor";
+		return "admin/editAuthor";
 	}
 
 	@PostMapping("/admin/editAuthor/{id}")
@@ -109,7 +109,7 @@ public class AutoreController {
 		}
 
 		model.addAttribute("author", autoreService.findAutoreById(id));
-		return "/admin/editAuthor";
+		return "admin/editAuthor";
 	}
 
 	@GetMapping("/authorDetails/{id}")
